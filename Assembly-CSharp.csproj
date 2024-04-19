@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\cameraShake.cs" />
     <Compile Include="Assets\Scripts\movementController.cs" />
+    <Compile Include="Assets\Scripts\itemMoveToChar.cs" />
+    <Compile Include="Assets\Scripts\ItemCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
