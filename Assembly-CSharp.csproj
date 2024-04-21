@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\rotateLighter.cs" />
     <Compile Include="Assets\Scripts\battery.cs" />
     <Compile Include="Assets\Scripts\cameraFollow.cs" />
+    <Compile Include="Assets\Scripts\flipXLighter.cs" />
     <Compile Include="Assets\Scripts\controlIntesityLighter.cs" />
     <Compile Include="Assets\Scripts\controlIntensityLighterWeapon.cs" />
     <Compile Include="Assets\Scripts\itemMoveToChar.cs" />

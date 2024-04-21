@@ -34,10 +34,12 @@ public class controlIntensityLighterWeapon : MonoBehaviour
                 reverseInten = true;
                 if(weapon.activeSelf)
                 {
-                    battery.currentBattery--;
+                    if(battery.currentBattery > 0 && battery.currentBattery <= 100 ) {
+                        battery.currentBattery -= 5;
+                    }
                 }else if (!weapon.activeSelf)
-                {
-                    if(battery.currentBattery < battery.maxBattery)
+                { 
+                    if (battery.currentBattery < battery.maxBattery)
                     {
                         battery.currentBattery += 0.5f;
                         Debug.Log("kurang");
@@ -68,4 +70,6 @@ public class controlIntensityLighterWeapon : MonoBehaviour
             }
         }
     }
+
+   
 }

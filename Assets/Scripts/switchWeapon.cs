@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class switchWeapon : MonoBehaviour
 {
+    battery battery;
+    controlIntensityLighterWeapon controlIntensityLighterWeapon;
     controlIntesityLighter[] controlIntesity;
     int currentWeapon = 0;
     [SerializeField]
@@ -11,6 +13,9 @@ public class switchWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        controlIntensityLighterWeapon = GameObject.FindAnyObjectByType<controlIntensityLighterWeapon>();
+        battery = GameObject.FindObjectOfType<battery>();
+
         for(int i = 0;i<weapon.Length;i++)
         {
             if (weapon[i] == weapon[0])
@@ -29,22 +34,37 @@ public class switchWeapon : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            currentWeapon++;
-            for(int i =0;i<weapon.Length; i++)
-            {
-                if (weapon[i] == weapon[currentWeapon])
-                {
-                    weapon[currentWeapon].SetActive(true);
-                }
-                else { 
-                    weapon[i].SetActive(false);
-                }
-                
-            }
-            if(currentWeapon == weapon.Length-1){
-                currentWeapon = -1;
+            SwitchWeapon();
+        }
 
+        if(controlIntensityLighterWeapon != null)
+        {
+            if (battery.currentBattery <= 0)
+            {
+                battery.currentBattery = 1;
+                SwitchWeapon();
             }
+        }
+    }
+    void SwitchWeapon()
+    {
+        currentWeapon++;
+        for (int i = 0; i < weapon.Length; i++)
+        {
+            if (weapon[i] == weapon[currentWeapon])
+            {
+                weapon[currentWeapon].SetActive(true);
+            }
+            else
+            {
+                weapon[i].SetActive(false);
+            }
+
+        }
+        if (currentWeapon == weapon.Length - 1)
+        {
+            currentWeapon = -1;
+
         }
     }
 }

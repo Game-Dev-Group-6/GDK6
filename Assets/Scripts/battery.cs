@@ -22,7 +22,7 @@ public class battery : MonoBehaviour
     void Update()
     {
 
-        //mekanik battery ada pada script controlInstensityLighter
+        //mekanik battery ada pada script controlInstensityLighterWeapon
 
         slider.value = (float)currentBattery / maxBattery;
     }
