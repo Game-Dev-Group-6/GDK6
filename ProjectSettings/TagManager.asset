@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Background
   - Player
   - Ground
-  - 
+  - Musuh
   - 
   - 
   - 
@@ -47,6 +48,12 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 309655573
+    locked: 0
+  - name: Musuh
+    uniqueID: 1782924609
+    locked: 0
+  - name: Particle
+    uniqueID: 2815736719
     locked: 0
   - name: Player
     uniqueID: 2898447387

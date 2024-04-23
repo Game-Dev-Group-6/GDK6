@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemCollection : MonoBehaviour
 {
+    
     [SerializeField] float speedUpDown;
     Vector2 firstPos;
     [SerializeField]bool reverse = false;

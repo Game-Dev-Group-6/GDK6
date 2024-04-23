@@ -35,7 +35,7 @@ public class controlIntensityLighterWeapon : MonoBehaviour
                 if(weapon.activeSelf)
                 {
                     if(battery.currentBattery > 0 && battery.currentBattery <= 100 ) {
-                        battery.currentBattery -= 5;
+                        battery.currentBattery -= 1;
                     }
                 }else if (!weapon.activeSelf)
                 { 
