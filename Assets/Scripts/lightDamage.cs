@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class lightDamage : MonoBehaviour
 {
+    flipXLighter flipXLighter;
     particleEffect[] particleEffect;
     delayTime delayTime;
     [SerializeField]
@@ -18,9 +19,14 @@ public class lightDamage : MonoBehaviour
     [SerializeField]
     float raycastDistance = 10f;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        flipXLighter = FindAnyObjectByType<flipXLighter>();
+    }
     void Start()
     {
         delayTime = GetComponent<delayTime>();
+       
     }
 
     // Update is called once per frame
@@ -30,7 +36,8 @@ public class lightDamage : MonoBehaviour
         lightPos = light2D.transform.position;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 distanceToMouse = mousePos - lightPos;
-        ray = Physics2D.RaycastAll(lightPos, distanceToMouse, raycastDistance, musuh);
+        Vector2 raycastDir = new Vector2(distanceToMouse.x * flipXLighter.flipXrorate, distanceToMouse.y);
+        ray = Physics2D.RaycastAll(lightPos, raycastDir.normalized, raycastDistance, musuh);
         foreach (RaycastHit2D hit in ray)
         {
             //waktu delay untuk menentukan waktu jeda ketika musuh terkena damage
@@ -64,13 +71,14 @@ public class lightDamage : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        flipXLighter = FindAnyObjectByType<flipXLighter>();
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 distance  = mouse - lightPos;
+        Vector2 raycastDir = new Vector2(distance.x * flipXLighter.flipXrorate, distance.y);
         Gizmos.color = Color.blue;
-        ray = Physics2D.RaycastAll(lightPos,distance, raycastDistance,musuh);
+        ray = Physics2D.RaycastAll(lightPos,raycastDir.normalized, raycastDistance , musuh);
         foreach (RaycastHit2D hit in ray)
         {
-
             Gizmos.DrawLine(lightPos, hit.point);
         }
     }
