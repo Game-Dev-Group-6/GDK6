@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class itemMoveToChar : MonoBehaviour
 {
+    [SerializeField] GameObject button;
     [SerializeField] float radius;
     [SerializeField] float speedCollect;
     Collider2D[] detectPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,8 +23,9 @@ public class itemMoveToChar : MonoBehaviour
             {
                 if (detectPlayer[i].tag == "Player")
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, detectPlayer[0].transform.position, speedCollect);
+                    button.SetActive(true);
                 }
+                /*else button.SetActive(false);*/
             }
         }
     }

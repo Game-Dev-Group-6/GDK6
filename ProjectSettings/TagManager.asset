@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background1
+    uniqueID: 2702695491
+    locked: 0
   - name: Background
     uniqueID: 807792403
     locked: 0
@@ -55,6 +58,15 @@ TagManager:
   - name: Particle
     uniqueID: 2815736719
     locked: 0
+  - name: Environment
+    uniqueID: 152145563
+    locked: 0
   - name: Player
     uniqueID: 2898447387
+    locked: 0
+  - name: Grass
+    uniqueID: 771550223
+    locked: 0
+  - name: Fog
+    uniqueID: 1334558501
     locked: 0

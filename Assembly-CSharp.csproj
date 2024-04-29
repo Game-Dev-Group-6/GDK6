@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\enemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\rotateLighter.cs" />
+    <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\battery.cs" />
     <Compile Include="Assets\Scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\flipXLighter.cs" />
@@ -71,12 +72,18 @@
     <Compile Include="Assets\Scripts\Enemy\particleDeath.cs" />
     <Compile Include="Assets\Scripts\switchWeapon.cs" />
     <Compile Include="Assets\Scripts\ItemCollection.cs" />
+    <Compile Include="Assets\Scripts\parallax.cs" />
     <Compile Include="Assets\Scripts\delayTime.cs" />
     <Compile Include="Assets\Scripts\Enemy\particleEffect.cs" />
     <Compile Include="Assets\Scripts\cameraShake.cs" />
     <Compile Include="Assets\Scripts\controlIntesityPlayer.cs" />
+    <Compile Include="Assets\Scripts\UI\recycleController.cs" />
     <Compile Include="Assets\Scripts\lightDamage.cs" />
+    <Compile Include="Assets\Scripts\UI\collisionParticle.cs" />
+    <Compile Include="Assets\Scripts\UI\posRecycle.cs" />
     <Compile Include="Assets\Scripts\movementController.cs" />
+    <Compile Include="Assets\Scripts\UI\trashFloat.cs" />
+    <Compile Include="Assets\Scripts\Enemy\enemyTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
