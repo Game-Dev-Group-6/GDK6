@@ -33,7 +33,7 @@ public class cameraShake : MonoBehaviour
             }
         }
     }
-    void CameraShake()
+    public void CameraShake()
     {
         channel = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         channel.m_AmplitudeGain = shakeIntensity;

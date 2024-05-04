@@ -5,6 +5,11 @@ using UnityEngine.Rendering.Universal;
 
 public class controlIntensityLighterWeapon : MonoBehaviour
 {
+
+    [SerializeField]
+    [Range(0f, 10f)]
+    float bateraiTambah,bateraiKurang;
+
     battery battery;
     [SerializeField]
     GameObject weapon;
@@ -35,13 +40,13 @@ public class controlIntensityLighterWeapon : MonoBehaviour
                 if(weapon.activeSelf)
                 {
                     if(battery.currentBattery > 0 && battery.currentBattery <= 100 ) {
-                        battery.currentBattery -= 1;
+                        battery.currentBattery -= bateraiKurang;
                     }
                 }else if (!weapon.activeSelf)
                 { 
                     if (battery.currentBattery < battery.maxBattery)
                     {
-                        battery.currentBattery += 0.5f;
+                        battery.currentBattery += bateraiTambah;
                         Debug.Log("kurang");
                     }
                     

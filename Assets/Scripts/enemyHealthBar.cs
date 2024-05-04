@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class enemyHealthBar : MonoBehaviour
 {
+    [SerializeField]
+    bool dead = false;
+    delayTime delayTime;
     int i = 0;
     particleDeath particleDeath;
     float healthMax = 100;
     [SerializeField]
-    float currentHealth;
+    public float currentHealth;
     [SerializeField]
     Slider healthSlider;
     lightDamage lightDamage;
@@ -17,30 +20,32 @@ public class enemyHealthBar : MonoBehaviour
     void Start()
     {
         currentHealth = healthMax;
-        
+        delayTime = GetComponent<delayTime>();
     }  
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            /*TakeDamage();*/
-        }
         healthSlider.value = currentHealth / healthMax;
        
         if (currentHealth <= 0)
         {
-            
-            if(i == 0)
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            if (i == 0)
             {
-                healthSlider.transform.parent.gameObject.SetActive(false);
                 GetComponentInParent<SpriteRenderer>().enabled = false;
                 Debug.Log("mati");
                 particleDeath = transform.Find("DeathParticle").GetComponent<particleDeath>();
                 particleDeath.PartcilePlay();
                 i++;
             }
+                dead = true;
+        }
+
+        if(delayTime.Delay(60) && dead == true)
+        {
+            EnemyDead();
         }
     }
 
@@ -48,5 +53,11 @@ public class enemyHealthBar : MonoBehaviour
     {
         lightDamage = FindAnyObjectByType<lightDamage>();
         currentHealth -= lightDamage.damage;
+    }
+
+    void EnemyDead()
+    {
+        //mengambil object parent, karena object poci merupakan children
+        Destroy(transform.parent.gameObject);
     }
 }

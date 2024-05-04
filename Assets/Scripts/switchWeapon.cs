@@ -6,7 +6,6 @@ public class switchWeapon : MonoBehaviour
 {
     battery battery;
     controlIntensityLighterWeapon controlIntensityLighterWeapon;
-    controlIntesityLighter[] controlIntesity;
     int currentWeapon = 0;
     [SerializeField]
     GameObject[] weapon = new GameObject[2];
@@ -36,9 +35,10 @@ public class switchWeapon : MonoBehaviour
         {
             SwitchWeapon();
         }
-
+        
         if(controlIntensityLighterWeapon != null)
         {
+            //Kondisi ketika baterai 0, maka akan otomatis switch ke SenterBiasa
             if (battery.currentBattery <= 0)
             {
                 battery.currentBattery = 1;
@@ -61,10 +61,10 @@ public class switchWeapon : MonoBehaviour
             }
 
         }
+        //di 
         if (currentWeapon == weapon.Length - 1)
         {
             currentWeapon = -1;
-
         }
     }
 }
