@@ -22,6 +22,9 @@ public class movementController : MonoBehaviour
     [SerializeField]float move,speed;
     Animator anim;
     SpriteRenderer sprite;
+
+    private bool interactNPC;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -33,11 +36,25 @@ public class movementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!interactNPC)
+        {
+            MoveHorizontal();
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+            anim.SetBool("Kedip", true);
+        }
         PlayerStay();
-        MoveHorizontal();
+        // MoveHorizontal();
         Jump();
     }
+
+    public void ToggleInteraction()
+    {
+        interactNPC = !interactNPC;
+    }
+
     void MoveHorizontal()
     {
         move = Input.GetAxis("Horizontal");
