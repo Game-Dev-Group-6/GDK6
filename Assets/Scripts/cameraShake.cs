@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
-    [SerializeField]CinemachineVirtualCamera cam;
+    [SerializeField] CinemachineVirtualCamera cam;
     CinemachineBasicMultiChannelPerlin channel;
     float time;
     [SerializeField] float shakeIntensity;
@@ -15,19 +15,22 @@ public class cameraShake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GetComponent<CinemachineVirtualCamera> ();
-        CameraStop ();
+        cam = GetComponent<CinemachineVirtualCamera>();
+        CameraStop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             CameraShake();
-            
-        }else if (time > 0){
+
+        }
+        else if (time > 0)
+        {
             time -= Time.deltaTime;
-            if(time <= 0)
+            if (time <= 0)
             {
                 CameraStop();
             }
@@ -44,4 +47,12 @@ public class cameraShake : MonoBehaviour
         channel = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         channel.m_AmplitudeGain = 0;
     }
+
+
+    /* void siwtchCamera(){
+        Camera[] camera;
+
+        int i = 0;
+        
+    } */
 }

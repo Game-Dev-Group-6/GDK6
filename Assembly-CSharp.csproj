@@ -64,13 +64,15 @@
     <Analyzer Include="D:\INSTALISASI\Unity File\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\enemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\rotateLighter.cs" />
+    <Compile Include="Assets\Scripts\Enemy\switchCamera.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\battery.cs" />
     <Compile Include="Assets\Scripts\flipXLighter.cs" />
     <Compile Include="Assets\Scripts\Enemy\enemyCombat.cs" />
     <Compile Include="Assets\Scripts\controlIntesityLighter.cs" />
+    <Compile Include="Assets\Scripts\Enemy\enemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Enemy\delayTime2.cs" />
     <Compile Include="Assets\Scripts\controlIntensityLighterWeapon.cs" />
     <Compile Include="Assets\Scripts\itemMoveToChar.cs" />
     <Compile Include="Assets\Scripts\Enemy\bullet.cs" />
@@ -79,9 +81,12 @@
     <Compile Include="Assets\Scripts\ItemCollection.cs" />
     <Compile Include="Assets\Scripts\parallax.cs" />
     <Compile Include="Assets\Scripts\delayTime.cs" />
+    <Compile Include="Assets\Scripts\Enemy\graveYard.cs" />
     <Compile Include="Assets\Scripts\Enemy\particleEffect.cs" />
     <Compile Include="Assets\Scripts\cameraShake.cs" />
     <Compile Include="Assets\Scripts\controlIntesityPlayer.cs" />
+    <Compile Include="Assets\graveYardFalse.cs" />
+    <Compile Include="Assets\Scripts\Enemy\combat.cs" />
     <Compile Include="Assets\Scripts\UI\recycleController.cs" />
     <Compile Include="Assets\Scripts\lightDamage.cs" />
     <Compile Include="Assets\Scripts\UI\collisionParticle.cs" />
@@ -89,6 +94,7 @@
     <Compile Include="Assets\Scripts\movementController.cs" />
     <Compile Include="Assets\Scripts\UI\trashFloat.cs" />
     <Compile Include="Assets\Scripts\Enemy\enemyTrigger.cs" />
+    <Compile Include="Assets\Scripts\Enemy\handAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

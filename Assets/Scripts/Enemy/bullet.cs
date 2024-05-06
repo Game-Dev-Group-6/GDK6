@@ -89,7 +89,7 @@ public class bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.name == "Ground" || other.collider.name == "Player")
+        if (other.collider.name == "Ground")
         {
             ContactPoint2D contact = other.GetContact(0);
             Vector2 point = contact.point;
@@ -101,6 +101,14 @@ public class bullet : MonoBehaviour
             /* particle.GetComponent<ParticleSystem>().Stop(); */
             Destroy(gameObject);
         }
+        if (other.collider.name == "Player")
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            other.collider.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.01f, 3), ForceMode2D.Impulse);
+            cameraShake.CameraShake();
+            Destroy(gameObject);
+        }
+
 
     }
 }

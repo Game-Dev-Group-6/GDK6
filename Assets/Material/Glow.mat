@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GlowTex:
-        m_Texture: {fileID: 2800000, guid: 662d10fdb4cce9e48a06e278554529a3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9ebba97cd9cb47740aced5bfef6c4231, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:

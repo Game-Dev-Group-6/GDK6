@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class enemyHealthBar : MonoBehaviour
 {
     [SerializeField]
+    float damageFromLight = 1;
+    [SerializeField]
     bool dead = false;
-    delayTime delayTime;
+    delayTime2 delayTime2;
     int i = 0;
     particleDeath particleDeath;
     float healthMax = 100;
@@ -20,14 +22,14 @@ public class enemyHealthBar : MonoBehaviour
     void Start()
     {
         currentHealth = healthMax;
-        delayTime = GetComponent<delayTime>();
-    }  
+        delayTime2 = GetComponent<delayTime2>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         healthSlider.value = currentHealth / healthMax;
-       
+
         if (currentHealth <= 0)
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
@@ -40,19 +42,23 @@ public class enemyHealthBar : MonoBehaviour
                 particleDeath.PartcilePlay();
                 i++;
             }
-                dead = true;
+            dead = true;
         }
 
-        if(delayTime.Delay(60) && dead == true)
+        if (dead == true)
         {
-            EnemyDead();
+            if (delayTime2.Delay(3f))
+            {
+                EnemyDead();
+            }
         }
+
     }
 
     public void TakeDamage()
     {
         lightDamage = FindAnyObjectByType<lightDamage>();
-        currentHealth -= lightDamage.damage;
+        currentHealth -= damageFromLight;
     }
 
     void EnemyDead()

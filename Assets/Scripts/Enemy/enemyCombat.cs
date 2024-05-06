@@ -28,7 +28,7 @@ public class enemyCombat : MonoBehaviour
 
     }
 
-    void Shoot()
+    public void Shoot()
     {
         float posGround = GameObject.Find("Ground").transform.position.y;
         bullet = Instantiate(enemyBullet, new Vector3(transform.position.x + UnityEngine.Random.Range(-5, 5), groundY, 0), transform.rotation);
