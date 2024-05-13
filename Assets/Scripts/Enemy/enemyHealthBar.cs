@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class enemyHealthBar : MonoBehaviour
 {
-    [SerializeField]
-    float damageFromLight = 1;
-    [SerializeField]
-    bool dead = false;
-    delayTime2 delayTime2;
     int i = 0;
-    particleDeath particleDeath;
-    float healthMax = 100;
-    [SerializeField]
-    public float currentHealth;
-    [SerializeField]
-    Slider healthSlider;
-    lightDamage lightDamage;
+    private float healthMax = 100;
+    [SerializeField] public float currentHealth;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] private float damageFromLight = 1;
+    [SerializeField] private bool dead = false;
+    private lightDamage lightDamage;
+    private delayTime2 delayTime2;
+    private particleDeath particleDeath;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +45,7 @@ public class enemyHealthBar : MonoBehaviour
 
         if (dead == true)
         {
-            if (delayTime2.Delay(3f))
-            {
-                EnemyDead();
-            }
+
         }
 
     }
@@ -61,9 +56,13 @@ public class enemyHealthBar : MonoBehaviour
         currentHealth -= damageFromLight;
     }
 
-    void EnemyDead()
+    public void EnemyDead()
     {
+        if (delayTime2.Delay(1.2f))
+        {
+            Destroy(transform.parent.gameObject);
+        }
         //mengambil object parent, karena object poci merupakan children
-        Destroy(transform.parent.gameObject);
+
     }
 }

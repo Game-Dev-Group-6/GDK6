@@ -6,25 +6,24 @@ using UnityEngine;
 
 public class enemyTrigger : MonoBehaviour
 {
-    bool combat = false;
-
+    private bool combat = false;
     public bool combatBegin = false;//saat kondisi combatBegin = true, maka semua radius trigger diabaikan
-    Color newColor;
-    delayTime delayTime;
-    Animator animator;
+    private Color newColor;
+    private delayTime delayTime;//Pakai Time.time
+    private Animator animator;
+    private DialogueManager dialogueManager;
     int i = 0;
     int j = 0;
 
     [SerializeField]
-    [Header("Urutan: Value Range Trigger harus > Penampakan")]
-    float rangeTrigger;
-    [SerializeField]
-    float penampakan, speedTrigger, startCombat;
+    [Header("Urutan: Value areGentayangan harus > areaPenampakan > areaCombat")]
+    public float areaGentayangan;
+    [SerializeField] private float areaPenampakan, areaCombat, speedTrigger;
 
-    GameObject graveYard;
-    Vector2 posPlayer;
-    Transform childrenObj;
-    bool gentayangan = false;
+    private GameObject graveYard;
+    private Vector2 posPlayer;
+    private Transform childrenObj;
+    private bool gentayangan = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +31,8 @@ public class enemyTrigger : MonoBehaviour
         delayTime = GetComponent<delayTime>();
         childrenObj = transform.GetChild(0);
         animator = childrenObj.GetComponent<Animator>();
+        dialogueManager = FindAnyObjectByType<DialogueManager>();
+
     }
 
     // Update is called once per frame
@@ -39,18 +40,18 @@ public class enemyTrigger : MonoBehaviour
     {
         posPlayer = GameObject.Find("Player").transform.position;
         float distance = Vector2.Distance(gameObject.transform.position, posPlayer);
-        if (distance <= rangeTrigger && distance > penampakan && !combat)
+        if (distance <= areaGentayangan && distance > areaPenampakan && !combat)
         {
             Gentayangan();
         }
-        else if (distance <= penampakan && distance > startCombat && !combat)
+        else if (distance <= areaPenampakan && distance > areaCombat && !combat)
         {
             childrenObj.transform.localScale = Vector2.one * 1;
             animator.SetBool("gentayangan", false);
             childrenObj.GetComponent<SpriteRenderer>().flipX = true;
             Penampakan();
         }
-        else if (distance <= startCombat && childrenObj.GetComponent<enemyHealthBar>().currentHealth > 0 || combat)
+        else if (distance <= areaCombat && childrenObj.GetComponent<enemyHealthBar>().currentHealth > 0 || combat)
         {
             if (!combatBegin)
             {
@@ -66,8 +67,12 @@ public class enemyTrigger : MonoBehaviour
                 childrenObj.GetComponent<SpriteRenderer>().color = newColor;
                 //menampilkan canvas/healthBar enemy
                 childrenObj.transform.GetChild(0).gameObject.SetActive(true);
-                ShowGraveYard();
-                combatBegin = true;
+
+                if (dialogueManager.startActionAfterDialog)
+                {
+                    ShowGraveYard();
+                }
+
             }
         }
 
@@ -84,7 +89,7 @@ public class enemyTrigger : MonoBehaviour
 
         if (i < 1)
         {
-            childrenObj.transform.position = Vector3.left * (rangeTrigger + 50);
+            childrenObj.transform.position = Vector3.left * (areaGentayangan + 50);
             childrenObj.GetComponent<SpriteRenderer>().flipX = false;
             i++;
         }
@@ -107,7 +112,7 @@ public class enemyTrigger : MonoBehaviour
 
         if (j < 1)
         {
-            childrenObj.transform.position = new Vector2(transform.position.x - (penampakan - 13f), GameObject.Find("Ground").transform.position.y + GameObject.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.y + 1f);
+            childrenObj.transform.position = new Vector2(transform.position.x - (areaPenampakan - 13f), GameObject.Find("Ground").transform.position.y + GameObject.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.y + 1f);
             j++;
         }
         newColor = childrenObj.GetComponent<SpriteRenderer>().color;
@@ -119,7 +124,7 @@ public class enemyTrigger : MonoBehaviour
     void ShowGraveYard()
     {
         graveYard = transform.GetChild(1).gameObject;
-        graveYard.transform.position = new Vector2(transform.position.x - penampakan, graveYard.transform.position.y);
+        graveYard.transform.position = new Vector2(transform.position.x - areaGentayangan, graveYard.transform.position.y);
         switchCamera grave = graveYard.GetComponent<switchCamera>();
         if (!grave.backToPlayer)
         {
@@ -131,8 +136,8 @@ public class enemyTrigger : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, rangeTrigger);
-        Gizmos.DrawWireSphere(transform.position, penampakan);
-        Gizmos.DrawWireSphere(transform.position, startCombat);
+        Gizmos.DrawWireSphere(transform.position, areaGentayangan);
+        Gizmos.DrawWireSphere(transform.position, areaPenampakan);
+        Gizmos.DrawWireSphere(transform.position, areaCombat);
     }
 }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Tree
+  - Trash
+  - FlashLight/Get
+  - Environment/TendExit
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - Player
   - Ground
   - Musuh
-  - 
-  - 
+  - Bullet
+  - Trash
   - 
   - 
   - 
@@ -43,6 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Scene1/BackTendExit
+    uniqueID: 4060204767
+    locked: 0
+  - name: Scene1/TendExit
+    uniqueID: 1352864865
+    locked: 0
+  - name: Scene1/Other
+    uniqueID: 746258991
+    locked: 0
   - name: BackgroundBlack
     uniqueID: 807792403
     locked: 0
@@ -58,6 +71,9 @@ TagManager:
   - name: Particle
     uniqueID: 2815736719
     locked: 0
+  - name: Trash
+    uniqueID: 2546822173
+    locked: 0
   - name: Environment
     uniqueID: 152145563
     locked: 0
@@ -72,4 +88,10 @@ TagManager:
     locked: 0
   - name: Fog
     uniqueID: 1334558501
+    locked: 0
+  - name: Interact
+    uniqueID: 839022261
+    locked: 0
+  - name: UI Button
+    uniqueID: 1509764743
     locked: 0

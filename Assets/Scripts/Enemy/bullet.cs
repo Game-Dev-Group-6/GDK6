@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+
+    combat combat;
     [SerializeField]
     Sprite[] sprites;
     [SerializeField]
@@ -24,8 +26,8 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        combat = FindAnyObjectByType<combat>();
         int random = UnityEngine.Random.Range(0, 3);
-        Debug.Log(random);
         GetComponent<SpriteRenderer>().sprite = sprites[random];
         lights[random].SetActive(true);
         cameraShake = FindAnyObjectByType<cameraShake>();
@@ -47,8 +49,23 @@ public class bullet : MonoBehaviour
             if (gameObject.transform.position.y < groundY + 7 && up)
             {
                 gameObject.transform.position += (Vector3)Vector2.up * 0.1f;
-                dir = player.position - bulet.position;
+                if (combat != null)
+                {
+                    if (combat.shieldActive)
+                    {
+                        Debug.Log("make Shield");
+                        dir = combat.shieldNow.transform.position - bulet.position;
+
+                    }
+                    else if (!combat.shieldActive)
+                    {
+                        Debug.Log("Not make Shield");
+                        dir = player.position - bulet.position;
+                    }
+                }
+
             }
+
             else
             {
 
@@ -76,7 +93,8 @@ public class bullet : MonoBehaviour
 
                     bulet.GetComponent<BoxCollider2D>().enabled = true;
                     Rigidbody2D rb = bulet.GetComponent<Rigidbody2D>();
-                    rb.AddForce(dir.normalized * 4f, ForceMode2D.Impulse);
+                    rb.AddForce(dir.normalized * 1f, ForceMode2D.Impulse);
+                    detectHit();
                 }
 
                 Quaternion rotation = Quaternion.Euler(0, 0, nowAngle);
@@ -85,6 +103,7 @@ public class bullet : MonoBehaviour
             }
 
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -104,11 +123,46 @@ public class bullet : MonoBehaviour
         if (other.collider.name == "Player")
         {
             GetComponent<BoxCollider2D>().enabled = false;
-            other.collider.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.01f, 3), ForceMode2D.Impulse);
-            cameraShake.CameraShake();
-            Destroy(gameObject);
+
         }
 
+
+    }
+
+    void detectHit()
+    {
+        Collider2D[] hit = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 0.5f), transform.eulerAngles.z);
+        foreach (Collider2D hitTo in hit)
+        {
+            if (hitTo.tag == "Tree")
+            {
+                if (combat.shieldActive)
+                {
+                    hitTo.GetComponent<treeCut>().treeFall = true;
+                }
+                combat.shieldActive = false;
+                Destroy(gameObject);
+            }
+            if (hitTo.tag == "Player")
+            {
+                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 3), ForceMode2D.Impulse);
+                cameraShake.CameraShake();
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        float angle = transform.eulerAngles.z;
+
+        // Simpan matriks Gizmos sebelumnya
+        Matrix4x4 originalMatrix = Gizmos.matrix;
+
+        // Atur Gizmos.matrix ke matriks transformasi objek (posisi, rotasi, skala)
+        Gizmos.matrix = Matrix4x4.TRS(transform.position, Quaternion.Euler(0, 0, angle), Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(1.5f, 0.5f, 0));
+        Gizmos.matrix = originalMatrix;
 
     }
 }

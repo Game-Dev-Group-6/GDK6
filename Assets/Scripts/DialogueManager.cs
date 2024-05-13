@@ -32,6 +32,8 @@ public class DialogueManager : MonoBehaviour
 
     private movementController playerMovementScript;
 
+    public bool startActionAfterDialog = false;
+    private int countClickButton = 0;
     private bool dialogueStarted;
 
     private int playerIndex;
@@ -51,16 +53,25 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+
         if (playerContinueButton.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Return))
                 TriggerContinueNPCDialogue();
         }
 
-        if (nPCContinueButton.activeSelf)
+        if (nPCContinueButton != null)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
-                TriggerContinuePlayerDialogue();
+            if (nPCContinueButton.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                    TriggerContinuePlayerDialogue();
+            }
+        }
+
+        if (countClickButton == playerDialogueSentences.Length + nPCDialogueSentences.Length)
+        {
+            startActionAfterDialog = true;
         }
     }
 
@@ -69,7 +80,7 @@ public class DialogueManager : MonoBehaviour
 
         playerMovementScript.ToggleInteraction();
 
-        if(PlayerSpeakingFirst)
+        if (PlayerSpeakingFirst)
         {
             playerSpeechBubbleAnimator.SetTrigger("Open");
             yield return new WaitForSeconds(speechBubbleAnimationDelay);
@@ -86,7 +97,8 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypePlayerDialogue()
     {
-        foreach(char letter in playerDialogueSentences[playerIndex].ToCharArray())
+
+        foreach (char letter in playerDialogueSentences[playerIndex].ToCharArray())
         {
             playerDialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -97,9 +109,11 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeNPCDialogue()
     {
-        foreach(char letter in nPCDialogueSentences[nPCIndex].ToCharArray())
+
+        foreach (char letter in nPCDialogueSentences[nPCIndex].ToCharArray())
         {
             nPCDialogueText.text += letter;
+
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -120,14 +134,14 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        
-        if(dialogueStarted)
+
+        if (dialogueStarted)
             playerIndex++;
         else
             dialogueStarted = true;
-        
+
         StartCoroutine(TypePlayerDialogue());
-        
+
     }
 
     private IEnumerator ContinueNPCDialogue()
@@ -145,14 +159,14 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        
+
         if (dialogueStarted)
             nPCIndex++;
         else
             dialogueStarted = true;
-            
+
         StartCoroutine(TypeNPCDialogue());
-        
+
     }
 
     public void TriggerContinuePlayerDialogue()
@@ -189,5 +203,10 @@ public class DialogueManager : MonoBehaviour
         }
         else
             StartCoroutine(ContinueNPCDialogue());
+    }
+
+    public void CountClickButton()
+    {
+        countClickButton++;
     }
 }

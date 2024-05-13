@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class fogParallax : MonoBehaviour
 {
-    [Range(-0.001f,-0.005f)]
-    [SerializeField]
-    float speedFog;
-    [SerializeField]
-    float lenghtSprite;
-    [SerializeField]
-    [Range(0f, 1f)]
-    float speedBg;
-    float camX, startPos;
+    [Range(-0.001f, -0.005f)][SerializeField] private float speedFog;
+    [SerializeField] private float lenghtSprite;
+    [SerializeField][Range(0f, 1f)] private float speedBg;
+    private float camX, startPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +33,7 @@ public class fogParallax : MonoBehaviour
         {
             startPos -= lenghtSprite;
         }
-        
+
 
 
     }

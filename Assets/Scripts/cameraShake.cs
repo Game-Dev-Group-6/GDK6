@@ -7,9 +7,9 @@ public class cameraShake : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera cam;
     CinemachineBasicMultiChannelPerlin channel;
-    float time;
-    [SerializeField] float shakeIntensity;
-    [SerializeField] float shakeTime;
+    private float time;
+    [SerializeField] private float shakeIntensity;
+    [SerializeField] private float shakeTime;
 
 
     // Start is called before the first frame update
@@ -47,12 +47,4 @@ public class cameraShake : MonoBehaviour
         channel = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         channel.m_AmplitudeGain = 0;
     }
-
-
-    /* void siwtchCamera(){
-        Camera[] camera;
-
-        int i = 0;
-        
-    } */
 }

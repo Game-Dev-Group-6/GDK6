@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class handAttack : MonoBehaviour
 {
-    [SerializeField]
-    public bool startCombat = false;
-    bool detectPlayer = false;
-    delayTime2 delay;
-    Vector2 contact;
-    GameObject handZombie;
+    [SerializeField] public bool startCombat = false;
+    private bool detectPlayer = false;
+    private delayTime2 delay;
+    private Vector2 contact;
+    private GameObject handZombie;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +41,6 @@ public class handAttack : MonoBehaviour
     void HandAttack()
     {
         Collider2D[] areaHit = Physics2D.OverlapBoxAll((Vector3)new Vector2(transform.position.x, transform.position.y - 2.6f), new Vector2(5f, 0.1f), 2f);
-        if (areaHit.Length > 0)
-        {
-
-        }
         foreach (Collider2D hit in areaHit)
         {
             if (hit.name == "Player")
