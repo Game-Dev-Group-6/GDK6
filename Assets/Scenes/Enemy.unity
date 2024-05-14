@@ -257,7 +257,6 @@ GameObject:
   - component: {fileID: 546717521}
   - component: {fileID: 546717520}
   - component: {fileID: 546717519}
-  - component: {fileID: 546717518}
   - component: {fileID: 546717517}
   - component: {fileID: 546717516}
   - component: {fileID: 546717515}
@@ -344,41 +343,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33296502, y: 0.411686}
   m_EdgeRadius: 0
---- !u!70 &546717518
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546717514}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.028200373, y: -0.0375067}
-  m_Size: {x: 0.47121832, y: 0.47121832}
-  m_Direction: 1
 --- !u!50 &546717519
 Rigidbody2D:
   serializedVersion: 4
@@ -953,7 +917,6 @@ GameObject:
   - component: {fileID: 1309727567}
   - component: {fileID: 1309727566}
   - component: {fileID: 1309727565}
-  - component: {fileID: 1309727564}
   - component: {fileID: 1309727563}
   - component: {fileID: 1309727562}
   - component: {fileID: 1309727561}
@@ -1039,41 +1002,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33296502, y: 0.411686}
   m_EdgeRadius: 0
---- !u!70 &1309727564
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309727560}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.028200373, y: -0.0375067}
-  m_Size: {x: 0.47121832, y: 0.47121832}
-  m_Direction: 1
 --- !u!50 &1309727565
 Rigidbody2D:
   serializedVersion: 4
@@ -1212,7 +1140,7 @@ GameObject:
   - component: {fileID: 1384635398}
   - component: {fileID: 1384635399}
   - component: {fileID: 1384635400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Doko
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1328,7 +1256,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
