@@ -57,6 +57,9 @@ TagManager:
   - name: Scene1/Other
     uniqueID: 746258991
     locked: 0
+  - name: Scene2/Mountain
+    uniqueID: 3466262719
+    locked: 0
   - name: Scene2/Environemt/Trees_1
     uniqueID: 2418469367
     locked: 0
@@ -71,6 +74,9 @@ TagManager:
     locked: 0
   - name: Scene2/Environemt/Ground
     uniqueID: 361929831
+    locked: 0
+  - name: Scene3/Environement
+    uniqueID: 451203469
     locked: 0
   - name: BackgroundBlack
     uniqueID: 807792403
