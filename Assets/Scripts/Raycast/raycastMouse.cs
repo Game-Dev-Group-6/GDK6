@@ -6,11 +6,14 @@ using UnityEngine.PlayerLoop;
 
 public class raycastMouse : MonoBehaviour
 {
-    [SerializeField] Texture2D texture;
+    eventExitTend eventExitTend;
+    [SerializeField] LayerMask layerMask;
+    [SerializeField] Texture2D[] textures;
     public bool interactTendExit = false;
     GameObject flashLight;
+
     Ray ray;
-    RaycastHit2D[] hit2D;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,42 +23,68 @@ public class raycastMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
+
         RayCast();
+        CursorChange();
     }
 
+    void CursorChange()
+    {
+        eventExitTend = GetComponent<eventExitTend>();
+        if (FindAnyObjectByType<interactExit>().getInteractMouse && interactTendExit && !eventExitTend.triggerEventExitTend)
+        {
+            Cursor.SetCursor(textures[1], Vector2.zero, CursorMode.ForceSoftware);
+        }
+        else if (!FindAnyObjectByType<interactExit>().getInteractMouse)
+        {
+            if (flashLight != null)
+            {
+                Cursor.SetCursor(textures[0], Vector2.zero, CursorMode.ForceSoftware);
+            }
+            else if (flashLight == null)
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+            }
+
+
+        }
+    }
     void RayCast()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        hit2D = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity);
-        foreach (RaycastHit2D hit in hit2D)
+        RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, layerMask);
+        foreach (RaycastHit2D hit2D in hit)
         {
-            if (hit.collider.tag == "Environment/TendExit")
+            Debug.Log(hit2D.collider.name);
+            if (hit2D.collider.tag == "Environment/TendExit")
             {
-
-                if (hit.collider.GetComponent<interactExit>().getInteractMouse)
+                interactTendExit = true;
+                if (hit2D.collider.GetComponent<interactExit>().getInteractMouse)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-
+                        GetComponent<eventExitTend>().triggerEventExitTend = true;
                     }
                 }
 
             }
 
 
-
-            if (hit.collider.tag == "FlashLight/Get")
+            else if (hit2D.collider.tag == "FlashLight/Get")
             {
-                flashLight = hit.collider.gameObject;
+                interactTendExit = false;
+                flashLight = hit2D.collider.gameObject;
                 flashLight.GetComponent<InteractFlashLight>().Hover();
+                Cursor.SetCursor(textures[0], Vector2.zero, CursorMode.ForceSoftware);
                 if (Input.GetMouseButtonDown(0))
                 {
-
+                    GetComponent<getFlashLight>().canvasActive = true;
                 }
             }
-            else if (hit.collider.tag != "FlashLight/Get")
+            else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit")
             {
+                interactTendExit = false;
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
                 if (flashLight != null)
                 {
                     flashLight.GetComponent<InteractFlashLight>().NotHover();
@@ -65,8 +94,10 @@ public class raycastMouse : MonoBehaviour
             }
         }
 
-        if (hit2D.Length <= 0)
+        if (hit.Length <= 0)
         {
+            interactTendExit = false;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             if (flashLight != null)
             {
                 flashLight.GetComponent<InteractFlashLight>().NotHover();

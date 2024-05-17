@@ -20,8 +20,14 @@ public class interactBag : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            flashLightIcon.ChangePosition();
-            flashLightIcon.transform.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            if (flashLightIcon != null)
+            {
+                flashLightIcon.gameObject.SetActive(true);
+                flashLightIcon.ChangePosition();
+                flashLightIcon.GetComponent<BoxCollider2D>().enabled = true;
+            }
+
+
             transform.localPosition += (Vector3)Vector2.up * 0.1f;
             transform.localScale += (Vector3)Vector2.one * 0.3f;
         }
@@ -31,12 +37,17 @@ public class interactBag : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            flashLightIcon.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            flashLightIcon.ChangePositionNormal();
+            if (flashLightIcon != null)
+            {
+                flashLightIcon.ChangePositionNormal();
+                flashLightIcon.GetComponent<BoxCollider2D>().enabled = false;
+                flashLightIcon.gameObject.SetActive(false);
+            }
+
             transform.localPosition -= (Vector3)Vector2.up * 0.1f;
             transform.localScale -= (Vector3)Vector2.one * 0.3f;
         }
     }
 
-    
+
 }

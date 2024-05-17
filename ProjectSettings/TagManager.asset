@@ -10,6 +10,7 @@ TagManager:
   - Trash
   - FlashLight/Get
   - Environment/TendExit
+  - Environment/TendOpen
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Musuh
   - Bullet
   - Trash
-  - 
+  - Interact
   - 
   - 
   - 
@@ -55,6 +56,21 @@ TagManager:
     locked: 0
   - name: Scene1/Other
     uniqueID: 746258991
+    locked: 0
+  - name: Scene2/Environemt/Trees_1
+    uniqueID: 2418469367
+    locked: 0
+  - name: Scene2/Environemt/Bushes_2
+    uniqueID: 719533321
+    locked: 0
+  - name: Scene2/Environemt/DokoTend_3
+    uniqueID: 3307708487
+    locked: 0
+  - name: Scene2/Environemt/Campfire
+    uniqueID: 3971500449
+    locked: 0
+  - name: Scene2/Environemt/Ground
+    uniqueID: 361929831
     locked: 0
   - name: BackgroundBlack
     uniqueID: 807792403

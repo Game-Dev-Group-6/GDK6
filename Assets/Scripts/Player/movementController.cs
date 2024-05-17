@@ -116,6 +116,11 @@ public class movementController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && ground == true)
         {
+            if (FindAnyObjectByType<cameraShake>() != null)
+            {
+                FindAnyObjectByType<cameraShake>().CameraShake();
+            }
+
             rb.velocity = new Vector2(0, 1) * powerJump;
             anim.SetBool("IsJumping", true);
         }

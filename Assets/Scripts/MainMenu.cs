@@ -7,7 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Movement");
+        SceneManager.LoadScene(1);
+        PlayerPrefs.DeleteAll();
     }
     public void QuitGame()
     {

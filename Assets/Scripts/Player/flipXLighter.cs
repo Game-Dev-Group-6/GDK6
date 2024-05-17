@@ -35,15 +35,15 @@ public class flipXLighter : MonoBehaviour
                 flipXrorate = -1;
             }
         }
-        else
+        else if (!flip)
         {
             transform.position = flipXFalse.transform.position;
-            if (valueX < flipXTrue.transform.position.x)
+            if (valueX < flipXFalse.transform.position.x)
             {
                 Debug.Log("balik");
                 flipXrorate = -1;
             }
-            else if (valueX > flipXTrue.transform.position.x)
+            else if (valueX > flipXFalse.transform.position.x)
             {
                 flipXrorate = 1;
             }

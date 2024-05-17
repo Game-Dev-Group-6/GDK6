@@ -17,6 +17,8 @@ public class InteractFlashLight : MonoBehaviour
         color = GetComponent<SpriteRenderer>().color;
         firstPos = transform.localPosition;
         firstScale = transform.localScale;
+        rotate = transform.rotation;
+        moveDir = rotate * Vector3.right * 0.1f;
     }
 
     // Update is called once per frame
@@ -55,15 +57,14 @@ public class InteractFlashLight : MonoBehaviour
     }
     public void ChangePosition()
     {
+
+        /* transform.localPosition += moveDir; */
         hover = true;
-        rotate = transform.rotation;
-        moveDir = rotate * Vector3.right * 0.1f;
-        transform.localPosition += moveDir;
     }
 
     public void ChangePositionNormal()
     {
-        transform.localPosition = firstPos;
+        /* transform.localPosition = firstPos; */
         hover = false;
     }
 

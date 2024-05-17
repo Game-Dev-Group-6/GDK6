@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class interactExit : MonoBehaviour
 {
 
+
     [SerializeField]
     GameObject tendExit;
     Animator animator;
@@ -49,23 +50,8 @@ public class interactExit : MonoBehaviour
             }
 
         }
-        WhenTendExitGetInteractMouse();
     }
-    void WhenTendExitGetInteractMouse()
-    {
-        if (getInteractMouse)
-        {
 
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.GetChild(1).gameObject.SetActive(true);
-            transform.GetChild(1).transform.position = new Vector3(mousePos.x, mousePos.y + 0.2f, 0);
-
-        }
-        else if (!getInteractMouse)
-        {
-            transform.GetChild(1).gameObject.SetActive(false);
-        }
-    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
