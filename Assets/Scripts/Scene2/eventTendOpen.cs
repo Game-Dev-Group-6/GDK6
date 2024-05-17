@@ -12,6 +12,7 @@ public class eventTendOpen : MonoBehaviour
     [SerializeField] Light2D[] allLight;
     public bool eventTrue = false;
     [SerializeField] GameObject flashLight;
+    [SerializeField] GameObject Campfire;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class eventTendOpen : MonoBehaviour
     }
     void EventOpen()
     {
+        Campfire.GetComponent<Animator>().enabled = false;
         flashLight.GetComponent<controlIntesityLighter>().enabled = false;
         foreach (Light2D light in allLight)
         {

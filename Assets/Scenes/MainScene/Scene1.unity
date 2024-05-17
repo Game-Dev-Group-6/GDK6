@@ -498,7 +498,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: -2082816576, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -582,7 +582,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 209343603, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -813,8 +813,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.59795, y: -0.45659995, z: 0}
-    m_Extent: {x: 4.60015, y: 2.1213, z: 0}
+    m_Center: {x: -0.5946499, y: -0.4469, z: 0}
+    m_Extent: {x: 4.59095, y: 2.1179, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -926,7 +926,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: -1025194761, guid: 066872ae94e433b45a318f8d4ff4be98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 551017810}
   - component: {fileID: 551017811}
   - component: {fileID: 551017812}
+  - component: {fileID: 551017813}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -1596,6 +1597,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reset: 0
+--- !u!82 &551017813
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551017803}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5ea3b9f6927ddd646897e889968b11d4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &601409081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +2036,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: -292393557, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2092,7 +2189,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -2191,7 +2288,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 1081253848, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2313,7 +2410,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: -1710432212, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2397,7 +2494,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 151331267, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2591,7 +2688,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 415607700, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3737,7 +3834,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1509764743
-  m_SortingLayer: 21
+  m_SortingLayer: 23
   m_SortingOrder: 0
   m_Sprite: {fileID: 1915685288, guid: 808e9360e7ab8c74d869e65f0c0960a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3898,6 +3995,10 @@ PrefabInstance:
     - target: {fileID: 6569421128415099624, guid: 5761277a81fda854c800b9fa46f78b30, type: 3}
       propertyPath: m_Name
       value: Player_Scene1-?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487435033497779951, guid: 5761277a81fda854c800b9fa46f78b30, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
