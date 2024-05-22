@@ -15,7 +15,6 @@ public class battery : MonoBehaviour
     {
         maxBattery = 100;
         currentBattery = maxBattery;
-
     }
 
     // Update is called once per frame

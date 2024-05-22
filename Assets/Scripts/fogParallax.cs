@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fogParallax : MonoBehaviour
 {
-    [Range(-0.001f, -0.005f)][SerializeField] private float speedFog;
+    [Range(-0.001f, 0.005f)][SerializeField] private float speedFog;
     [SerializeField] private float lenghtSprite;
     [SerializeField][Range(0f, 1f)] private float speedBg;
     private float camX, startPos;

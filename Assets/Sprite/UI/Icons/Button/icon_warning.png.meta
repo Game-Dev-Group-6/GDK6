@@ -134,7 +134,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: icon_warning_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b6bfc97ccb1a240b8396ab0a2f76cb
+      internalID: 2040061600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_warning_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b93d653d6f503f499f78b901d59838a
+      internalID: 253693831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_warning_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228a63ea9816e384693d0f747ab4d443
+      internalID: -37344086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_warning_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bea84fa1fd48c64ba0cd50295d5d0db
+      internalID: -274787530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_warning_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d0957c3608efb4897bb5d162f70c71
+      internalID: -116282148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_warning_5
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 10
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc70405c237a74438691163fabfdc1f
+      internalID: -1278255791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +271,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_warning_0: 2040061600
+      icon_warning_1: 253693831
+      icon_warning_2: -37344086
+      icon_warning_3: -274787530
+      icon_warning_4: -116282148
+      icon_warning_5: -1278255791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ TagManager:
   - FlashLight/Get
   - Environment/TendExit
   - Environment/TendOpen
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -48,14 +49,32 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Scene1/BackTendExit
+  - name: Scene1/Environment/TentBg
     uniqueID: 4060204767
     locked: 0
-  - name: Scene1/TendExit
+  - name: Scene1/Environment/Tent_Bg_Surround
     uniqueID: 1352864865
     locked: 0
-  - name: Scene1/Other
+  - name: Scene1/Environment/TentExit
     uniqueID: 746258991
+    locked: 0
+  - name: Scene1/Environment/Floor
+    uniqueID: 1480550621
+    locked: 0
+  - name: Scene1/Environment/Bag
+    uniqueID: 1614185083
+    locked: 0
+  - name: Scene1/Environment/Bed
+    uniqueID: 2802432901
+    locked: 0
+  - name: Scene1/Environment/Player
+    uniqueID: 2821453253
+    locked: 0
+  - name: Scene1/Environment/Pole
+    uniqueID: 1114536279
+    locked: 0
+  - name: Scene1/Environment/Lantern
+    uniqueID: 152517497
     locked: 0
   - name: Scene2/Mountain
     uniqueID: 3466262719
@@ -71,6 +90,9 @@ TagManager:
     locked: 0
   - name: Scene2/Environemt/Campfire
     uniqueID: 3971500449
+    locked: 0
+  - name: Scene2/Environemt/Player
+    uniqueID: 1785967487
     locked: 0
   - name: Scene2/Environemt/Ground
     uniqueID: 361929831

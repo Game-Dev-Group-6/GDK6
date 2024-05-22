@@ -16,7 +16,5 @@ public class buttonAmbil : MonoBehaviour
         {
             Destroy(flashLightIcon);
         }
-
-
     }
 }

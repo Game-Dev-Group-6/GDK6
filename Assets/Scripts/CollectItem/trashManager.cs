@@ -27,12 +27,15 @@ public class trashManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         TrashCount();
     }
 
     void TrashCount()
     {
-        trashCount.text = "Trash : " + trashCollect + "/" + startManyTrash;
+        if (trashCount != null)
+        {
+            trashCount.text = "Trash : " + trashCollect + "/" + startManyTrash;
+        }
+
     }
 }

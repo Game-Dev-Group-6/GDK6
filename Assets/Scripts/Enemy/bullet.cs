@@ -17,45 +17,49 @@ public class bullet : MonoBehaviour
     int i = 0;
     [SerializeField]
     int kecepatanRotasi = 0;
-    bool up = true;
+    bool pushUp = true;
     bool fire = false;
     float groundY;
-    delayTime delay;
+    delayTime2 delay;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        combat = FindAnyObjectByType<combat>();
+        // START ----- Make Random Sprite for Ranting -----//
         int random = UnityEngine.Random.Range(0, 3);
         GetComponent<SpriteRenderer>().sprite = sprites[random];
         lights[random].SetActive(true);
+        // END //
+
+        combat = FindAnyObjectByType<combat>();
         cameraShake = FindAnyObjectByType<cameraShake>();
-        delay = GetComponent<delayTime>();
+        delay = GetComponent<delayTime2>();
         groundY = GameObject.Find("Ground").transform.position.y;
-        /* StartCoroutine(); */
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         Transform player = GameObject.Find("Player").transform;
         Transform bulet = gameObject.transform;
 
-        if (delay.Delay(0.000001f))
+        if (delay.Delay(0.0000000001f))
         {
-
-            if (gameObject.transform.position.y < groundY + 7 && up)
+            if (gameObject.transform.position.y < groundY + 7 && pushUp)
             {
-                gameObject.transform.position += (Vector3)Vector2.up * 0.1f;
+                gameObject.transform.position += (Vector3)Vector2.up * 0.3f;
                 if (combat != null)
                 {
                     if (combat.shieldActive)
                     {
                         Debug.Log("make Shield");
-                        dir = combat.shieldNow.transform.position - bulet.position;
-
+                        if (combat.shieldNow != null)
+                        {
+                            dir = combat.shieldNow.transform.position - bulet.position;
+                        }
+                        else if (combat.shieldNow == null)
+                        {
+                            combat.shieldNow = null;
+                        }
                     }
                     else if (!combat.shieldActive)
                     {
@@ -63,28 +67,25 @@ public class bullet : MonoBehaviour
                         dir = player.position - bulet.position;
                     }
                 }
-
             }
-
             else
             {
-
-                up = false;
+                pushUp = false;
                 float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
                 if (i < 1)
                 {
-                    nowAngle = Mathf.Atan2(bulet.position.y * -1, bulet.position.x) * Mathf.Rad2Deg;
+                    nowAngle = Mathf.Atan2(bulet.position.y, bulet.position.x) * Mathf.Rad2Deg;
                     i++;
                 }
-                if (nowAngle > angle && !fire)
-                {
-                    nowAngle -= kecepatanRotasi;
-                    Debug.Log("jalan");
-                }
-                else if (nowAngle < angle && !fire)
+                if (nowAngle < angle && !fire)
                 {
                     nowAngle += kecepatanRotasi;
+                    Debug.Log("jalan");
+                }
+                else if (nowAngle > angle && !fire)
+                {
+                    nowAngle -= kecepatanRotasi;
                     Debug.Log("jalan");
                 }
                 if ((int)nowAngle == (int)angle)
@@ -96,14 +97,10 @@ public class bullet : MonoBehaviour
                     rb.AddForce(dir.normalized * 1f, ForceMode2D.Impulse);
                     detectHit();
                 }
-
                 Quaternion rotation = Quaternion.Euler(0, 0, nowAngle);
                 gameObject.transform.rotation = rotation;
-
             }
-
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -123,7 +120,6 @@ public class bullet : MonoBehaviour
         if (other.collider.name == "Player")
         {
             GetComponent<BoxCollider2D>().enabled = false;
-
         }
 
 
@@ -145,7 +141,7 @@ public class bullet : MonoBehaviour
             }
             if (hitTo.tag == "Player")
             {
-                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 3), ForceMode2D.Impulse);
+                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.2f, 3), ForceMode2D.Impulse);
                 cameraShake.CameraShake();
                 Destroy(gameObject);
             }

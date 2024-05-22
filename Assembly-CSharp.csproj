@@ -65,17 +65,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\lightDamage.cs" />
+    <Compile Include="Assets\Scripts\Enemy\destroyBulletWhenEnemyBlink.cs" />
     <Compile Include="Assets\Scripts\Scene2\interactOpenTent.cs" />
     <Compile Include="Assets\Scripts\Enemy\switchCamera.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\Environment\treeManagerSort.cs" />
     <Compile Include="Assets\Scripts\Scene1\InteractFlashLight.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\DelayAllScene\delayTime.cs" />
     <Compile Include="Assets\Scripts\Scene2\getFlashLightScene2.cs" />
     <Compile Include="Assets\Scripts\Environment\treeCut.cs" />
     <Compile Include="Assets\Scripts\CollectItem\triggerCollect.cs" />
+    <Compile Include="Assets\Scripts\DelayAllScene\delayFlashLight_1.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Raycast\raycastMouse.cs" />
+    <Compile Include="Assets\Scripts\Enemy\hitAfterBlink.cs" />
     <Compile Include="Assets\Scripts\Scene1\buttonAmbil.cs" />
     <Compile Include="Assets\Scripts\Player\switchWeapon.cs" />
     <Compile Include="Assets\Scripts\Player\controlIntesityLighter.cs" />
@@ -96,11 +100,12 @@
     <Compile Include="Assets\Scripts\Scene1\interactExit.cs" />
     <Compile Include="Assets\Scripts\Raycast\raycastMouseScene2.cs" />
     <Compile Include="Assets\Scripts\ItemCollection.cs" />
+    <Compile Include="Assets\Scripts\Environment\treeDurability.cs" />
     <Compile Include="Assets\Scripts\Player\flipXLighter.cs" />
     <Compile Include="Assets\Scripts\parallax.cs" />
+    <Compile Include="Assets\Scripts\Enemy\giveWarning.cs" />
     <Compile Include="Assets\Scripts\Scene1\getFlashLight.cs" />
     <Compile Include="Assets\Scripts\Scene2\TextTent.cs" />
-    <Compile Include="Assets\Scripts\delayTime.cs" />
     <Compile Include="Assets\Scripts\Scene2\eventTendOpen.cs" />
     <Compile Include="Assets\Scripts\Enemy\delayBlink.cs" />
     <Compile Include="Assets\Scripts\Enemy\graveYard.cs" />

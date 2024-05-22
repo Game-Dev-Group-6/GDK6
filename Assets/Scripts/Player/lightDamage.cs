@@ -8,7 +8,7 @@ public class lightDamage : MonoBehaviour
 {
     private flipXLighter flipXLighter;
     private particleEffect[] particleEffect;
-    private delayTime delayTime;
+    private delayTime2 delayTime;
     [SerializeField] private LayerMask musuh;
     private Vector2 mousePos;
     private Vector2 lightPos;
@@ -23,12 +23,29 @@ public class lightDamage : MonoBehaviour
     }
     void Start()
     {
-        delayTime = GetComponent<delayTime>();
-
+        delayTime = GetComponent<delayTime2>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        Raycast();
+    }
+
+    private void OnDrawGizmos()
+    {
+        flipXLighter = FindAnyObjectByType<flipXLighter>();
+        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 distance = mouse - lightPos;
+        Vector2 raycastDir = new Vector2(distance.x * flipXLighter.flipXrorate, distance.y);
+        Gizmos.color = Color.blue;
+        ray = Physics2D.RaycastAll(lightPos, raycastDir.normalized, raycastDistance, musuh);
+        foreach (RaycastHit2D hit in ray)
+        {
+            Gizmos.DrawLine(lightPos, hit.point);
+        }
+    }
+    void Raycast()
     {
         light2D = GetComponent<Light2D>();
         lightPos = light2D.transform.position;
@@ -62,20 +79,6 @@ public class lightDamage : MonoBehaviour
                 //semua particle dihentikan
                 particle.PartcileStop();
             }
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        flipXLighter = FindAnyObjectByType<flipXLighter>();
-        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 distance = mouse - lightPos;
-        Vector2 raycastDir = new Vector2(distance.x * flipXLighter.flipXrorate, distance.y);
-        Gizmos.color = Color.blue;
-        ray = Physics2D.RaycastAll(lightPos, raycastDir.normalized, raycastDistance, musuh);
-        foreach (RaycastHit2D hit in ray)
-        {
-            Gizmos.DrawLine(lightPos, hit.point);
         }
     }
 }

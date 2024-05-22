@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 536060366955093086}
   - component: {fileID: 6342198005874460563}
   - component: {fileID: 7485777603059533663}
-  - component: {fileID: 7572681557604493679}
+  - component: {fileID: 7736650740526543640}
   m_Layer: 0
   m_Name: BatteryWeapon
   m_TagString: Untagged
@@ -67,7 +67,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   maxBattery: 0
   currentBattery: 0
---- !u!114 &7572681557604493679
+--- !u!114 &7736650740526543640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,9 +76,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 127222286919468574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb3a2481a2fb7048b786a9ecea1ab16, type: 3}
+  m_Script: {fileID: 11500000, guid: 94cb72b8bb9c7ba499c436f9ea4ddb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: 0
   currentTime: 0
   lastTime: 0
 --- !u!1 &703055568702703125
@@ -165,7 +166,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1396519909
-  m_SortingLayer: 12
+  m_SortingLayer: 19
   m_SortingOrder: 0
   m_Sprite: {fileID: 1178276428, guid: da98eb1153eac4b4fbbc3287c59a6c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -291,6 +292,7 @@ MonoBehaviour:
   move: 0
   speed: 4
   interactNPC: 0
+  slowMove: 0
 --- !u!114 &2323699199976000511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +448,7 @@ GameObject:
   - component: {fileID: 8385030928952440099}
   - component: {fileID: 2757657062818433114}
   - component: {fileID: 8182860648397048280}
-  - component: {fileID: 4441467504291069407}
+  - component: {fileID: 6659305434608144967}
   m_Layer: 0
   m_Name: LightLighter
   m_TagString: Untagged
@@ -534,7 +536,7 @@ MonoBehaviour:
   timeDelayChangeIntensity: 2
   intenMin: 0.5
   intenMax: 1
---- !u!114 &4441467504291069407
+--- !u!114 &6659305434608144967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,9 +545,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 815831163499501489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb3a2481a2fb7048b786a9ecea1ab16, type: 3}
+  m_Script: {fileID: 11500000, guid: 94cb72b8bb9c7ba499c436f9ea4ddb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: 0
   currentTime: 0
   lastTime: 0
 --- !u!1 &827109362778083095
@@ -5402,7 +5405,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 771550223
-  m_SortingLayer: 13
+  m_SortingLayer: 20
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5509,7 +5512,7 @@ GameObject:
   - component: {fileID: 26226633264407146}
   - component: {fileID: 3711939092303931936}
   - component: {fileID: 8789520393345345821}
-  - component: {fileID: 4605612270633483842}
+  - component: {fileID: 5038753192298794878}
   m_Layer: 0
   m_Name: LightWeapon
   m_TagString: Untagged
@@ -5600,7 +5603,7 @@ MonoBehaviour:
     m_Bits: 512
   damage: 1
   raycastDistance: 7
---- !u!114 &4605612270633483842
+--- !u!114 &5038753192298794878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5609,9 +5612,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4743043069094431009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb3a2481a2fb7048b786a9ecea1ab16, type: 3}
+  m_Script: {fileID: 11500000, guid: 94cb72b8bb9c7ba499c436f9ea4ddb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: 0
   currentTime: 0
   lastTime: 0
 --- !u!1 &5201182062687697374
@@ -10469,7 +10473,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1479230577
-  m_SortingLayer: 8
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -10620,7 +10624,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1396519909
-  m_SortingLayer: 12
+  m_SortingLayer: 19
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5dd95880dc9313a41beff75e6132c726, type: 3}
   m_Color: {r: 1, g: 0.9481132, b: 0.9481132, a: 1}
@@ -10827,7 +10831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7606355203302030733, guid: 9416f12f00cd07840b8babd38a107ec8, type: 3}
       propertyPath: m_SortingLayer
-      value: 15
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7606355203302030733, guid: 9416f12f00cd07840b8babd38a107ec8, type: 3}
       propertyPath: m_SortingLayerID

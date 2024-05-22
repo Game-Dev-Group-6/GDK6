@@ -113,6 +113,10 @@ public class treeManagerSort : MonoBehaviour
                     treeRightEnemy.Add(treeIn);
                 }
             }
+            if (treeIn.GetComponent<treeDurability>().currentDurability <= 0)
+            {
+                Destroy(treeIn);
+            }
 
         }
     }

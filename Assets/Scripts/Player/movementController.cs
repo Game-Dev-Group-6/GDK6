@@ -24,13 +24,15 @@ public class movementController : MonoBehaviour
     private SpriteRenderer sprite;
 
     public bool interactNPC;
+    public bool slowMove = false;
+    float speedAnim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-
+        speedAnim = anim.speed;
     }
 
     // Update is called once per frame
@@ -58,11 +60,30 @@ public class movementController : MonoBehaviour
     void MoveHorizontal()
     {
         move = Input.GetAxis("Horizontal");
-        direction = new Vector2(move, 0) * speed * Time.deltaTime;
+        if (!slowMove)
+        {
+            direction = new Vector2(move, 0) * speed * Time.deltaTime;
+        }
+        else if (slowMove)
+        {
+            direction = new Vector2(move, 0) * Time.deltaTime * 0.5f;
+
+        }
+
         if (Mathf.Abs(move) > 0)
         {
-            anim.SetBool("Kedip", false);
-            anim.SetBool("Run", true);
+            if (!slowMove)
+            {
+                anim.speed = speedAnim;
+                anim.SetBool("Kedip", false);
+                anim.SetBool("Run", true);
+            }
+            else if (slowMove)
+            {
+                anim.SetBool("Kedip", false);
+                anim.SetBool("Run", true);
+                anim.speed = 0.5f;
+            }
         }
         else
         {
@@ -108,8 +129,6 @@ public class movementController : MonoBehaviour
             time = 0;
             curentTime = Time.time;
         }
-
-
     }
 
     void Jump()

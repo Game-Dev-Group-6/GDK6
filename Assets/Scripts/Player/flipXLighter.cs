@@ -18,6 +18,11 @@ public class flipXLighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FlipX();
+    }
+
+    void FlipX()
+    {
         flip = player.gameObject.GetComponent<SpriteRenderer>().flipX;
         valueX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         if (flip)

@@ -13,8 +13,7 @@ public class switchCamera : MonoBehaviour
     handAttack handAttack;
     public bool backToPlayer = false;
     GameObject[] cameraa;
-    [SerializeField]
-    CinemachineVirtualCamera virtualCamera;
+    [SerializeField] CinemachineVirtualCamera virtualCamera;
     movementController movementController;
 
     void Start()
@@ -22,11 +21,9 @@ public class switchCamera : MonoBehaviour
         gendoruwo = GameObject.Find("Enemy_Gendoruwo");
         enemyTrigger = GameObject.Find("RangeTriggerGendoruwo").GetComponent<enemyTrigger>();
         movementController = FindAnyObjectByType<movementController>();
-
     }
     void Update()
     {
-
         if (virtualCamera.transform.position.x > gendoruwo.transform.position.x - 5)
         {
             if (backToPlayer)
@@ -38,8 +35,6 @@ public class switchCamera : MonoBehaviour
                     startCombat = false;
                 }
             }
-
-
         }
         if (followPlayer)
         {
@@ -59,17 +54,15 @@ public class switchCamera : MonoBehaviour
         handAttack = GetComponent<handAttack>();
         handAttack.startCombat = true;
         virtualCamera.Follow = gameObject.transform;
-
-
     }
     public void LookPlayer()
     {
         followPlayer = true;
         virtualCamera.Follow = GameObject.Find("Player").transform;
         backToPlayer = true;
-
     }
-    public void LookEnemy()
+
+    public void LookEnemy()//Dipanggil pada animasi Graveyard
     {
         movementController.interactNPC = true;
 

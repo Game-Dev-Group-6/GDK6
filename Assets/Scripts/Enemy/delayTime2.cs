@@ -6,8 +6,6 @@ using UnityEngine;
 public class delayTime2 : MonoBehaviour
 {
     public float Timer;
-    public float currentTime;
-    public float lastTime;
 
 
     // Update is called once per frame
@@ -18,7 +16,6 @@ public class delayTime2 : MonoBehaviour
 
     public bool Delay(float timeDelay)
     {
-        currentTime = Time.deltaTime;
         Timer += Time.deltaTime;
         if (Timer > timeDelay)
         {

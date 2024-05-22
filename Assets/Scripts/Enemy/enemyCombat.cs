@@ -6,7 +6,6 @@ using UnityEngine;
 public class enemyCombat : MonoBehaviour
 {
     [SerializeField]
-    float add = 0;
     float groundY;
     [SerializeField]
     GameObject enemyBullet;

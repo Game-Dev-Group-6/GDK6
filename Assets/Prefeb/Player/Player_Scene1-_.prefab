@@ -42,7 +42,8 @@ GameObject:
   - component: {fileID: 8090002231111347779}
   - component: {fileID: 5713769307180551010}
   - component: {fileID: 2353436532128060462}
-  - component: {fileID: 442461828379014861}
+  - component: {fileID: 8628507947151960338}
+  - component: {fileID: 1162310622676488363}
   m_Layer: 0
   m_Name: LightLighter
   m_TagString: Untagged
@@ -82,9 +83,9 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
   m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
-  m_Intensity: 12.07
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
+  m_Intensity: 11
+  m_LightVolumeIntensity: 0.005
+  m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 000000001bccc2ac13ef253015f874129b8e110943dc17a10fecfc2d49639aa1b57602321d6ccd9725bf8b4fdfce01f26114a3502f027b2c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -127,10 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70ecfca38aa6184ea7d1e542ec64bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDelayChangeIntensity: 2
-  intenMin: 3
-  intenMax: 5
---- !u!114 &442461828379014861
+  random: 0
+--- !u!114 &8628507947151960338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,11 +138,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882107880336789803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb3a2481a2fb7048b786a9ecea1ab16, type: 3}
+  m_Script: {fileID: 11500000, guid: 94cb72b8bb9c7ba499c436f9ea4ddb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
-  lastTime: 0
+  Timer: 0
+--- !u!114 &1162310622676488363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882107880336789803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a61ae064a72354e8201bae1236a4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
 --- !u!1 &2540593981298223713
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +510,7 @@ MonoBehaviour:
   move: 0
   speed: 4
   interactNPC: 0
+  slowMove: 0
 --- !u!114 &2664149367067124229
 MonoBehaviour:
   m_ObjectHideFlags: 0

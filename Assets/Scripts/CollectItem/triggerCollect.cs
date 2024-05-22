@@ -14,14 +14,15 @@ public class triggerCcollect : MonoBehaviour
     delayTime2 delayTime2;
     bool destroyTrash = false;
 
-    [Header("Merubah scale trash ketika terkena mouse")]
+
+    //START----- Merubah scale dari Trash ketika terdeteksi mouse -----//
     Vector2 nowPos;
-    float newPos = 0.1f;
-    [SerializeField] private GameObject trash, trashActive;
-    int trigger = 0;
+    Vector3 moveDir;
     Quaternion rotate;
-    [SerializeField] Vector3 moveDir;
-    // Start is called before the first frame update
+    float newPos = 0.1f;
+    int trigger = 0;
+    private GameObject trash, trashActive;
+    //END//
 
     void Start()
     {
@@ -32,9 +33,13 @@ public class triggerCcollect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Raycast();
+    }
+    void Raycast()
+    {
 
         rayMousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
-        ray = Physics2D.RaycastAll(rayMousePos.origin, rayMousePos.direction, Mathf.Infinity, layerMask);
+        ray = Physics2D.RaycastAll(rayMousePos.origin, rayMousePos.direction, 0.1f, layerMask);
 
         foreach (RaycastHit2D hit in ray)
         {

@@ -5,50 +5,72 @@ using UnityEngine.Rendering.Universal;
 
 public class controlIntesityLighter : MonoBehaviour
 {
-
-    delayTime delayTime;
-    [SerializeField]
-    float timeDelayChangeIntensity;
-    [SerializeField]
-    float intenMin, intenMax;
-    Light2D lightInten;
- 
+    bool MulaiKedip = true;
+    [SerializeField] int random;
+    float intenMin = 0, intenMax;
     bool reverseInten = false;
+    Light2D lightInten;
+    delayTime2 delayTime;
+    delayFlashLight_1 delayFlashLight_1;
+
 
     void Start()
     {
         lightInten = GetComponent<Light2D>();
-        delayTime = GetComponent<delayTime>();
+        delayTime = GetComponent<delayTime2>();
+        delayFlashLight_1 = GetComponent<delayFlashLight_1>();
+        intenMax = lightInten.intensity;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lightInten != null)
+        RandomInt();
+        BanyakKedip();
+    }
+    void RandomInt()
+    {
+        if (delayFlashLight_1.Delay(7) && MulaiKedip)
         {
-            if (delayTime.Delay(timeDelayChangeIntensity))
+            random = Random.Range(1, 4);
+        }
+    }
+
+    void BanyakKedip()
+    {
+        if (random > 0)
+        {
+            MulaiKedip = false;
+            IntensityLighter();
+        }
+        else if (random <= 0)
+        {
+            MulaiKedip = true;
+        }
+    }
+
+    void IntensityLighter()
+    {
+        if (!reverseInten)
+        {
+            lightInten.intensity -= 0.5f;
+            if (lightInten.intensity <= intenMin)
             {
                 reverseInten = true;
             }
         }
+        if (delayTime.Delay(1))
+        {
+            Debug.Log("+");
+        }
         if (reverseInten)
         {
-            IntensityLighter();
-        }
 
-    }
-    void IntensityLighter()
-    {
-        lightInten.intensity -= 0.05f;
-        if(lightInten.intensity < intenMin)
-        {
-            for(float i = lightInten.intensity;i<=intenMax;i += 0.05f)
+            lightInten.intensity += 0.5f;
+            if (lightInten.intensity >= intenMax)
             {
-                lightInten.intensity += 0.05f;
-                if(lightInten.intensity >= intenMax)
-                {
-                    reverseInten = false;
-                }
+                reverseInten = false;
+                random--;
             }
         }
     }
