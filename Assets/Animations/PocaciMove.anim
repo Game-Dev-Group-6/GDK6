@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pocaci
+  m_Name: PocaciMove
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,15 +22,15 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1047532156, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
-    - time: 0.016666668
+    - time: 0.1
       value: {fileID: 552815576, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
-    - time: 0.033333335
+    - time: 0.2
       value: {fileID: -596619633, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
-    - time: 0.05
+    - time: 0.3
       value: {fileID: -1739527381, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
-    - time: 0.06666667
+    - time: 0.4
       value: {fileID: -1017257858, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
-    - time: 0.083333336
+    - time: 0.5
       value: {fileID: -453895541, guid: 58ec22cfcf9dbe9419b2e85d9f2499cd, type: 3}
     attribute: m_Sprite
     path: 
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

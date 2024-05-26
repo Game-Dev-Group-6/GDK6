@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Doko
+  m_Name: DokoJump
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1735968411, guid: 8f79c37c3772c0a4696fc7956f25d5d6, type: 3}
-    - time: 0.016666668
-      value: {fileID: 1509905370, guid: 8f79c37c3772c0a4696fc7956f25d5d6, type: 3}
+      value: {fileID: -1410378567, guid: b29af8b23545f8d4c874037d44d13310, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -46,14 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1735968411, guid: 8f79c37c3772c0a4696fc7956f25d5d6, type: 3}
-    - {fileID: 1509905370, guid: 8f79c37c3772c0a4696fc7956f25d5d6, type: 3}
+    - {fileID: -1410378567, guid: b29af8b23545f8d4c874037d44d13310, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.033333335
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
