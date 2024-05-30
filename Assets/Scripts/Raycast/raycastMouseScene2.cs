@@ -7,18 +7,32 @@ using UnityEngine.SceneManagement;
 
 public class raycastMouseScene2 : MonoBehaviour
 {
-    [SerializeField] Texture2D cursorImage;
+    bool canGetFlashlight = false;
+    [SerializeField] sceneScript2 sceneScript2;
+    [SerializeField] PlayerPrefsSave playerPrefsSave;
+    [SerializeField] Texture2D[] cursorImage;
     [SerializeField] LayerMask layerMask;
+    delayTime2 delayTime2;
+    [SerializeField] int CountClick = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        delayTime2 = GetComponent<delayTime2>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Raycast();
+        if (CountClick == 1)
+        {
+            sceneScript2.Script2();
+            if (delayTime2.Delay(0.5f))
+            {
+                CountClick = 3;
+            }
+
+        }
     }
     void Raycast()
     {
@@ -31,10 +45,24 @@ public class raycastMouseScene2 : MonoBehaviour
                 interactOpenTent interactOpenTent = hit2D.transform.GetComponent<interactOpenTent>();
                 if (interactOpenTent.firstInteract)
                 {
-                    Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.ForceSoftware);
+                    Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
                     if (Input.GetMouseButtonDown(0))
                     {
-                        GetComponent<eventTendOpen>().eventTrue = true;
+                        if (!PlayerPrefs.HasKey("CanEnter"))
+                        {
+                            if (CountClick == 3)
+                            {
+                                CountClick = 0;
+                            }
+                            CountClick++;
+                        }
+                        if (PlayerPrefs.HasKey("CanEnter"))
+                        {
+                            playerPrefsSave.SetPosPlayer(0);
+                            hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
+                            CountClick = 0;
+                            canGetFlashlight = true;
+                        }
                     }
                 }
                 else if (!interactOpenTent.firstInteract)
@@ -43,10 +71,28 @@ public class raycastMouseScene2 : MonoBehaviour
                 }
 
             }
+            if (hit2D.collider.tag == "Campfire")
+            {
+                if (hit2D.collider.GetComponent<interactCampfire>().mouseCanInteract)
+                {
+                    Cursor.SetCursor(cursorImage[1], Vector2.zero, CursorMode.ForceSoftware);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        hit2D.collider.GetComponent<monologTrigger>().MonologTrigger();
+                        Debug.Log("ini campfire2");
+                    }
+                }
+                else if (!hit2D.collider.GetComponent<interactCampfire>().mouseCanInteract)
+                {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                }
+            }
         }
         if (hit.Length <= 0)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
+
+
 }

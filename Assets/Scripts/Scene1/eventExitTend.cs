@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class eventExitTend : MonoBehaviour
 {
+    [SerializeField] int indexScene = 1;
     [SerializeField] GameObject lantern, flashLight, exitTend;
     [SerializeField] Light2D[] offAllLight;
     public bool triggerEventExitTend = false;
@@ -25,7 +26,7 @@ public class eventExitTend : MonoBehaviour
     {
         if (triggerEventExitTend)
         {
-            GetComponent<playerPrefs>().SaveScene();
+            GetComponent<playerPrefs1>().SaveScene();
             exitTend.GetComponent<interactExit>().enabled = false;
             lantern.GetComponent<Animator>().enabled = false;
             flashLight.GetComponent<controlIntesityLighter>().enabled = false;
@@ -39,7 +40,7 @@ public class eventExitTend : MonoBehaviour
             if (GetComponent<delayTime2>().Delay(3))
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(indexScene);
             }
         }
     }

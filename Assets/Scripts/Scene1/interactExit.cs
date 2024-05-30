@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,8 @@ using UnityEngine.Rendering.Universal;
 
 public class interactExit : MonoBehaviour
 {
-
+    public AudioClip[] tentSFX;
+    AudioSource audioSource;
 
     [SerializeField]
     GameObject tendExit;
@@ -19,9 +21,9 @@ public class interactExit : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
         animator = tendExit.GetComponent<Animator>();
         LightTendExit = transform.GetChild(0).GetComponent<Light2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,7 @@ public class interactExit : MonoBehaviour
                 animator.SetBool("TendExit", true);
                 animator.SetBool("TendExit2", false);
             }
+            TentHoverSFX();
             getInteractMouse = true;
             transform.localPosition += (Vector3)Vector2.up * 0.2f;
             transform.localScale += (Vector3)Vector2.up * 0.2f;
@@ -83,5 +86,15 @@ public class interactExit : MonoBehaviour
             firstInteract = false;
             LightTendExit.intensity = 0f;
         }
+    }
+    public void TentHoverSFX()
+    {
+        audioSource.clip = tentSFX[0];
+        audioSource.Play();
+    }
+    public void TentExitSFX()
+    {
+        audioSource.clip = tentSFX[1];
+        audioSource.Play();
     }
 }

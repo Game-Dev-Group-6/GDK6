@@ -5,10 +5,14 @@ using UnityEngine;
 public class interactBag : MonoBehaviour
 {
     InteractFlashLight flashLightIcon;
+    [SerializeField] AudioClip[] audioClip;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         flashLightIcon = transform.GetChild(0).gameObject.GetComponent<InteractFlashLight>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class interactBag : MonoBehaviour
                 flashLightIcon.GetComponent<BoxCollider2D>().enabled = true;
             }
 
-
+            BagSFX();
             transform.localPosition += (Vector3)Vector2.up * 0.1f;
             transform.localScale += (Vector3)Vector2.one * 0.3f;
         }
@@ -49,5 +53,10 @@ public class interactBag : MonoBehaviour
         }
     }
 
+    void BagSFX()
+    {
+        audioSource.clip = audioClip[0];
+        audioSource.Play();
+    }
 
 }

@@ -5,8 +5,15 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private float typingSpeed = 0.05f;
+    [SerializeField] int[] showSentences;
+    public enum TypeInteract
+    {
+        Monolog, Dialogue
+    }
+    bool dialog;
+    public TypeInteract selectTypeInteract;
 
+    [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private bool PlayerSpeakingFirst;
 
     [Header("Dialogue TMP Text")]
@@ -16,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Continue Buttons")]
     [SerializeField] private GameObject playerContinueButton;
     [SerializeField] private GameObject nPCContinueButton;
+    [SerializeField] private GameObject playerContinueButtonMonolog;
 
     [Header("Animation Controllers")]
     [SerializeField] private Animator playerSpeechBubbleAnimator;
@@ -36,29 +44,43 @@ public class DialogueManager : MonoBehaviour
     private int countClickButton = 0;
     private bool dialogueStarted;
 
-    private int playerIndex;
-    private int nPCIndex;
+    [SerializeField] private int playerIndex;
+    [SerializeField] private int nPCIndex;
+    [SerializeField] private int playerIndexMonolog;
 
     private float speechBubbleAnimationDelay = 0.6f;
 
     private void Start()
     {
         playerMovementScript = FindObjectOfType<movementController>();
+        SelectTypeInteract();
     }
 
-    public void TriggerStartDialogue()
+    public void TriggerStartDialogue(int[] selectSentences)
     {
-        StartCoroutine(StartDialogue());
+        if (dialog)
+        {
+            StartCoroutine(StartDialogue());
+        }
+        else if (!dialog)
+        {
+            showSentences = selectSentences;
+            StartCoroutine(StartMonolog());
+        }
+
     }
 
     private void Update()
     {
-
-        if (playerContinueButton.activeSelf)
+        if (playerContinueButton != null)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
-                TriggerContinueNPCDialogue();
+            if (playerContinueButton.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                    TriggerContinueNPCDialogue();
+            }
         }
+
 
         if (nPCContinueButton != null)
         {
@@ -69,10 +91,12 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+
         if (countClickButton == playerDialogueSentences.Length + nPCDialogueSentences.Length)
         {
             startActionAfterDialog = true;
         }
+
     }
 
     private IEnumerator StartDialogue()
@@ -89,7 +113,6 @@ public class DialogueManager : MonoBehaviour
         else
         {
             nPCSpeechBubbleAnimator.SetTrigger("Open");
-
             yield return new WaitForSeconds(speechBubbleAnimationDelay);
             StartCoroutine(TypeNPCDialogue());
         }
@@ -122,6 +145,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ContinuePlayerDialogue()
     {
+
         nPCDialogueText.text = "";
 
         nPCSpeechBubbleAnimator.SetTrigger("Close");
@@ -134,14 +158,12 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-
         if (dialogueStarted)
             playerIndex++;
         else
             dialogueStarted = true;
 
         StartCoroutine(TypePlayerDialogue());
-
     }
 
     private IEnumerator ContinueNPCDialogue()
@@ -171,9 +193,13 @@ public class DialogueManager : MonoBehaviour
 
     public void TriggerContinuePlayerDialogue()
     {
+
+        Debug.Log("TriggerContinuePlayerDialog");
+
         uIAudioSource.Play();
 
         nPCContinueButton.SetActive(false);
+
 
         if (playerIndex >= playerDialogueSentences.Length - 1)
         {
@@ -189,6 +215,9 @@ public class DialogueManager : MonoBehaviour
 
     public void TriggerContinueNPCDialogue()
     {
+
+        Debug.Log("TriggerContinueNPCDialogu");
+
         uIAudioSource.Play();
 
         playerContinueButton.SetActive(false);
@@ -203,10 +232,82 @@ public class DialogueManager : MonoBehaviour
         }
         else
             StartCoroutine(ContinueNPCDialogue());
+
     }
+
+
+    private IEnumerator StartMonolog()
+    {
+        playerMovementScript.ToggleInteraction();
+        playerSpeechBubbleAnimator.SetTrigger("Open");
+        yield return new WaitForSeconds(speechBubbleAnimationDelay);
+        StartCoroutine(TypePlayerMonolog());
+    }
+    public void TriggerContinuePlayerMonolog()
+    {
+        Debug.Log("TriggerContinuePlayerMonolog");
+        playerContinueButtonMonolog.SetActive(false);
+        uIAudioSource.Play();
+
+        if (playerIndexMonolog >= showSentences.Length - 1)
+        {
+            playerDialogueText.text = "";
+            playerSpeechBubbleAnimator.SetTrigger("Close");
+            playerMovementScript.ToggleInteraction();
+            playerIndexMonolog = 0;
+            showSentences = null;
+        }
+        else
+        {
+            StartCoroutine(ContinuePlayerMonolog());
+            playerIndexMonolog++;
+        }
+    }
+    private IEnumerator ContinuePlayerMonolog()
+    {
+        yield return new WaitForSeconds(speechBubbleAnimationDelay);
+
+        playerDialogueText.text = "";
+        yield return new WaitForSeconds(speechBubbleAnimationDelay);
+
+        StartCoroutine(TypePlayerMonolog());
+    }
+    private IEnumerator TypePlayerMonolog()
+    {
+        int lenghtChar = 1;
+        foreach (char letter in playerDialogueSentences[showSentences[playerIndexMonolog]].ToCharArray())
+        {
+            playerDialogueText.text += letter;
+            lenghtChar++;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        if (lenghtChar >= playerDialogueSentences[showSentences[playerIndexMonolog]].ToCharArray().Length)
+        {
+            playerContinueButtonMonolog.SetActive(true);
+        }
+
+    }
+
+
 
     public void CountClickButton()
     {
         countClickButton++;
+        Debug.Log("countClickButtonIsAdd");
     }
+
+    void SelectTypeInteract()
+    {
+        switch (selectTypeInteract)
+        {
+            case TypeInteract.Monolog:
+                dialog = false;
+                break;
+            case TypeInteract.Dialogue:
+                dialog = true;
+                break;
+        }
+    }
+
+
 }

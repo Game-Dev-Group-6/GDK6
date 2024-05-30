@@ -9,28 +9,27 @@ public class interactOpenTent : MonoBehaviour
     bool reverse = false;
     public bool firstInteract = false;
     [SerializeField] Light2D openTentLight;
-    eventTendOpen eventTendOpen;
+    [SerializeField] eventTendOpen eventTendOpen;
     //----- END -----//
-    GameObject textOpenTent;
+    [SerializeField] GameObject textOpenTent;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        textOpenTent = transform.GetChild(1).gameObject;
-        eventTendOpen = FindAnyObjectByType<eventTendOpen>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         TentLight();
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+
             firstInteract = true;
             Debug.Log("PlayerMasuk");
             textOpenTent.SetActive(true);
@@ -50,36 +49,43 @@ public class interactOpenTent : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
             firstInteract = false;
-            openTentLight.intensity = 3;
+            if (openTentLight != null)
+            {
+                openTentLight.intensity = 3;
+            }
+
             textOpenTent.GetComponent<Animator>().SetBool("Enable", true);
         }
     }
 
     void TentLight()
     {
-        if (firstInteract && !eventTendOpen.eventTrue)
+        if (eventTendOpen != null)
         {
-            if (openTentLight != null)
+            if (firstInteract && !eventTendOpen.eventTrue)
             {
-                if (openTentLight.intensity <= 10 && !reverse)
+                if (openTentLight != null)
                 {
-                    openTentLight.intensity += 0.2f;
-                    if (openTentLight.intensity >= 10)
+                    if (openTentLight.intensity <= 10 && !reverse)
                     {
-                        reverse = true;
+                        openTentLight.intensity += 0.2f;
+                        if (openTentLight.intensity >= 10)
+                        {
+                            reverse = true;
+                        }
                     }
-                }
-                else if (openTentLight.intensity >= 0 && reverse)
-                {
-                    openTentLight.intensity -= 0.2f;
-                    if (openTentLight.intensity <= 0)
+                    else if (openTentLight.intensity >= 0 && reverse)
                     {
-                        reverse = false;
+                        openTentLight.intensity -= 0.2f;
+                        if (openTentLight.intensity <= 0)
+                        {
+                            reverse = false;
+                        }
                     }
                 }
             }
-
         }
     }
 }

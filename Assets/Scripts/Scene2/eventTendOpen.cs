@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class eventTendOpen : MonoBehaviour
 {
-
+    [SerializeField] int indexScene = 1;
     [Header("Object HasveLight")]
     [SerializeField] Light2D[] allLight;
     public bool eventTrue = false;
@@ -17,7 +17,7 @@ public class eventTendOpen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        allLight = FindObjectsOfType<Light2D>();
 
     }
 
@@ -31,8 +31,15 @@ public class eventTendOpen : MonoBehaviour
     }
     void EventOpen()
     {
-        Campfire.GetComponent<Animator>().enabled = false;
-        flashLight.GetComponent<controlIntesityLighter>().enabled = false;
+        if (Campfire != null)
+        {
+            Campfire.GetComponent<Animator>().enabled = false;
+        }
+        if (flashLight != null)
+        {
+            flashLight.GetComponent<controlIntesityLighter>().enabled = false;
+        }
+
         foreach (Light2D light in allLight)
         {
             if (light.intensity > 0)
@@ -42,7 +49,7 @@ public class eventTendOpen : MonoBehaviour
         }
         if (GetComponent<delayTime2>().Delay(3))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(indexScene);
         }
     }
 

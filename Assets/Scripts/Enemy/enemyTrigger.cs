@@ -107,7 +107,7 @@ public class enemyTrigger : MonoBehaviour
 
     void Penampakan()
     {
-        childrenObj.GetComponent<ItemCollection>().enabled = true;
+
         childrenObj.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
         if (j < 1)

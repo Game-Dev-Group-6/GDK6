@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene/Scene7.unity
     guid: b2aab48ae74a1d34dad86e368bade7b3
+  - enabled: 1
+    path: Assets/Scenes/CutScene/Cutscene_Scene_2_3.unity
+    guid: 30a126eb97ea5364a9472f148087b58c
+  - enabled: 1
+    path: Assets/Scenes/MainScene/Scene4_Tenda1.unity
+    guid: 7a9de06134eeded44ac2a4d383dd1c84
+  - enabled: 1
+    path: Assets/Scenes/MainScene/Scene4_Tenda2.unity
+    guid: d448cd3e61cfd4042ab3e2f224391a49
   m_configObjects: {}

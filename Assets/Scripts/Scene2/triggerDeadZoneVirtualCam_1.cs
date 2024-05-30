@@ -18,7 +18,7 @@ public class triggerDeadZoneVirtualCam_1 : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        cam = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+        cam = GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame
@@ -54,6 +54,7 @@ public class triggerDeadZoneVirtualCam_1 : MonoBehaviour
         {
             if (deadZoneActive)
             {
+                cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.x = 0;
                 cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_DeadZoneWidth = 0;
                 deadZoneActive = false;
             }
@@ -68,6 +69,7 @@ public class triggerDeadZoneVirtualCam_1 : MonoBehaviour
             if (deadZoneActive)
             {
                 cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_DeadZoneWidth = 0;
+                cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.x = 0;
                 deadZoneActive = false;
             }
 

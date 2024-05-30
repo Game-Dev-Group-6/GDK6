@@ -63,6 +63,8 @@ public class raycastMouse : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        gamelan.GamelanStop();
+                        hit2D.collider.GetComponent<interactExit>().TentExitSFX();
                         GetComponent<eventExitTend>().triggerEventExitTend = true;
                     }
                 }

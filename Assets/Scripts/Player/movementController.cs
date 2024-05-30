@@ -27,11 +27,16 @@ public class movementController : MonoBehaviour
     public bool slowMove = false;
     float speedAnim;
 
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+
         speedAnim = anim.speed;
     }
 

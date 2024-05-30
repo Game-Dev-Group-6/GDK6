@@ -13,9 +13,8 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player") && !triggered)
         {
             //Start Dialogue
-            dialogueManager.TriggerStartDialogue();
+            dialogueManager.TriggerStartDialogue(null);
             triggered = true;
         }
-        
     }
 }

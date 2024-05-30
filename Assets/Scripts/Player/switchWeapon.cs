@@ -15,7 +15,7 @@ public class switchWeapon : MonoBehaviour
         controlIntensityLighterWeapon = GameObject.FindAnyObjectByType<controlIntensityLighterWeapon>();
         battery = GameObject.FindObjectOfType<battery>();
 
-        for(int i = 0;i<weapon.Length;i++)
+        for (int i = 0; i < weapon.Length; i++)
         {
             if (weapon[i] == weapon[0])
             {
@@ -31,12 +31,12 @@ public class switchWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && PlayerPrefs.HasKey("HasDamage"))
         {
             SwitchWeapon();
         }
-        
-        if(controlIntensityLighterWeapon != null)
+
+        if (controlIntensityLighterWeapon != null)
         {
             //Kondisi ketika baterai 0, maka akan otomatis switch ke SenterBiasa
             if (battery.currentBattery <= 0)
