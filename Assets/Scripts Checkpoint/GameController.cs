@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCheckpoint : MonoBehaviour
+public class GameController : MonoBehaviour
 {
-    Vector2 checkpointPos;
+    Vector2 startPos;
     Rigidbody2D playerRb;
-    
-    void Start()
+
+    private void Awake() 
     {
-        checkpointPos = transform.position;
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle")) 
         {
@@ -20,12 +25,10 @@ public class PlayerCheckpoint : MonoBehaviour
         }
     }
 
-    public void UpdateCheckpoint(Vector2 pos) 
+    void Die() 
     {
-        checkpointPos = pos;
+        StartCoroutine(Respawn(0.5f));
     }
-
-    
 
     IEnumerator Respawn(float duration) 
     {
@@ -33,14 +36,9 @@ public class PlayerCheckpoint : MonoBehaviour
         playerRb.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
-        transform.position = checkpointPos;
+        transform.position = startPos;
         transform.localScale = new Vector3(1, 1, 1);
         playerRb.simulated = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
