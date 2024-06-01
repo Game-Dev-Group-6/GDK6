@@ -108,4 +108,14 @@ public class raycastMouse : MonoBehaviour
 
         }
     }
+    public void ClickOpenTent()
+    {
+        GetComponent<eventExitTend>().triggerEventExitTend = true;
+        gamelan.GamelanStop();
+    }
+    public void ClickOpenTent2()
+    {
+        GetComponent<eventExitTend>().triggerEventExitTend = true;
+        gamelan.GamelanStop();
+    }
 }

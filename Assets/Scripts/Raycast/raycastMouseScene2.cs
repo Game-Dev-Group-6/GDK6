@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class raycastMouseScene2 : MonoBehaviour
 {
+    [SerializeField] eventTendOpen eventTendOpen;
+    [SerializeField] transition transition;
     bool canGetFlashlight = false;
     [SerializeField] sceneScript2 sceneScript2;
     [SerializeField] PlayerPrefsSave playerPrefsSave;
@@ -46,8 +48,9 @@ public class raycastMouseScene2 : MonoBehaviour
                 if (interactOpenTent.firstInteract)
                 {
                     Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && !DialogueManager.isInteract)
                     {
+
                         if (!PlayerPrefs.HasKey("CanEnter"))
                         {
                             if (CountClick == 3)
@@ -58,10 +61,7 @@ public class raycastMouseScene2 : MonoBehaviour
                         }
                         if (PlayerPrefs.HasKey("CanEnter"))
                         {
-                            playerPrefsSave.SetPosPlayer(0);
-                            hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
-                            CountClick = 0;
-                            canGetFlashlight = true;
+                            GoInsideTent();
                         }
                     }
                 }
@@ -76,8 +76,9 @@ public class raycastMouseScene2 : MonoBehaviour
                 if (hit2D.collider.GetComponent<interactCampfire>().mouseCanInteract)
                 {
                     Cursor.SetCursor(cursorImage[1], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && !DialogueManager.isInteract)
                     {
+
                         hit2D.collider.GetComponent<monologTrigger>().MonologTrigger();
                         Debug.Log("ini campfire2");
                     }
@@ -94,5 +95,17 @@ public class raycastMouseScene2 : MonoBehaviour
         }
     }
 
+    public void GoInsideTent()
+    {
+        if (transition != null)
+        {
+            transition.gameObject.SetActive(true);
+            transition.triggerTransition = true;
+        }
 
+        playerPrefsSave.SetPosPlayer(0);
+        eventTendOpen.eventTrue = true;
+        CountClick = 0;
+        canGetFlashlight = true;
+    }
 }

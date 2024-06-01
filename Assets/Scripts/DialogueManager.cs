@@ -5,6 +5,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+
     [SerializeField] int[] showSentences;
     public enum TypeInteract
     {
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int playerIndex;
     [SerializeField] private int nPCIndex;
     [SerializeField] private int playerIndexMonolog;
+    public static bool isInteract = false;
 
     private float speechBubbleAnimationDelay = 0.6f;
 
@@ -64,6 +66,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (!dialog)
         {
+            isInteract = true;
             showSentences = selectSentences;
             StartCoroutine(StartMonolog());
         }
@@ -238,6 +241,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator StartMonolog()
     {
+
         playerMovementScript.ToggleInteraction();
         playerSpeechBubbleAnimator.SetTrigger("Open");
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
@@ -256,6 +260,7 @@ public class DialogueManager : MonoBehaviour
             playerMovementScript.ToggleInteraction();
             playerIndexMonolog = 0;
             showSentences = null;
+            isInteract = false;
         }
         else
         {

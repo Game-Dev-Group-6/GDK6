@@ -27,16 +27,6 @@ public class eventExitTend : MonoBehaviour
         if (triggerEventExitTend)
         {
             GetComponent<playerPrefs1>().SaveScene();
-            exitTend.GetComponent<interactExit>().enabled = false;
-            lantern.GetComponent<Animator>().enabled = false;
-            flashLight.GetComponent<controlIntesityLighter>().enabled = false;
-            foreach (Light2D light in offAllLight)
-            {
-                if (light.intensity > 0)
-                {
-                    light.intensity -= 0.1f;
-                }
-            }
             if (GetComponent<delayTime2>().Delay(3))
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

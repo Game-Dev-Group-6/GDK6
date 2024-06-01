@@ -26,18 +26,17 @@ public class sceneTransition : MonoBehaviour
     [SerializeField] PlayerPrefsSave playerPrefsSave;
     [Range(-5, 5)][SerializeField] float giveDistance;
     GameObject player;
-
+    [SerializeField] transition transition_Image;
     bool nextScene = true;
     bool Trigger = false;
     [SerializeField] int LoadScene;
     delayTime2 delayTime2;
-    Light2D[] lights;
+
 
 
     void Awake()
     {
         delayTime2 = GetComponent<delayTime2>();
-        lights = GameObject.FindObjectsOfType<Light2D>();
         player = GameObject.FindWithTag("Player");
         ChooseScene();
     }
@@ -58,24 +57,15 @@ public class sceneTransition : MonoBehaviour
             PlayerPrefs.SetInt("flipX", player.GetComponent<SpriteRenderer>().flipX ? 1 : 0);
             player.GetComponent<movementController>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
-            Debug.Log("Trigger");
-            OffAllLight();
+            transition_Image.gameObject.SetActive(true);
+            transition_Image.triggerTransition = true;
             if (delayTime2.Delay(5))
             {
                 SceneManager.LoadScene(LoadScene);
             }
         }
     }
-    void OffAllLight()
-    {
-        foreach (Light2D light in lights)
-        {
-            if (light.intensity > 0)
-            {
-                light.intensity -= 0.2f;
-            }
-        }
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

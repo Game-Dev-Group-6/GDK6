@@ -60,8 +60,8 @@ public class interactExit : MonoBehaviour
         {
             if (animator != null)
             {
-                animator.SetBool("TendExit", true);
-                animator.SetBool("TendExit2", false);
+                animator.SetBool("show", true);
+                animator.SetBool("hide", false);
             }
             TentHoverSFX();
             getInteractMouse = true;
@@ -77,8 +77,8 @@ public class interactExit : MonoBehaviour
         {
             if (animator != null)
             {
-                animator.SetBool("TendExit", false);
-                animator.SetBool("TendExit2", true);
+                animator.SetBool("hide", true);
+                animator.SetBool("show", false);
             }
             getInteractMouse = false;
             transform.localPosition -= (Vector3)Vector2.up * 0.2f;
