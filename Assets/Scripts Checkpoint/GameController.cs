@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    Vector2 startPos;
+    Vector2 checkpointPos;
     Rigidbody2D playerRb;
 
     private void Awake() 
@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        startPos = transform.position;
+        checkpointPos = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +23,11 @@ public class GameController : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void UpdateCheckpoint(Vector2 pos) 
+    {
+        checkpointPos = pos;
     }
 
     void Die() 
@@ -34,10 +39,10 @@ public class GameController : MonoBehaviour
     {
         playerRb.velocity = new Vector2(0, 0);
         playerRb.simulated = false;
-        transform.localScale = new Vector3(0, 0, 0);
+        //transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
-        transform.position = startPos;
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.position = checkpointPos;
+        //transform.localScale = new Vector3(1, 1, 1);
         playerRb.simulated = true;
     }
 
