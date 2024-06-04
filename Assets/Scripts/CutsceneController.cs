@@ -12,7 +12,7 @@ public class CutsceneController : MonoBehaviour
     public AudioSource backgroundMusic;
     public ParallaxScrolling parallaxScrolling; // Referensi ke script ParallaxScrolling
     public Button skipButton; // Referensi ke tombol Skip
-    public float skipButtonDelay = 5f; // Waktu delay sebelum tombol skip muncul
+    public float skipButtonDelay = 7f; // Waktu delay sebelum tombol skip muncul
     public float fadeDuration = 1f; // Durasi fade in
 
     private CanvasGroup mainMenuCanvasGroup;
