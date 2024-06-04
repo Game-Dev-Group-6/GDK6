@@ -7,15 +7,31 @@ using UnityEngine.SceneManagement;
 
 public class raycastMouseScene2 : MonoBehaviour
 {
+    public enum raycastForScene
+    {
+        Scene_Bintang_Raya,
+        Scene_Hutan_Roh,
+        Scene_Pemukiman,
+        Scene_Hutan_Mistik,
+        Scene_Jalur_Hutan,
+        Scene_Jalur_Pendakian,
+        Scene_Pemakaman
+    }
+    bool bintangRaya = false;
+    public raycastForScene RaycastForScene;
     [SerializeField] eventTendOpen eventTendOpen;
     [SerializeField] transition transition;
-    bool canGetFlashlight = false;
     [SerializeField] sceneScript2 sceneScript2;
     [SerializeField] PlayerPrefsSave playerPrefsSave;
     [SerializeField] Texture2D[] cursorImage;
     [SerializeField] LayerMask layerMask;
     delayTime2 delayTime2;
     [SerializeField] int CountClick = 0;
+
+    void Awake()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +41,44 @@ public class raycastMouseScene2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Raycast();
-        if (CountClick == 1)
+        ChooseRaycastForScene();
+        if (bintangRaya)
         {
-            sceneScript2.Script2();
-            if (delayTime2.Delay(0.5f))
+            if (CountClick == 1)
             {
-                CountClick = 3;
+                sceneScript2.Script2();
+                if (delayTime2.Delay(0.5f))
+                {
+                    CountClick = 3;
+                }
             }
+        }
 
+    }
+    void ChooseRaycastForScene()
+    {
+        switch (RaycastForScene)
+        {
+            case raycastForScene.Scene_Bintang_Raya:
+                bintangRaya = true;
+                RaycastBintangRaya();
+                break;
+            case raycastForScene.Scene_Hutan_Roh:
+                break;
+            case raycastForScene.Scene_Pemukiman:
+                RaycastPemukiman();
+                break;
+            case raycastForScene.Scene_Jalur_Hutan:
+                break;
+            case raycastForScene.Scene_Hutan_Mistik:
+                break;
+            case raycastForScene.Scene_Pemakaman:
+                break;
+            case raycastForScene.Scene_Jalur_Pendakian:
+                break;
         }
     }
-    void Raycast()
+    void RaycastBintangRaya()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, layerMask);
@@ -61,7 +103,13 @@ public class raycastMouseScene2 : MonoBehaviour
                         }
                         if (PlayerPrefs.HasKey("CanEnter"))
                         {
-                            GoInsideTent();
+                            if (transition != null)
+                            {
+                                transition.gameObject.SetActive(true);
+                                transition.triggerTransition = true;
+                            }
+                            playerPrefsSave.SetPosPlayer(0);
+                            hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
                         }
                     }
                 }
@@ -94,6 +142,40 @@ public class raycastMouseScene2 : MonoBehaviour
             Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
+    void RaycastPemukiman()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, layerMask);
+        foreach (RaycastHit2D hit2D in hit)
+        {
+            if (hit2D.collider.tag == "Environment/TendOpen")
+            {
+                interactOpenTent interactOpenTent = hit2D.transform.GetComponent<interactOpenTent>();
+                if (interactOpenTent.firstInteract)
+                {
+                    Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (transition != null)
+                        {
+                            transition.gameObject.SetActive(true);
+                            transition.triggerTransition = true;
+                        }
+                        playerPrefsSave.SetPosPlayer(0);
+                        hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
+                    }
+                }
+                else if (!interactOpenTent.firstInteract)
+                {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                }
+            }
+        }
+        if (hit.Length <= 0)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        }
+    }
 
     public void GoInsideTent()
     {
@@ -102,10 +184,10 @@ public class raycastMouseScene2 : MonoBehaviour
             transition.gameObject.SetActive(true);
             transition.triggerTransition = true;
         }
-
         playerPrefsSave.SetPosPlayer(0);
         eventTendOpen.eventTrue = true;
         CountClick = 0;
-        canGetFlashlight = true;
     }
+
+
 }

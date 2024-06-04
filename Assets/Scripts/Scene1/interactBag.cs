@@ -24,7 +24,7 @@ public class interactBag : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (flashLightIcon != null)
+            if (flashLightIcon != null && !PlayerPrefs.HasKey("HaveFlashlightWhite"))
             {
                 flashLightIcon.gameObject.SetActive(true);
                 flashLightIcon.ChangePosition();

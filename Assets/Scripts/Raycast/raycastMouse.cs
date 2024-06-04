@@ -6,6 +6,7 @@ using UnityEngine.PlayerLoop;
 
 public class raycastMouse : MonoBehaviour
 {
+    [SerializeField] GameObject CanvasGetFlashlight;
     eventExitTend eventExitTend;
     [SerializeField] LayerMask layerMask;
     [SerializeField] Texture2D[] textures;
@@ -80,7 +81,7 @@ public class raycastMouse : MonoBehaviour
                 Cursor.SetCursor(textures[0], Vector2.zero, CursorMode.ForceSoftware);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<getFlashLight>().canvasActive = true;
+                    CanvasGetFlashlight.GetComponent<getFlashLight>().canvasActive = true;
                 }
             }
             else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit")

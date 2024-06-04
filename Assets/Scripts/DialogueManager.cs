@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
 
+    [SerializeField] UnityEvent events;
     [SerializeField] int[] showSentences;
     public enum TypeInteract
     {
@@ -80,7 +82,11 @@ public class DialogueManager : MonoBehaviour
             if (playerContinueButton.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    countClickButton++;
                     TriggerContinueNPCDialogue();
+                }
+
             }
         }
 
@@ -90,7 +96,11 @@ public class DialogueManager : MonoBehaviour
             if (nPCContinueButton.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    countClickButton++;
                     TriggerContinuePlayerDialogue();
+                }
+
             }
         }
 

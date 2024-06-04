@@ -11,6 +11,7 @@ public class trashManager : MonoBehaviour
     [SerializeField] private GameObject[] trash;
     [SerializeField] public List<GameObject> allTrash;
     [SerializeField] private Text trashCount;
+    [SerializeField] private triggerCcollect triggerCcollect;
 
     void Awake()
     {
@@ -19,7 +20,6 @@ public class trashManager : MonoBehaviour
     }
     void Start()
     {
-
         startManyTrash = trash.Length;
         trash = null;
     }
@@ -34,7 +34,7 @@ public class trashManager : MonoBehaviour
     {
         if (trashCount != null)
         {
-            trashCount.text = "Trash : " + trashCollect + "/" + startManyTrash;
+            trashCount.text = "Trash : " + triggerCcollect.trashCollected + "/" + startManyTrash;
         }
 
     }

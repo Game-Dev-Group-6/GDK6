@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class trashEffect : MonoBehaviour
 {
+    
     [SerializeField]
     AudioClip[] audios;
     AudioSource audioSource;
@@ -24,4 +25,6 @@ public class trashEffect : MonoBehaviour
         audioSource.clip = audios[1];
         audioSource.Play();
     }
+
+   
 }

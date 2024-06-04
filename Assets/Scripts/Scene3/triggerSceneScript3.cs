@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class triggerSceneScript3 : MonoBehaviour
 {
+
+    [SerializeField] GameObject ColliderPenghalang;
     [SerializeField] sceneScript3 sceneScript3;
     // Start is called before the first frame update
     void Start()
@@ -25,10 +27,16 @@ public class triggerSceneScript3 : MonoBehaviour
             {
                 sceneScript3.Script1();
             }
-            if (PlayerPrefs.GetInt("SceneScript3") == 0)
+            if (PlayerPrefs.GetInt("SceneScript3") == 0 && !PlayerPrefs.HasKey("HaveFlashlightWhite"))
             {
                 sceneScript3.Script2();
-                PlayerPrefs.SetInt("CanEnter", 0);
+            }
+            else if (PlayerPrefs.HasKey("HaveFlashlightWhite"))
+            {
+                if (ColliderPenghalang != null)
+                {
+                    Destroy(ColliderPenghalang);
+                }
             }
         }
     }
@@ -41,7 +49,7 @@ public class triggerSceneScript3 : MonoBehaviour
             {
                 sceneScript3.Script1();
             }
-            if (PlayerPrefs.GetInt("SceneScript3") == 0)
+            if (PlayerPrefs.GetInt("SceneScript3") == 0 && !PlayerPrefs.HasKey("HaveFlashlightWhite"))
             {
                 sceneScript3.Script2();
             }

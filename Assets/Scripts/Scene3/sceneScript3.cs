@@ -32,6 +32,8 @@ public class sceneScript3 : MonoBehaviour
             {
                 monologTriggers[0].MonologTrigger();
                 PlayerPrefs.SetInt("SceneScript3", 0);
+                PlayerPrefs.SetInt("CanEnter", 0);
+                PlayerPrefs.SetInt("CanGetFlashlightInTent", 0);
             }
         }
     }

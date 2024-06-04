@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class eventExitTend : MonoBehaviour
 {
     [SerializeField] int indexScene = 1;
-    [SerializeField] GameObject lantern, flashLight, exitTend;
-    [SerializeField] Light2D[] offAllLight;
     public bool triggerEventExitTend = false;
     // Start is called before the first frame update
     void Start()

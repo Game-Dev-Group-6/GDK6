@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class buttonAmbil : MonoBehaviour
 {
-    [SerializeField] GameObject flashLightIcon, flashLight;
-    [SerializeField] getFlashLight getFlashLight;
+    [SerializeField] GameObject flashlightOnBag, ConditionGetFlashLight;
+    [SerializeField] getFlashLight canvasGetFlashlight;
     // Start is called before the first frame update
 
     public void CanvasNotActive()
     {
-        getFlashLight.canvasActive = false;
-        flashLight.SetActive(true);
-        if (flashLight != null)
+        canvasGetFlashlight.canvasActive = false;
+        ConditionGetFlashLight.GetComponent<conditionHaveFlashlight>().flashlightWhite = true;
+        if (ConditionGetFlashLight != null)
         {
-            Destroy(flashLightIcon);
+            Destroy(flashlightOnBag);
         }
     }
 }

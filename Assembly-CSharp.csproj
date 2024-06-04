@@ -65,15 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Scene3\awakeLight.cs" />
-    <Compile Include="Assets\Scripts\Player\lightDamage.cs" />
     <Compile Include="Assets\Scripts\Scene2\interactCampfire.cs" />
     <Compile Include="Assets\Scripts\Enemy\destroyBulletWhenEnemyBlink.cs" />
     <Compile Include="Assets\Scripts\Scene2\sceneScript2.cs" />
     <Compile Include="Assets\Scripts\Scene3\playerPrefs3.cs" />
     <Compile Include="Assets\Scripts\Scene2\interactOpenTent.cs" />
     <Compile Include="Assets\Scripts\Enemy\switchCamera.cs" />
+    <Compile Include="Assets\Packages\TP\Readme\Runtime\Settings\ReadmeSettings.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\Cutscene\goToOtherScene.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\SerializableDictionary\SerializableDictionary.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\controlIntensityLighterWeapon.cs" />
     <Compile Include="Assets\Scripts\Environment\treeManagerSort.cs" />
     <Compile Include="Assets\Scripts\Scene7\playerPrefs7.cs" />
     <Compile Include="Assets\Scripts\Scene1\InteractFlashLight.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\DelayAllScene\delayTime.cs" />
     <Compile Include="Assets\Scripts\Scene2\getFlashLightScene2.cs" />
     <Compile Include="Assets\Scripts\Environment\treeCut.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\controlIntesityLighter.cs" />
     <Compile Include="Assets\Scripts\CollectItem\triggerCollect.cs" />
     <Compile Include="Assets\Scripts\DelayAllScene\delayFlashLight_1.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -89,19 +92,20 @@
     <Compile Include="Assets\Scripts\Enemy\hitAfterBlink.cs" />
     <Compile Include="Assets\Scripts\Scene3\sceneScript3.cs" />
     <Compile Include="Assets\Scripts\Scene1\buttonAmbil.cs" />
-    <Compile Include="Assets\Scripts\Player\switchWeapon.cs" />
     <Compile Include="Assets\Scripts\Scene1\gamelan.cs" />
-    <Compile Include="Assets\Scripts\Player\controlIntesityLighter.cs" />
+    <Compile Include="Assets\Scripts\UI\effectFlashWhite.cs" />
     <Compile Include="Assets\Scripts\Enemy\enemyCombat.cs" />
     <Compile Include="Assets\Scripts\Cutscene\Scene2.cs" />
     <Compile Include="Assets\Scripts\CollectItem\trashManager.cs" />
     <Compile Include="Assets\Scripts\Scene6\playerPrefs6.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\conditionHaveFlashlight.cs" />
     <Compile Include="Assets\Scripts\Enemy\enemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\switchWeapon.cs" />
     <Compile Include="Assets\Scripts\Player\movementController.cs" />
+    <Compile Include="Assets\Scripts\DialogueManagerV2.cs" />
     <Compile Include="Assets\Scripts\Enemy\delayTime2.cs" />
+    <Compile Include="Assets\Packages\TP\Readme\Runtime\TextAreaObject.cs" />
     <Compile Include="Assets\Scripts\Scene3\triggerSceneScript3.cs" />
-    <Compile Include="Assets\Scripts\Player\controlIntesityPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player\battery.cs" />
     <Compile Include="Assets\Scripts\Enemy\bullet.cs" />
     <Compile Include="Assets\Scripts\Scene2\triggerDeadZoneVirtualCam_1.cs" />
     <Compile Include="Assets\Scripts\Cutscene\Scene1.cs" />
@@ -110,41 +114,52 @@
     <Compile Include="Assets\Scripts\Scene4\PlayerPrefsSave.cs" />
     <Compile Include="Assets\Scripts\Player\soundSfxManager.cs" />
     <Compile Include="Assets\Scripts\Scene2\conditionComeToScene3.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\TP\Extension Methods\Scripts\TinyExtensions.cs" />
     <Compile Include="Assets\Scripts\Scene1\eventExitTend.cs" />
     <Compile Include="Assets\Scripts\Scene1\interactExit.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\rotateLighter.cs" />
     <Compile Include="Assets\Scripts\Raycast\raycastMouseScene2.cs" />
     <Compile Include="Assets\Scripts\Environment\treeDurability.cs" />
     <Compile Include="Assets\Scripts\UI\controlColor.cs" />
-    <Compile Include="Assets\Scripts\Player\flipXLighter.cs" />
     <Compile Include="Assets\Scripts\UI\opening.cs" />
     <Compile Include="Assets\Scripts\Enemy\giveWarning.cs" />
     <Compile Include="Assets\Scripts\UI\narratorTrigger.cs" />
     <Compile Include="Assets\Scripts\Scene1\getFlashLight.cs" />
     <Compile Include="Assets\Scripts\Scene2\TextTent.cs" />
+    <Compile Include="Assets\Packages\TP\Readme\Runtime\ReadmeManager.cs" />
     <Compile Include="Assets\Scripts\Scene2\eventTendOpen.cs" />
     <Compile Include="Assets\Scripts\Enemy\delayBlink.cs" />
     <Compile Include="Assets\Scripts\Enemy\graveYard.cs" />
     <Compile Include="Assets\Scripts\Enemy\particleEffect.cs" />
     <Compile Include="Assets\Scripts\cameraShake.cs" />
     <Compile Include="Assets\Scripts\Cutscene\monologTrigger.cs" />
-    <Compile Include="Assets\Scripts\Player\controlIntensityLighterWeapon.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\controlIntesityPlayer.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\TP\Util\HideFlagsUtility.cs" />
+    <Compile Include="Assets\Packages\TP\Readme\Runtime\Readme.cs" />
     <Compile Include="Assets\Scripts\Enemy\combat.cs" />
     <Compile Include="Assets\Scripts\Scene5\playerPrefs5.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\TP\Util\EditorWidowOrInspector.cs" />
+    <Compile Include="Assets\Scripts\UI\uiFlashlight.cs" />
     <Compile Include="Assets\Scripts\UI\transition.cs" />
     <Compile Include="Assets\Scripts\Enemy\delayCamera.cs" />
+    <Compile Include="Assets\Scripts\CollectItem\chooseTrashInScene.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\battery.cs" />
     <Compile Include="Assets\Scripts\Scene2\playerPrefs2.cs" />
-    <Compile Include="Assets\Scripts\Player\rotateLighter.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\flipXLighter.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\TP\Util\Logs.cs" />
     <Compile Include="Assets\Scripts\Scene3\triggerParallaxOff.cs" />
     <Compile Include="Assets\Scripts\Environment\parallax.cs" />
     <Compile Include="Assets\Scripts\Cutscene\cutScene_2_3.cs" />
     <Compile Include="Assets\Scripts\Enemy\enemyTrigger.cs" />
     <Compile Include="Assets\Scripts\Scene1\playerPrefs1.cs" />
+    <Compile Include="Assets\Scripts\Player\Flashlight\lightDamage.cs" />
     <Compile Include="Assets\Scripts\selectMonologSentences.cs" />
     <Compile Include="Assets\Scripts\Enemy\handAttack.cs" />
     <Compile Include="Assets\Scripts\Scene2\goToScene3.cs" />
     <Compile Include="Assets\Scripts\Environment\treeCutMakeCameraShake.cs" />
     <Compile Include="Assets\Scripts\CollectItem\trashEffect.cs" />
+    <Compile Include="Assets\Packages\TP\Shared\SerializableDictionary\VirtualDictionary.cs" />
     <Compile Include="Assets\Scripts\Scene1\interactBag.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +169,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Packages\TP\Readme\Samples\Scene Sample\Text File Dummy.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -162,12 +178,15 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Packages\TP\Shared\TP\Extension Methods\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Samples\Timeline\1.7.6\Gameplay Sequence Demo\Shaders\WorldSpaceGrid.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Packages\TP\Readme\Plugins\HtmlAgilityPack.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -509,6 +528,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>Assets\Packages\TP\Readme\Plugins\HtmlAgilityPack.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1079,12 +1102,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="PPv2URPConverters">
       <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
@@ -1249,6 +1272,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Timeline.Samples.Text.Editor.csproj" />
+    <ProjectReference Include="Timeline.Samples.Utilities.Editor.csproj" />
+    <ProjectReference Include="MyBox.csproj" />
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Editor.csproj" />
+    <ProjectReference Include="Timeline.Samples.Annotation.Editor.csproj" />
+    <ProjectReference Include="Timeline.Samples.Tween.Editor.csproj" />
+    <ProjectReference Include="Samples.GameplaySequence.csproj" />
+    <ProjectReference Include="Timeline.Samples.Tween.csproj" />
+    <ProjectReference Include="Timeline.Samples.Video.Editor.csproj" />
+    <ProjectReference Include="Timeline.Samples.Video.csproj" />
+    <ProjectReference Include="Timeline.Samples.Utilities.csproj" />
+    <ProjectReference Include="Timeline.Samples.TimeDilation.csproj" />
+    <ProjectReference Include="Timeline.Samples.Text.csproj" />
+    <ProjectReference Include="Timeline.Samples.Annotation.csproj" />
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.csproj" />
+    <ProjectReference Include="Unity.PlayerPrefsEditor.EditorResources.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

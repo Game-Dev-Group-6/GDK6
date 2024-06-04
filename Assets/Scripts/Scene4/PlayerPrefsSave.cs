@@ -12,6 +12,7 @@ public class PlayerPrefsSave : MonoBehaviour
     }
     public PlayerPrefsScene playerPrefsScene;
     GameObject player, virtualCamera;
+    string[] keyPlayerPrefs;
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -98,5 +99,10 @@ public class PlayerPrefsSave : MonoBehaviour
                 SAVESCENE_posX = "Scene7PosX";
                 break;
         }
+    }
+
+    void ListPlayerPrefs()
+    {
+
     }
 }

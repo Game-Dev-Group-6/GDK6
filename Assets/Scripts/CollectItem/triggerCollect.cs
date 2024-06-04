@@ -21,9 +21,16 @@ public class triggerCcollect : MonoBehaviour
     Quaternion rotate;
     float newPos = 0.1f;
     int trigger = 0;
-    private GameObject trash, trashActive;
+    private GameObject trash, trashActive, parentTrash;
+    public int trashCollected = 0;
     //END//
-
+    void Awake()
+    {
+        if (PlayerPrefs.HasKey("TrashCollected"))
+        {
+            trashCollected = PlayerPrefs.GetInt("TrashCollected");
+        }
+    }
     void Start()
     {
         trashManager = GetComponent<trashManager>();
@@ -45,11 +52,14 @@ public class triggerCcollect : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                trashCollected++;
+                PlayerPrefs.SetInt("TrashCollected", trashCollected);
                 hit.transform.GetComponent<trashEffect>().SoundEffectPick();
                 hit.transform.GetComponent<SpriteRenderer>().enabled = false;
                 hit.transform.GetComponent<BoxCollider2D>().enabled = false;
                 trashManager.trashCollect++;
                 trashActive = hit.transform.gameObject;
+                parentTrash = hit.transform.parent.gameObject;
                 destroyTrash = true;
             }
 
@@ -78,8 +88,10 @@ public class triggerCcollect : MonoBehaviour
         {
             if (delayTime2.Delay(0.2f))
             {
+                parentTrash.GetComponent<chooseTrashInScene>().DestroyTrash = true;
                 trashManager.allTrash.Remove(trash);
                 Destroy(trashActive);
+                parentTrash = null;
                 trashActive = null;
                 destroyTrash = false;
             }

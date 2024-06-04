@@ -16,6 +16,10 @@ public class gamelan : MonoBehaviour
         {
             indexAudio = PlayerPrefs.GetInt("GamelanWhisperPlay");
         }
+        if (PlayerPrefs.HasKey("CanGetFlashlightInTent"))
+        {
+            isGetFlashlight = true;
+        }
         ConditionGamelanWhisperPlay();
     }
     void Start()
@@ -51,6 +55,8 @@ public class gamelan : MonoBehaviour
             if (isGetFlashlight)
             {
                 indexAudio++;
+                PlayerPrefs.DeleteKey("SceneScript");
+                PlayerPrefs.SetInt("CanEnter", 0);
             }
         }
         else if (indexAudio == 0)

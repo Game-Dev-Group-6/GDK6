@@ -22,7 +22,6 @@ public class sceneScript2 : MonoBehaviour
     void Update()
     {
         Script1();
-        Debug.Log("Aktif" + PlayerPrefs.GetInt("SceneScript"));
     }
     void Script1()
     {
@@ -53,7 +52,6 @@ public class sceneScript2 : MonoBehaviour
                 {
                     monologTriggers[1].MonologTrigger();
                     PlayerPrefs.SetInt("SceneScript", 1);
-
                 }
             }
         }
