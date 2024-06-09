@@ -42,25 +42,30 @@ public class DialogueManagerV2 : MonoBehaviour
     [SerializeField] private AudioSource uIAudioSource;
 
 
-
+    [SerializeField] GameObject[] UIhide;
 
     private movementController playerMovementScript;
 
     public bool events = false, setEventFalse = false;
     [SerializeField] public int countClickButton = 0;
-    private bool dialogueStarted;
-
     [SerializeField] private int playerIndexI = 0;
     [SerializeField] private int playerIndexJ = 0;
-    [SerializeField] private int nPCIndexI = -1;
+    [SerializeField] private int nPCIndexI = 0;
     [SerializeField] private int nPCIndexJ = 0;
     public static bool isInteract = false;
     [SerializeField] public int countSentences;
-
     private float speechBubbleAnimationDelay = 0.6f;
 
     private void Start()
     {
+        if (PlayerSpeakingFirst)
+        {
+            nPCIndexI = -1;
+        }
+        else if (!PlayerSpeakingFirst)
+        {
+            playerIndexI = -1;
+        }
         playerMovementScript = FindObjectOfType<movementController>();
         CountSentences();
     }
@@ -68,6 +73,7 @@ public class DialogueManagerV2 : MonoBehaviour
     public void TriggerStartDialogue()
     {
         StartCoroutine(StartDialogue());
+        HideUI();
     }
 
     private void Update()
@@ -101,8 +107,10 @@ public class DialogueManagerV2 : MonoBehaviour
 
         if (countClickButton == countSentences)
         {
-            /*  events = true;
-             countClickButton = 0; */
+            UnHideUI();
+            playerMovementScript.interactNPC = false;
+            events = true;
+            
         }
 
 
@@ -128,7 +136,7 @@ public class DialogueManagerV2 : MonoBehaviour
     private IEnumerator StartDialogue()
     {
 
-        playerMovementScript.ToggleInteraction();
+        playerMovementScript.interactNPC = true;
 
         if (PlayerSpeakingFirst)
         {
@@ -146,26 +154,34 @@ public class DialogueManagerV2 : MonoBehaviour
 
     private IEnumerator TypePlayerDialogue()
     {
-
         foreach (char letter in playerSentences[playerIndexI].sentences[playerIndexJ].ToCharArray())
         {
             playerDialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-
+        playerIndexJ++;
+        if (playerIndexJ > playerSentences[playerIndexI].sentences.Length - 1)
+        {
+            nPCIndexI++;
+            nPCIndexJ = 0;
+        }
         playerContinueButton.SetActive(true);
     }
 
     private IEnumerator TypeNPCDialogue()
     {
-
         foreach (char letter in npcSentences[nPCIndexI].sentences[nPCIndexJ].ToCharArray())
         {
             nPCDialogueText.text += letter;
 
             yield return new WaitForSeconds(typingSpeed);
         }
-
+        nPCIndexJ++;
+        if (nPCIndexJ > npcSentences[nPCIndexI].sentences.Length - 1)
+        {
+            playerIndexI++;
+            playerIndexJ = 0;
+        }
         nPCContinueButton.SetActive(true);
     }
 
@@ -179,25 +195,6 @@ public class DialogueManagerV2 : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        if (playerIndexI <= playerSentences.Length - 1)
-        {
-            if (playerIndexJ < playerSentences[playerIndexI].sentences.Length - 1)
-            {
-                playerIndexJ++;
-                if (playerIndexJ >= playerSentences[playerIndexI].sentences.Length - 1)
-                {
-                    nPCIndexI++;
-                    if (nPCIndexI <= 0)
-                    {
-                        nPCIndexJ = 0;
-                    }
-                    else
-                    {
-                        nPCIndexJ = -1;
-                    }
-                }
-            }
-        }
         StartCoroutine(TypePlayerDialogue());
     }
 
@@ -211,25 +208,6 @@ public class DialogueManagerV2 : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        if (nPCIndexI <= npcSentences.Length - 1)
-        {
-            if (dialogueStarted)
-            {
-                if (nPCIndexJ < npcSentences[nPCIndexI].sentences.Length - 1)
-                {
-                    nPCIndexJ++;
-                    if (nPCIndexJ >= npcSentences[nPCIndexI].sentences.Length - 1)
-                    {
-                        playerIndexJ = -1;
-                        playerIndexI++;
-                    }
-                }
-            }
-            else
-            {
-                dialogueStarted = true;
-            }
-        }
         StartCoroutine(TypeNPCDialogue());
     }
 
@@ -249,12 +227,10 @@ public class DialogueManagerV2 : MonoBehaviour
             nPCDialogueText.text = "";
 
             nPCSpeechBubbleAnimator.SetTrigger("Close");
-
-            playerMovementScript.ToggleInteraction();
         }
         if (playerIndexI <= playerSentences.Length - 1)
         {
-            if (nPCIndexJ < npcSentences[nPCIndexI].sentences.Length - 1)
+            if (nPCIndexJ <= npcSentences[nPCIndexI].sentences.Length - 1)
             {
                 nPCDialogueText.text = "";
                 nPCSpeechBubbleAnimator.SetTrigger("Close");
@@ -286,12 +262,12 @@ public class DialogueManagerV2 : MonoBehaviour
             playerDialogueText.text = "";
 
             playerSpeechBubbleAnimator.SetTrigger("Close");
-
-            playerMovementScript.ToggleInteraction();
+            /* 
+                        playerMovementScript.ToggleInteraction(); */
         }
         if (nPCIndexI <= npcSentences.Length - 1)
         {
-            if (playerIndexJ < playerSentences[playerIndexI].sentences.Length - 1)
+            if (playerIndexJ <= playerSentences[playerIndexI].sentences.Length - 1)
             {
                 playerDialogueText.text = "";
                 playerSpeechBubbleAnimator.SetTrigger("Close");
@@ -304,6 +280,29 @@ public class DialogueManagerV2 : MonoBehaviour
                 StartCoroutine(ContinueNPCDialogue());
             }
 
+        }
+
+    }
+
+    void HideUI()
+    {
+        if (UIhide != null)
+        {
+            foreach (GameObject UI in UIhide)
+            {
+                UI.SetActive(false);
+            }
+        }
+
+    }
+    void UnHideUI()
+    {
+        if (UIhide != null)
+        {
+            foreach (GameObject UI in UIhide)
+            {
+                UI.SetActive(true);
+            }
         }
 
     }

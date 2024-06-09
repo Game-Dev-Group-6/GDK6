@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    bool otherTrigger;
+    [SerializeField] DialogueManagerV2 otherTriggerDialogueManagerV2;
     [SerializeField] private DialogueManagerV2 dialogueManagerV2;
     [SerializeField] private DialogueManager dialogueManager;
 
@@ -32,4 +34,10 @@ public class DialogueTrigger : MonoBehaviour
         }
 
     }
+
+    public void OtherTrigger()
+    {
+        otherTriggerDialogueManagerV2.TriggerStartDialogue();
+    }
+
 }

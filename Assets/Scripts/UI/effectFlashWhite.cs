@@ -13,7 +13,7 @@ public class effectFlashWhite : MonoBehaviour
         Dialogue_Manager_V2
     }
     public listGetTrriggerFrom ListGetTrriggerFrom;
-    [SerializeField] bool events = false;
+    [SerializeField] public bool events = false;
     bool reverse = false;
     [SerializeField][Range(0f, 1f)] float intensityFlash;
     [SerializeField][Range(0f, 1f)] float intensityFlash1;

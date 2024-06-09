@@ -9,34 +9,34 @@ EditorBuildSettings:
     path: Assets/Scenes/Dummy/MainMenu.unity
     guid: e6ee9d4ca236c56408d345e40114a2d5
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene1_Tenda.unity
+    path: Assets/Scenes/MainScene/Scene_1_Tenda.unity
     guid: b3c28aa822859174fafa1f5cf682a448
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene2_Bintang_Raya.unity
+    path: Assets/Scenes/MainScene/Scene_2_Bintang_Raya.unity
     guid: 5452ba10275015a4da247bd66bb63f07
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene3_Hutan_Roh.unity
+    path: Assets/Scenes/MainScene/Scene_3_Hutan_Roh.unity
     guid: 232de5f192c8ecd4bbe74469274714c6
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene4_Pemukiman.unity
+    path: Assets/Scenes/MainScene/Scene_4_Pemukiman.unity
     guid: 059d425667ecb614b8d1f3c14eb1a3d3
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene5_Hutan_Mistik.unity
+    path: Assets/Scenes/MainScene/Scene_5_Hutan_Mistik.unity
     guid: 86c8c7d864e9b9b41a933e3f359fa286
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene6_Pemakaman.unity
+    path: Assets/Scenes/MainScene/Scene_6_Pemakaman.unity
     guid: ac302908e3213074e98e1848b9cc2317
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene7_Jalur_Pendakian.unity
+    path: Assets/Scenes/MainScene/Scene_7_Jalur_Pendakian.unity
     guid: b2aab48ae74a1d34dad86e368bade7b3
   - enabled: 1
     path: Assets/Scenes/CutScene/Cutscene_Scene_2_3.unity
     guid: 30a126eb97ea5364a9472f148087b58c
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene4_Tenda1.unity
+    path: Assets/Scenes/MainScene/Scene_4_Tenda1.unity
     guid: 7a9de06134eeded44ac2a4d383dd1c84
   - enabled: 1
-    path: Assets/Scenes/MainScene/Scene4_Tenda2.unity
+    path: Assets/Scenes/MainScene/Scene_4_Tenda2.unity
     guid: d448cd3e61cfd4042ab3e2f224391a49
   - enabled: 1
     path: Assets/Scenes/CutScene/Opening.unity

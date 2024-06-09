@@ -54,6 +54,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment/1
+    uniqueID: 1597387423
+    locked: 0
+  - name: Environment/2
+    uniqueID: 3673328041
+    locked: 0
+  - name: Environment/3
+    uniqueID: 1417637139
+    locked: 0
+  - name: Environment/4
+    uniqueID: 2890586307
+    locked: 0
+  - name: Environment/5
+    uniqueID: 4210509973
+    locked: 0
+  - name: Environment/6
+    uniqueID: 727536845
+    locked: 0
+  - name: Player
+    uniqueID: 176885101
+    locked: 0
+  - name: Grass
+    uniqueID: 588423963
+    locked: 0
   - name: Scene1/Environment/TentBg
     uniqueID: 4060204767
     locked: 0
