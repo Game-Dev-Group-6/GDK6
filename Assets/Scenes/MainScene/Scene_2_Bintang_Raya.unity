@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026600003, y: -0.07669999, z: 0}
-    m_Extent: {x: 0.5744, y: 0.5011, z: 0}
+    m_Center: {x: 0.02884999, y: -0.081499994, z: 0}
+    m_Extent: {x: 0.56955004, y: 0.5018, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -47215,11 +47215,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 589506395239501242, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.482
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 589506395239501242, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 723989061457528828, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_Name
@@ -47227,7 +47227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 723989061457528828, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1552223128400147727, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: flashlightWhite
@@ -47239,27 +47239,27 @@ PrefabInstance:
       objectReference: {fileID: 890743821}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 95.29076
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 43.374004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 49.64538
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1759054072269443619, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.687002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2442545472833176460, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.y
@@ -47365,6 +47365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3603866008504843375, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: UIHealth
+      value: 
+      objectReference: {fileID: 1602682160}
     - target: {fileID: 8447915447721584376, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -47411,6 +47415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1602682160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3659513300644462538, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+  m_PrefabInstance: {fileID: 1571834160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687809461
 GameObject:
   m_ObjectHideFlags: 0
@@ -47444,7 +47453,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
+  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
   m_Intensity: 11
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

@@ -110,7 +110,7 @@ public class DialogueManagerV2 : MonoBehaviour
             UnHideUI();
             playerMovementScript.interactNPC = false;
             events = true;
-            
+
         }
 
 
@@ -283,6 +283,7 @@ public class DialogueManagerV2 : MonoBehaviour
         }
 
     }
+   
 
     void HideUI()
     {

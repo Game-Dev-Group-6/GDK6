@@ -10,7 +10,7 @@ public class treeCutMakeCameraShake : MonoBehaviour
     public void MakeShake()
     {
         cameraShake = FindAnyObjectByType<cameraShake>();
-        cameraShake.CameraShake();
+        cameraShake.CameraShake(1,1);
         Durability.GetComponent<treeDurability>().durabilityActive = true;
     }
 

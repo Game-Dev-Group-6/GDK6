@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class cameraShake : MonoBehaviour
 {
+
+
     [SerializeField] CinemachineVirtualCamera cam;
     CinemachineBasicMultiChannelPerlin channel;
     private float time;
-    [SerializeField] private float shakeIntensity;
-    [SerializeField] private float shakeTime;
+   /*  [SerializeField] private float shakeIntensity;
+    [SerializeField] private float shakeTime; */
 
 
     // Start is called before the first frame update
@@ -22,12 +24,12 @@ public class cameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /* if (Input.GetKeyDown(KeyCode.Space) && PlayerPrefs.HasKey("CameraShake"))
         {
             CameraShake();
 
-        }
-        else if (time > 0)
+        } */
+        if (time > 0)
         {
             time -= Time.deltaTime;
             if (time <= 0)
@@ -36,7 +38,7 @@ public class cameraShake : MonoBehaviour
             }
         }
     }
-    public void CameraShake()
+    public void CameraShake(float shakeTime,float shakeIntensity)
     {
         channel = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         channel.m_AmplitudeGain = shakeIntensity;

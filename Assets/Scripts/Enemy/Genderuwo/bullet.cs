@@ -113,7 +113,7 @@ public class bullet : MonoBehaviour
             particle = GameObject.Find("ParticleBullet").transform;
             particle.transform.position = point;
             particle.GetComponent<ParticleSystem>().Play();
-            cameraShake.CameraShake();
+            cameraShake.CameraShake(1, 1);
             /* particle.GetComponent<ParticleSystem>().Stop(); */
             Destroy(gameObject);
         }
@@ -143,7 +143,7 @@ public class bullet : MonoBehaviour
             {
                 hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.2f, 3), ForceMode2D.Impulse);
                 hitTo.GetComponent<playerHealthManager>().TakeDamage(1);
-                cameraShake.CameraShake();
+                cameraShake.CameraShake(1, 1);
                 Destroy(gameObject);
             }
         }

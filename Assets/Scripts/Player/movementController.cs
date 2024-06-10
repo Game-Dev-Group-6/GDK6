@@ -43,9 +43,10 @@ public class movementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!interactNPC)
+        if (!interactNPC && !PlayerPrefs.HasKey("CutScene"))
         {
             MoveHorizontal();
+            Jump();
         }
         else
         {
@@ -54,7 +55,7 @@ public class movementController : MonoBehaviour
         }
         PlayerStay();
         // MoveHorizontal();
-        Jump();
+
     }
 
     public void ToggleInteraction()
@@ -140,9 +141,9 @@ public class movementController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && ground == true)
         {
-            if (FindAnyObjectByType<cameraShake>() != null)
+            if (FindAnyObjectByType<cameraShake>() != null && PlayerPrefs.HasKey("CameraShake"))
             {
-                FindAnyObjectByType<cameraShake>().CameraShake();
+                FindAnyObjectByType<cameraShake>().CameraShake(1,1);
             }
 
             rb.velocity = new Vector2(0, 1) * powerJump;

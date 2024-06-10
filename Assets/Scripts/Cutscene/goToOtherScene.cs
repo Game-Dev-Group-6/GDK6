@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
+
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class sceneTransition : MonoBehaviour
@@ -16,7 +13,7 @@ public class sceneTransition : MonoBehaviour
         SCENE_6_AND_7
     }
     public SelectSceneTransition selectSceneTransition;
-    [SerializeField] bool goSceneTransition = false;
+    [SerializeField] bool goSceneTransition;
     public enum SelectScene
     {
         PREVIOUS_SCENE,

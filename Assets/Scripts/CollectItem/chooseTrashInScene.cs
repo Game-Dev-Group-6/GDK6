@@ -48,6 +48,10 @@ public class chooseTrashInScene : MonoBehaviour
                         }
                     }
                 }
+                else if (!PlayerPrefs.HasKey("ShowTrashInBintangRaya"))
+                {
+                    trash.SetActive(false);
+                }
                 break;
 
             case TrashIn.Hutan_Roh:
@@ -65,6 +69,10 @@ public class chooseTrashInScene : MonoBehaviour
                             Destroy(trash);
                         }
                     }
+                }
+                else if (!PlayerPrefs.HasKey("ShowTrashInHutanRoh"))
+                {
+                    trash.SetActive(false);
                 }
                 break;
 
@@ -84,6 +92,10 @@ public class chooseTrashInScene : MonoBehaviour
                         }
                     }
                 }
+                else if (!PlayerPrefs.HasKey("ShowTrashInJalurHutan"))
+                {
+                    trash.SetActive(false);
+                }
                 break;
 
             case TrashIn.Hutan_Mistik:
@@ -101,6 +113,10 @@ public class chooseTrashInScene : MonoBehaviour
                             Destroy(trash);
                         }
                     }
+                }
+                else if (!PlayerPrefs.HasKey("ShowTrashInHutanMistik"))
+                {
+                    trash.SetActive(false);
                 }
                 break;
 
@@ -120,6 +136,10 @@ public class chooseTrashInScene : MonoBehaviour
                         }
                     }
                 }
+                else if (!PlayerPrefs.HasKey("ShowTrashInPemakaman"))
+                {
+                    trash.SetActive(false);
+                }
                 break;
 
             case TrashIn.Jalur_Pendakian:
@@ -137,6 +157,10 @@ public class chooseTrashInScene : MonoBehaviour
                             Destroy(trash);
                         }
                     }
+                }
+                else if (!PlayerPrefs.HasKey("ShowTrashInJalurPendakian"))
+                {
+                    trash.SetActive(false);
                 }
                 break;
         }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class pocicaCombatManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] healthBar;
     public bool pocicaAttack;
     public int i = 0;
     public int j = 0;
@@ -31,6 +32,13 @@ public class pocicaCombatManager : MonoBehaviour
         }
         if (startCombat)
         {
+            if (begins)
+            {
+                foreach (GameObject Health in healthBar)
+                {
+                    Health.SetActive(true);
+                }
+            }
             begins = false;
             if (j < pocicaCombats.Length)
             {

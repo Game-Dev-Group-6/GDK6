@@ -190,6 +190,7 @@ public class pocicaCombat : MonoBehaviour
             HealthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             particle.Play();
+            FindAnyObjectByType<cameraShake>().CameraShake(1,1);
             animator.SetBool("Hit", false);
             blink = true;
             BlinKRandom();
