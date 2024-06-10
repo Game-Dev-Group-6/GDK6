@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class pocicaCombat : MonoBehaviour
 {
-
+    [SerializeField] GameObject HealthBar;
     public bool blink, IsAttack, firstBlink, secondBlink;
     [SerializeField] pocicaCombatManager pocicaCombatManager;
     public bool firstAttack, startCombat;
@@ -54,6 +54,7 @@ public class pocicaCombat : MonoBehaviour
             {
                 if (delayBlink.Delay(1))
                 {
+                    HealthBar.SetActive(true);
                     delayBlink.Timer = 0;
                     transform.localScale = firstSize;
                     secondBlink = false;
@@ -186,6 +187,7 @@ public class pocicaCombat : MonoBehaviour
         }
         if (transform.localScale.x >= 6)
         {
+            HealthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             particle.Play();
             animator.SetBool("Hit", false);

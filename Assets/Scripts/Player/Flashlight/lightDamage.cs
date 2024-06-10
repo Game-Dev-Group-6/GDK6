@@ -57,19 +57,27 @@ public class lightDamage : MonoBehaviour
         ray = Physics2D.RaycastAll(lightPos, raycastDir.normalized, raycastDistance, musuh);
         foreach (RaycastHit2D hit in ray)
         {
-            //waktu delay untuk menentukan waktu jeda ketika musuh terkena damage
-            if (delayTime.Delay(0.2f))
+            if (hit.collider.tag == "Enemy/Gendu")
             {
-                //memberikan damage kepada musuh
-                hit.collider.gameObject.GetComponent<enemyHealthBar>().TakeDamage();
+                //waktu delay untuk menentukan waktu jeda ketika musuh terkena damage
+                if (delayTime.Delay(0.2f))
+                {
+                    //memberikan damage kepada musuh
+                    hit.collider.gameObject.GetComponent<enemyHealthBar>().TakeDamage();
 
-                //menampilkan effek particle
+                    //menampilkan effek particle
+                    transform.GetChild(0).gameObject.transform.position = hit.point;
+                    transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                }
+            }
+            if (hit.collider.tag == "Enemy/Pocica")
+            {
+                hit.collider.GetComponent<healthManager>().TakeDamage(0.05f);
                 transform.GetChild(0).gameObject.transform.position = hit.point;
                 transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-
             }
-            //jika raycast tidak mendeteksi musuh, maka semua particle tidak akan dijalankan
-        }
+
+        } //jika raycast tidak mendeteksi musuh, maka semua particle tidak akan dijalankan
         if (ray.Length <= 0)
         {
             //mengambil semua komponen particle efek

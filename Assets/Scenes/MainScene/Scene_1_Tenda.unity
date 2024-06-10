@@ -296,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36458202}
   - component: {fileID: 36458201}
+  - component: {fileID: 36458203}
   m_Layer: 0
   m_Name: Timeline_2
   m_TagString: Untagged
@@ -349,6 +350,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1121206424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36458203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36458200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: bd52ff694fa2ff6478e392c766bd02da, type: 2}
+    - {fileID: 11400000, guid: e071016214fbe0341a8d6b79f996997d, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1758247820}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: NotHasKey
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1758247820}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: HasKey
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &68954267
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,8 +824,6 @@ PlayableDirector:
     value: {fileID: 321875510}
   - key: {fileID: 8558493433939366988, guid: 0f39e2286454eb2468ef4f281ef115ae, type: 2}
     value: {fileID: 68954268}
-  - key: {fileID: -8809124596693912166, guid: 0f39e2286454eb2468ef4f281ef115ae, type: 2}
-    value: {fileID: 1758247819}
   m_ExposedReferences:
     m_References:
     - 6358d2003c605f44886fe061ac0f8eee: {fileID: 0}
@@ -813,12 +857,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 5b2b3129d819d8d499cc17f36a014e29, type: 2}
+    - {fileID: 11400000, guid: e071016214fbe0341a8d6b79f996997d, type: 2}
+    - {fileID: 11400000, guid: bd52ff694fa2ff6478e392c766bd02da, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 551017806}
           m_TargetAssemblyTypeName: raycastMouse, Assembly-CSharp
           m_MethodName: ClickOpenTent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1758247820}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: HasKey
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1758247820}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: NotHasKey
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1403,6 +1477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfc899b5a03b3342a43966dedbd5870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasDiary: {fileID: 0}
+  canvasUIBar: {fileID: 0}
+  volume: {fileID: 0}
+  depthOfField: {fileID: 0}
   hover: 0
   speedChangeColor: 0.0198
 --- !u!61 &457136225
@@ -1891,6 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasGetFlashlight: {fileID: 773275220}
+  DiaryBook: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -1925,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4cfe2f1e743b34e99d1ca2d35acf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexScene: 2
+  indexScene: 3
   triggerEventExitTend: 0
 --- !u!114 &551017811
 MonoBehaviour:
@@ -4258,13 +4337,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 880788290081203974, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: valueBorderY
+      value: 0.38
+      objectReference: {fileID: 0}
     - target: {fileID: 2546465616904567747, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: m_Name
       value: BorderCutScene
       objectReference: {fileID: 0}
     - target: {fileID: 2546465616904567747, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5142762113662743259, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: m_Color.b
@@ -4358,6 +4441,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8174297750563437354, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4368,6 +4455,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2546465616904567747, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
   m_PrefabInstance: {fileID: 1758247818}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1758247820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 880788290081203974, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+  m_PrefabInstance: {fileID: 1758247818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758247819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8b926cb2d602744bf89bfd15f61905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1802905421
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PlayerPrefsSave : MonoBehaviour
     [SerializeField] string SAVESCENE_posX;
     public enum PlayerPrefsScene
     {
-        None, one_1, two_2, three_3, four_4, five_5, six_6, seven_7
+        None, one_1, two_2, three_3, four_4, five_5, six_6, seven_7, eight_8
     }
     public PlayerPrefsScene playerPrefsScene;
     GameObject player, virtualCamera;
@@ -98,11 +98,10 @@ public class PlayerPrefsSave : MonoBehaviour
                 Debug.Log("Save scene7");
                 SAVESCENE_posX = "Scene7PosX";
                 break;
+            case PlayerPrefsScene.eight_8:
+                Debug.Log("Save scene8");
+                SAVESCENE_posX = "Scene8PosX";
+                break;
         }
-    }
-
-    void ListPlayerPrefs()
-    {
-
     }
 }

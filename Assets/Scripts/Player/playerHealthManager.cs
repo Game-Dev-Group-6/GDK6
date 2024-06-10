@@ -39,7 +39,11 @@ public class playerHealthManager : MonoBehaviour
             slider.value = (float)currentHealt / 100;
             PlayerPrefs.SetFloat("CurrentHealth", currentHealt);
         }
-        text.text = (int)currentHealt + "/100";
+        if (text != null)
+        {
+            text.text = (int)currentHealt + "/100";
+        }
+
     }
 
     public void TakeDamage(float Damage)

@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 2875661981208353392}
   - component: {fileID: 1405772331001623119}
   - component: {fileID: 5501888854809962402}
+  - component: {fileID: 3603866008504843375}
   m_Layer: 5
   m_Name: ----- CanvasBar ------
   m_TagString: Untagged
@@ -141,6 +142,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3603866008504843375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723989061457528828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bb92ccdc0b89f49bc8acd73e3b2b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIFlashlight: {fileID: 7048331759177669851}
 --- !u!1 &1133127650431884000
 GameObject:
   m_ObjectHideFlags: 0

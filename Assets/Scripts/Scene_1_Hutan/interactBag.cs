@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class interactBag : MonoBehaviour
@@ -11,10 +12,8 @@ public class interactBag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (flashLightIcon != null)
-        {
-            flashLightIcon = transform.GetChild(0).gameObject.GetComponent<InteractFlashLight>();
-        }
+
+        flashLightIcon = transform.GetChild(0).gameObject.GetComponent<InteractFlashLight>();
         audioSource = GetComponent<AudioSource>();
     }
 

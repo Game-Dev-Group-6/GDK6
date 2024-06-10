@@ -869,6 +869,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfc899b5a03b3342a43966dedbd5870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasDiary: {fileID: 0}
+  canvasUIBar: {fileID: 0}
+  volume: {fileID: 0}
+  depthOfField: {fileID: 0}
   hover: 0
   speedChangeColor: 0.0198
 --- !u!61 &457136225
@@ -1600,6 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasGetFlashlight: {fileID: 0}
+  DiaryBook: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -1634,7 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4cfe2f1e743b34e99d1ca2d35acf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexScene: 4
+  indexScene: 7
   triggerEventExitTend: 0
 --- !u!114 &551017811
 MonoBehaviour:
@@ -3232,7 +3237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 127222286919468574, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 703055568702703125, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_Name

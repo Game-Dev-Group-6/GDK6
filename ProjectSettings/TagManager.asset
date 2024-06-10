@@ -17,6 +17,9 @@ TagManager:
   - Flashlight/White
   - Flashlight/Yellow
   - Flashlight/Battery
+  - Enemy/Gendu
+  - Enemy/Pocica
+  - Diary
   layers:
   - Default
   - TransparentFX

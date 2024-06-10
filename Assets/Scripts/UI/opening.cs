@@ -46,7 +46,7 @@ public class opening : MonoBehaviour
         {
             if (delayTime2.Delay(3))
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         }
     }

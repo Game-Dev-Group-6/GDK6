@@ -16583,7 +16583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: LoadScene
-      value: 7
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: playerPrefsSave
@@ -19597,7 +19597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2262317579735421085, guid: 907dbde1c2ded444eb294765e3a79b38, type: 3}
       propertyPath: playerPrefsScene
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8479002331768822178, guid: 907dbde1c2ded444eb294765e3a79b38, type: 3}
       propertyPath: m_Name
@@ -25582,7 +25582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547695995397760873, guid: 957c4327c37fd5841b7783a9890479e7, type: 3}
       propertyPath: LoadScene
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8547695995397760873, guid: 957c4327c37fd5841b7783a9890479e7, type: 3}
       propertyPath: playerPrefsSave
@@ -36910,8 +36910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 6.850969, y: -0.5997, z: 0}
-    m_Extent: {x: 15.092268, y: 0.6236, z: 0}
+    m_Center: {x: 6.8538, y: -0.59860003, z: 0}
+    m_Extent: {x: 15.0905, y: 0.6228, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -50393,6 +50393,10 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 1.91
       objectReference: {fileID: 0}
+    - target: {fileID: 5537919697848327703, guid: 28bfd96ce4c16aa438307dec9ba4e882, type: 3}
+      propertyPath: m_TagString
+      value: Enemy/Gendu
+      objectReference: {fileID: 0}
     - target: {fileID: 8506642407176229708, guid: 28bfd96ce4c16aa438307dec9ba4e882, type: 3}
       propertyPath: m_Name
       value: RangeTriggerGendoruwo
@@ -58704,6 +58708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ----- PLAYER -----
       objectReference: {fileID: 0}
+    - target: {fileID: 815831163499501489, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2314753411656214508, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -58823,6 +58831,10 @@ PrefabInstance:
     - target: {fileID: 7912172192880774854, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DialogueManagerV2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013707406859411220, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

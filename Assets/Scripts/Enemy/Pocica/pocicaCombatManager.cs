@@ -21,18 +21,6 @@ public class pocicaCombatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* foreach (pocicaCombat pocica in pocicaCombats)
-        {
-            if (pocica.IsFly && !startCombat)
-            {
-                countPocica++;
-            }
-        }
-        if (countPocica == pocicaCombats.Length)
-        {
-            startCombat = true;
-        } */
-
         if (Input.GetKeyDown(KeyCode.C))
         {
             begins = true;

@@ -11100,6 +11100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 1991713277037774749, guid: a7dad00b977211140b534605075b7ce7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3135995641100527621, guid: a7dad00b977211140b534605075b7ce7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.036106687
@@ -11146,7 +11150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5739731997758103930, guid: a7dad00b977211140b534605075b7ce7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -20,9 +20,11 @@ public class battery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //mekanik battery ada pada script controlInstensityLighterWeapon
+        if (slider != null)
+        {
+            slider.value = (float)currentBattery / maxBattery;
+        }
 
-        slider.value = (float)currentBattery / maxBattery;
     }
 }

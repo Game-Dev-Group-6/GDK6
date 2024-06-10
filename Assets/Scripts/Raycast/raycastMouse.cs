@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Rendering;
 
 public class raycastMouse : MonoBehaviour
 {
-    [SerializeField] GameObject CanvasGetFlashlight;
+    [SerializeField] GameObject CanvasGetFlashlight, DiaryBook;
     eventExitTend eventExitTend;
     [SerializeField] LayerMask layerMask;
     [SerializeField] Texture2D[] textures;
     public bool interactTendExit = false;
-    GameObject flashLight;
+    GameObject flashLight, diary;
 
     Ray ray;
 
@@ -24,7 +25,6 @@ public class raycastMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         RayCast();
         CursorChange();
     }
@@ -46,8 +46,6 @@ public class raycastMouse : MonoBehaviour
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
             }
-
-
         }
     }
     void RayCast()
@@ -84,7 +82,19 @@ public class raycastMouse : MonoBehaviour
                     CanvasGetFlashlight.GetComponent<getFlashLight>().canvasActive = true;
                 }
             }
-            else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit")
+            else if (hit2D.collider.tag == "Diary")
+            {
+                interactTendExit = false;
+                diary = hit2D.collider.gameObject;
+                diary.GetComponent<InteractFlashLight>().hover = true;
+                Cursor.SetCursor(textures[0], Vector2.zero, CursorMode.ForceSoftware);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    diary.GetComponent<InteractFlashLight>().InteractDiary();
+                }
+                Debug.Log("Ini diary");
+            }
+            else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit" || hit2D.collider.tag != "Diary")
             {
                 interactTendExit = false;
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
@@ -92,6 +102,11 @@ public class raycastMouse : MonoBehaviour
                 {
                     flashLight.GetComponent<InteractFlashLight>().NotHover();
                     flashLight = null;
+                }
+                if (diary != null)
+                {
+                    diary.GetComponent<InteractFlashLight>().hover = false;
+                    diary = null;
                 }
 
             }
@@ -105,6 +120,11 @@ public class raycastMouse : MonoBehaviour
             {
                 flashLight.GetComponent<InteractFlashLight>().NotHover();
                 flashLight = null;
+            }
+            if (diary != null)
+            {
+                diary.GetComponent<InteractFlashLight>().hover = false;
+                diary = null;
             }
 
         }

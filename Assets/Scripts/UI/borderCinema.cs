@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class borderCinema : MonoBehaviour
 {
-    bool unHide, hide;
     [SerializeField] Material material;
     [SerializeField] GameObject materia;
     [SerializeField] float valueBorderY, speedHide;
@@ -15,39 +14,22 @@ public class borderCinema : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hide = true;
+        ConditionBorderActive();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            hide = true;
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            unHide = true;
-        }
-        if (hide)
-        {
-            HideBorder();
-        }
-        if (unHide)
-        {
-            materia.SetActive(true);
-            UnHideBorder();
-        }
+        ConditionBorderActive();
         material.SetFloat("_Height", valueBorderY);
     }
     void HideBorder()
     {
-        if (valueBorderY <= 0.4)
+        if (valueBorderY <= 0.38)
         {
             valueBorderY += speedHide;
-            if (valueBorderY > 0.4)
+            if (valueBorderY > 0.38)
             {
-                hide = false;
                 materia.SetActive(false);
             }
         }
@@ -57,10 +39,30 @@ public class borderCinema : MonoBehaviour
         if (valueBorderY >= 0.3)
         {
             valueBorderY -= speedHide;
-            if (valueBorderY < 0.3)
+            /* if (valueBorderY < 0.3)
             {
-                unHide = false;
-            }
+
+            } */
         }
+    }
+    void ConditionBorderActive()
+    {
+        if (PlayerPrefs.HasKey("CutScene"))
+        {
+            UnHideBorder();
+            materia.SetActive(true);
+        }
+        if (!PlayerPrefs.HasKey("CutScene"))
+        {
+            HideBorder();
+        }
+    }
+    public void HasKey()
+    {
+        PlayerPrefs.SetString("CutScene", "");
+    }
+    public void NotHasKey()
+    {
+        PlayerPrefs.DeleteKey("CutScene");
     }
 }

@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 815831163499501489, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2314753411656214508, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -457,6 +461,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 45863120}
+    - target: {fileID: 9013707406859411220, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1298,7 +1306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547695995397760873, guid: 957c4327c37fd5841b7783a9890479e7, type: 3}
       propertyPath: LoadScene
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8547695995397760873, guid: 957c4327c37fd5841b7783a9890479e7, type: 3}
       propertyPath: playerPrefsSave
@@ -1465,7 +1473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2262317579735421085, guid: 907dbde1c2ded444eb294765e3a79b38, type: 3}
       propertyPath: playerPrefsScene
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8479002331768822178, guid: 907dbde1c2ded444eb294765e3a79b38, type: 3}
       propertyPath: m_Name
@@ -2044,7 +2052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: LoadScene
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: playerPrefsSave

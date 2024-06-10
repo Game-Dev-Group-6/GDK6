@@ -37,17 +37,14 @@ public class enemyHealthBar : MonoBehaviour
                 GetComponentInParent<SpriteRenderer>().enabled = false;
                 Debug.Log("mati");
                 particleDeath = transform.Find("DeathParticle").GetComponent<particleDeath>();
-                particleDeath.PartcilePlay();
+                if (particleDeath != null)
+                {
+                    particleDeath.PartcilePlay();
+                }
                 i++;
             }
             dead = true;
         }
-
-        if (dead == true)
-        {
-
-        }
-
     }
 
     public void TakeDamage()

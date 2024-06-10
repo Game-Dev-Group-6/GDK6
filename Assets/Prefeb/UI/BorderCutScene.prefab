@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: e44a8ec27488570438c75feb5228a27b, type: 2}
   materia: {fileID: 8174297750563437354}
-  valueBorderY: 0.3
+  valueBorderY: 0.38
   speedHide: 0.001
 --- !u!1 &8174297750563437354
 GameObject:

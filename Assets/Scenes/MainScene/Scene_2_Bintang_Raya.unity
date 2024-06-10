@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.030300021, y: -0.07525, z: 0}
-    m_Extent: {x: 0.5833, y: 0.50835, z: 0}
+    m_Center: {x: 0.026600003, y: -0.07669999, z: 0}
+    m_Extent: {x: 0.5744, y: 0.5011, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15400,8 +15400,6 @@ PlayableDirector:
     value: {fileID: 513910389}
   - key: {fileID: -6700473817673726010, guid: f7b0effe2c0a5cc42afdb968f1708bda, type: 2}
     value: {fileID: 513910389}
-  - key: {fileID: 4850202950755568109, guid: f7b0effe2c0a5cc42afdb968f1708bda, type: 2}
-    value: {fileID: 5239365449815741598}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &233104407
@@ -15434,12 +15432,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: a5194018ce20cdb40be28142848e8b2f, type: 2}
+    - {fileID: 11400000, guid: e071016214fbe0341a8d6b79f996997d, type: 2}
+    - {fileID: 11400000, guid: bd52ff694fa2ff6478e392c766bd02da, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 649232168}
           m_TargetAssemblyTypeName: raycastMouseScene2, Assembly-CSharp
           m_MethodName: GoInsideTent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5239365449815741598}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: HasKey
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5239365449815741598}
+          m_TargetAssemblyTypeName: borderCinema, Assembly-CSharp
+          m_MethodName: NotHasKey
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -25499,6 +25527,10 @@ PrefabInstance:
     - target: {fileID: 703055568702703125, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_Name
       value: ----- PLAYER -----
+      objectReference: {fileID: 0}
+    - target: {fileID: 815831163499501489, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2314753411656214508, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_IsActive
@@ -36767,7 +36799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: LoadScene
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3786113489133382754, guid: 2cfb41551684fd2499ccbb96c8a6b8a9, type: 3}
       propertyPath: transition
@@ -47095,7 +47127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c56140ffbb3b74c9ae587999570d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexScene: 1
+  indexScene: 2
   eventTrue: 0
 --- !u!114 &1501238113
 MonoBehaviour:
@@ -58245,11 +58277,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 880788290081203974, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: valueBorderY
-      value: 0.3
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148101887662897349, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 7.4878
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148101887662897349, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00079345703
       objectReference: {fileID: 0}
     - target: {fileID: 2546465616904567747, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: m_Name
       value: BorderCutScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142762113662743259, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142762113662743259, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142762113662743259, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5169470262300872070, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
       propertyPath: m_Pivot.x
@@ -58331,16 +58383,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8174297750563437354, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
---- !u!1 &5239365449815741598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2546465616904567747, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
+--- !u!114 &5239365449815741598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 880788290081203974, guid: 89b2d782dcb37a148b2cc99d0177756a, type: 3}
   m_PrefabInstance: {fileID: 5239365449815741597}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8b926cb2d602744bf89bfd15f61905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5689993552748317453
 PrefabInstance:
   m_ObjectHideFlags: 0
