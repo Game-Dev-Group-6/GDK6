@@ -17,6 +17,7 @@ public class CutsceneController : MonoBehaviour
 
     private CanvasGroup mainMenuCanvasGroup;
     private bool cutscenePlaying = true;
+    private MainMenu mainMenuScript;
 
     private void Start()
     {
@@ -58,6 +59,12 @@ public class CutsceneController : MonoBehaviour
 
         // Mulai coroutine untuk menampilkan tombol skip setelah delay
         StartCoroutine(ShowSkipButtonAfterDelay(skipButtonDelay));
+
+        // Ambil referensi ke script MainMenu
+        if (mainMenuUI != null)
+        {
+            mainMenuScript = mainMenuUI.GetComponent<MainMenu>();
+        }
     }
 
     private void OnCutsceneStopped(PlayableDirector director)
@@ -100,6 +107,12 @@ public class CutsceneController : MonoBehaviour
         if (parallaxScrolling != null)
         {
             parallaxScrolling.enabled = true;
+        }
+
+        // Mainkan backsound dari MainMenu
+        if (mainMenuScript != null)
+        {
+            mainMenuScript.PlayBackgroundMusic();
         }
     }
 

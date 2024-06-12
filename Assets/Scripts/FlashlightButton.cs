@@ -8,6 +8,7 @@ public class FlashlightButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     public GameObject arrowImage; // Referensi ke Image panah
     public AudioSource hoverAudioSource; // Referensi ke komponen AudioSource untuk hover sound
+    public AudioSource clickAudioSource; // Referensi ke komponen AudioSource untuk click sound
 
     void Start()
     {
@@ -40,6 +41,11 @@ public class FlashlightButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (clickAudioSource != null)
+        {
+            clickAudioSource.Play(); // Mainkan efek suara saat tombol diklik
+        }
+
         // Implementasikan logika untuk memulai permainan atau berpindah ke menu lain di sini
         Debug.Log("Button Terklik!"); // test button
     }

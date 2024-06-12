@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public float delay = 2f; // Waktu penundaan dalam detik
     public AudioSource clickAudioSource; // Referensi ke komponen AudioSource untuk click sound
+    public AudioSource backgroundMusic; // Referensi ke komponen AudioSource untuk background music
     public GameObject settingsPanel; // Panel untuk pengaturan
     public GameObject creditsPanel; // Panel untuk pengaturan
     public Slider volumeSlider; // Slider untuk volume
@@ -36,6 +37,12 @@ public class MainMenu : MonoBehaviour
         if (volumeSlider != null)
         {
             volumeSlider.onValueChanged.AddListener(SetVolume);
+        }
+
+        // Pastikan background music tidak dimainkan saat start
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Stop();
         }
     }
 
@@ -122,5 +129,13 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Play();
+        }
     }
 }
