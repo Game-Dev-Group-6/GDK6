@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public class timeline1 : MonoBehaviour
 {
-    
+
     [SerializeField] DialogueManagerV2 dialogueManagerV2;
     GameObject player;
     [SerializeField] Transform shotCameraInPlayer;
@@ -40,7 +40,8 @@ public class timeline1 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            timelineActive = true;
+                timelineActive = true;
+                PlayerPrefs.SetString("ShowTrashInHutanRoh", "");
         }
     }
     public void CameraBackToPlayer()

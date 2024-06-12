@@ -42,7 +42,7 @@ public class DialogueManagerV2 : MonoBehaviour
     [SerializeField] private AudioSource uIAudioSource;
 
 
-    [SerializeField] GameObject[] UIhide;
+    [SerializeField] GameObject UIhide;
 
     private movementController playerMovementScript;
 
@@ -110,7 +110,6 @@ public class DialogueManagerV2 : MonoBehaviour
             UnHideUI();
             playerMovementScript.interactNPC = false;
             events = true;
-
         }
 
 
@@ -283,16 +282,13 @@ public class DialogueManagerV2 : MonoBehaviour
         }
 
     }
-   
+
 
     void HideUI()
     {
         if (UIhide != null)
         {
-            foreach (GameObject UI in UIhide)
-            {
-                UI.SetActive(false);
-            }
+            UIhide.SetActive(false);
         }
 
     }
@@ -300,10 +296,9 @@ public class DialogueManagerV2 : MonoBehaviour
     {
         if (UIhide != null)
         {
-            foreach (GameObject UI in UIhide)
-            {
-                UI.SetActive(true);
-            }
+
+            UIhide.SetActive(true);
+
         }
 
     }

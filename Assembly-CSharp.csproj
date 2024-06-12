@@ -72,11 +72,13 @@
     <Compile Include="Assets\Scripts\Scene_1_Hutan\eventExitTend.cs" />
     <Compile Include="Assets\Packages\TP\Readme\Runtime\Settings\ReadmeSettings.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
+    <Compile Include="Assets\Scripts\SceneJalurHutan\eventKuntaActive.cs" />
     <Compile Include="Assets\Scripts\Cutscene\goToOtherScene.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\sceneScript3.cs" />
     <Compile Include="Assets\Packages\TP\Shared\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\controlIntensityLighterWeapon.cs" />
     <Compile Include="Assets\Scripts\Environment\treeManagerSort.cs" />
+    <Compile Include="Assets\Scripts\sortEnvironment.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\InteractFlashLight.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\particleEffect.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Assets\Scripts\Enemy\Pocica\healthManager.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene7.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda2\interactDiary.cs" />
+    <Compile Include="Assets\Scripts\SceneJalurHutan\kuntaAfterDialogue.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\hitAfterBlink.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\wallActive.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\combat.cs" />
@@ -171,6 +174,7 @@
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\bullet.cs" />
     <Compile Include="Assets\Scripts\Environment\parallax.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene2.cs" />
+    <Compile Include="Assets\Scripts\SceneJalurHutan\kuntaAfterPocica.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\switchCamera.cs" />
     <Compile Include="Assets\Scripts\Cutscene\cutScene_2_3.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\delayCamera.cs" />

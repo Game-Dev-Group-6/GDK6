@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class opening : MonoBehaviour
 {
+
     [SerializeField] GameObject[] imagesOpening;
     [SerializeField] transition transition;
     [SerializeField] bool typeFinish = false;
@@ -18,7 +19,7 @@ public class opening : MonoBehaviour
     [SerializeField] private GameObject narratorSkipButton;
 
     [Header("Click Next Audio")]
-    [SerializeField] private AudioSource uIAudioSource;
+    AudioSource uIAudioSource;
 
     [Header("Dialogue Sentences")]
     [TextArea]
@@ -32,6 +33,7 @@ public class opening : MonoBehaviour
     {
         PlayerPrefs.SetInt("Scene1_Timeline", 1);
         TriggerStartNarrator();
+        uIAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -96,6 +98,11 @@ public class opening : MonoBehaviour
         int lenghtChar = 1;
         foreach (char letter in narratorSentences[narratorIndex - 1].ToCharArray())
         {
+            if (uIAudioSource != null)
+            {
+                uIAudioSource.Play();
+            }
+
             narratorText.text += letter;
             lenghtChar++;
             yield return new WaitForSeconds(typingSpeed);

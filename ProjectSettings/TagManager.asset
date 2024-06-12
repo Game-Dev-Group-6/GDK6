@@ -57,189 +57,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Environment/1
-    uniqueID: 1597387423
+  - name: _Environment_NotGetLight
+    uniqueID: 3354086019
     locked: 0
-  - name: Environment/2
-    uniqueID: 3673328041
+  - name: _Environemnt_Light
+    uniqueID: 3842842177
     locked: 0
-  - name: Environment/3
-    uniqueID: 1417637139
+  - name: _Enemy
+    uniqueID: 2441737505
     locked: 0
-  - name: Environment/4
-    uniqueID: 2890586307
+  - name: _Player
+    uniqueID: 1621584125
     locked: 0
-  - name: Environment/5
-    uniqueID: 4210509973
+  - name: _NotGetLight
+    uniqueID: 2549148425
     locked: 0
-  - name: Environment/6
-    uniqueID: 727536845
+  - name: _GetLight
+    uniqueID: 819813461
     locked: 0
-  - name: Player
-    uniqueID: 176885101
+  - name: _Grass
+    uniqueID: 1206382235
     locked: 0
-  - name: Grass
-    uniqueID: 588423963
-    locked: 0
-  - name: Scene1/Environment/TentBg
-    uniqueID: 4060204767
-    locked: 0
-  - name: Scene1/Environment/Tent_Bg_Surround
-    uniqueID: 1352864865
-    locked: 0
-  - name: Scene1/Environment/TentExit
-    uniqueID: 746258991
-    locked: 0
-  - name: Scene1/Environment/Floor
-    uniqueID: 1480550621
-    locked: 0
-  - name: Scene1/Environment/Bag
-    uniqueID: 1614185083
-    locked: 0
-  - name: Scene1/Environment/Bed
-    uniqueID: 2802432901
-    locked: 0
-  - name: Scene1/Environment/Player
-    uniqueID: 2821453253
-    locked: 0
-  - name: Scene1/Environment/Pole
-    uniqueID: 1114536279
-    locked: 0
-  - name: Scene1/Environment/Lantern
-    uniqueID: 152517497
-    locked: 0
-  - name: Scene2/Mountain
-    uniqueID: 3466262719
-    locked: 0
-  - name: Scene2/Environemt/Trees_1
-    uniqueID: 2418469367
-    locked: 0
-  - name: Scene2/Environemt/Bushes_2
-    uniqueID: 719533321
-    locked: 0
-  - name: Scene2/Environemt/DokoTend_3
-    uniqueID: 3307708487
-    locked: 0
-  - name: Scene2/Environemt/Campfire
-    uniqueID: 3971500449
-    locked: 0
-  - name: Scene2/Environemt/Player
-    uniqueID: 1785967487
-    locked: 0
-  - name: Scene2/Environemt/Ground
-    uniqueID: 361929831
-    locked: 0
-  - name: Scene3/Environment/Tree
-    uniqueID: 451203469
-    locked: 0
-  - name: Scene3/Environment/TreeLight
-    uniqueID: 378148897
-    locked: 0
-  - name: Scene3/Environment/Ground
-    uniqueID: 3776060335
-    locked: 0
-  - name: Scene4/Environment/Mountain
-    uniqueID: 2874548171
-    locked: 0
-  - name: Scene4/Environment/Bushes
-    uniqueID: 2294306489
-    locked: 0
-  - name: Scene4/Environment/Foreground
-    uniqueID: 1226873029
-    locked: 0
-  - name: Scene4/Environment/TentBushes
-    uniqueID: 488519587
-    locked: 0
-  - name: Scene4/Environment/Trees
-    uniqueID: 971512879
-    locked: 0
-  - name: Scene4/Environment/BushFront
-    uniqueID: 1469897891
-    locked: 0
-  - name: Scene4/Environment/Tent
-    uniqueID: 2614907369
-    locked: 0
-  - name: Scene4/Player
-    uniqueID: 1769235735
-    locked: 0
-  - name: Scene4/Environment/Grass
-    uniqueID: 1741342461
-    locked: 0
-  - name: Scene5/Environment/Tree
-    uniqueID: 2270793939
-    locked: 0
-  - name: Scene5/Environment/TreeGetLight
-    uniqueID: 1977218105
-    locked: 0
-  - name: Scene5/Environment/3
-    uniqueID: 2418775623
-    locked: 0
-  - name: Scene5/Player
-    uniqueID: 3459712787
-    locked: 0
-  - name: Scene5/Environment/Grass
-    uniqueID: 1391203101
-    locked: 0
-  - name: Scene6/Environment/Mountain
-    uniqueID: 2996322467
-    locked: 0
-  - name: Scene6/Environment/1
-    uniqueID: 2363648723
-    locked: 0
-  - name: Scene6/Environment/2
-    uniqueID: 2237241881
-    locked: 0
-  - name: Scene6/Player
-    uniqueID: 2256206621
-    locked: 0
-  - name: Scene6/Environment/Grass
-    uniqueID: 192235129
-    locked: 0
-  - name: Scene7/Environment/1
-    uniqueID: 3113821915
-    locked: 0
-  - name: Scene7/Player
-    uniqueID: 604224187
-    locked: 0
-  - name: Scene7/Environment/Grass
-    uniqueID: 3698899753
-    locked: 0
-  - name: BackgroundBlack
-    uniqueID: 807792403
-    locked: 0
-  - name: Mountain
-    uniqueID: 2702695491
-    locked: 0
-  - name: GroundBehind
-    uniqueID: 2711249737
-    locked: 0
-  - name: Ground
-    uniqueID: 309655573
-    locked: 0
-  - name: Particle
-    uniqueID: 2815736719
-    locked: 0
-  - name: Trash
-    uniqueID: 2546822173
-    locked: 0
-  - name: Environment
-    uniqueID: 152145563
-    locked: 0
-  - name: Musuh
-    uniqueID: 1782924609
-    locked: 0
-  - name: Player
-    uniqueID: 2898447387
-    locked: 0
-  - name: Grass
-    uniqueID: 771550223
-    locked: 0
-  - name: Fog
-    uniqueID: 1334558501
-    locked: 0
-  - name: Interact
-    uniqueID: 839022261
-    locked: 0
-  - name: UI Button
-    uniqueID: 1509764743
+  - name: _UI
+    uniqueID: 721529939
     locked: 0

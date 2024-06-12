@@ -40,7 +40,7 @@ Material:
     - _Height: 0.38099998
     - _Witdh: 0.98
     m_Colors:
-    - _Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _size: {r: 0.43, g: 4.55, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5807057857337810834

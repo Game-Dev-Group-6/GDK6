@@ -1,16 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class trashManager : MonoBehaviour
 {
-    int startManyTrash;
+    int startManyTrash = 6;
     public int trashCollect = 0;
     [SerializeField] private GameObject[] trash;
     [SerializeField] public List<GameObject> allTrash;
-    [SerializeField] private Text trashCount;
+    [SerializeField] private TextMeshProUGUI trashCount;
     [SerializeField] private triggerCcollect triggerCcollect;
 
     void Awake()
@@ -20,7 +21,6 @@ public class trashManager : MonoBehaviour
     }
     void Start()
     {
-        startManyTrash = trash.Length;
         trash = null;
     }
 
@@ -34,7 +34,7 @@ public class trashManager : MonoBehaviour
     {
         if (trashCount != null)
         {
-            trashCount.text = "Trash : " + triggerCcollect.trashCollected + "/" + startManyTrash;
+            trashCount.text = triggerCcollect.trashCollected + "/" + startManyTrash;
         }
 
     }

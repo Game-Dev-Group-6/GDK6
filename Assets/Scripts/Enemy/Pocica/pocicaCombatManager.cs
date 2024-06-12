@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class pocicaCombatManager : MonoBehaviour
 {
+    [SerializeField] GameObject jumpScareTrigger; bool IsTriggerJumpScare;
+
     [SerializeField] GameObject[] healthBar;
     public bool pocicaAttack;
     public int i = 0;
@@ -51,6 +53,14 @@ public class pocicaCombatManager : MonoBehaviour
             if (j >= pocicaCombats.Length)
             {
                 j = 0;
+            }
+        }
+        if (PlayerPrefs.HasKey("TriggerJumpScare"))
+        {
+            if (!IsTriggerJumpScare)
+            {
+                jumpScareTrigger.SetActive(true);
+                IsTriggerJumpScare = true;
             }
         }
     }

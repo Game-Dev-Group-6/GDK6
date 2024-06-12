@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000009f32365fa989f2da136d7f54c3d84aac9548f7facd545d2b6d0d8b0a1ba31223dfce01f26114a3502f027b2cdd683f587b82366085bb09a7c5f52ba857796e42793b1709bff89acef7e926900935e32a47a027c5a149b8ec7fb3736a679c92158dd1e41a21188a16af1b12e1cb1f56abb956c088c5982049a3371e1d2f1ce839a3dc9c57e951dc9b17657469fdc6ca67d390598739f4d97547962b90130737ce1d13ec52a34098b2d36ae28c199a59851dfb7a867946750bdb2699b9bbba032429bb78dc13ef253043dc17a149639aa115f874128fbbd4a71d6ccd979b8e11094145456a1bccc2ac0fecfc2d25bf8b4fb5760232872efd59
+  m_ApplyToSortingLayers: 00000000834aebc7411e0de521f58991fd68a76009ebf097555cdd30
   m_LightCookieSprite: {fileID: 21300000, guid: 27974cdcaf8cecb4cb29b9c01e1b5320, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000009f32365fa989f2da136d7f54c3d84aac9548f7facd545d2b6d0d8b0a1ba31223dfce01f26114a3502f027b2cdd683f587b82366085bb09a7c5f52ba857796e42793b1709bff89acef7e926900935e32a47a027c5a149b8ec7fb3736a679c92158dd1e41a21188a16af1b12e1cb1f56abb956c088c5982049a3371e1d2f1ce839a3dc9c57e951dc9b17657469fdc6ca67d390598739f4d97547962b90130737ce1d13ec52a34098b2d36ae28c199a59851dfb7a867946750bdb2699b9bbba032429bb78dc13ef253043dc17a149639aa115f874128fbbd4a71d6ccd979b8e11094145456a1bccc2ac0fecfc2d25bf8b4fb5760232872efd59
+  m_ApplyToSortingLayers: 00000000411e0de5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000009f32365fa989f2da136d7f54c3d84aac9548f7facd545d2b6d0d8b0a1ba31223dfce01f26114a3502f027b2cdd683f587b82366085bb09a7c5f52ba857796e42793b1709bff89acef7e926900935e32a47a027c5a149b8ec7fb3736a679c92158dd1e41a21188a16af1b12e1cb1f56abb956c088c5982049a3371e1d2f1ce839a3dc9c57e951dc9b17657469fdc6ca67d390598739f4d97547962b90130737ce1d13ec52a34098b2d36ae28c199a59851dfb7a867946750bdb2699b9bbba032429bb78dc13ef253043dc17a149639aa115f874128fbbd4a71d6ccd979b8e11094145456a1bccc2ac0fecfc2d25bf8b4fb5760232872efd59
+  m_ApplyToSortingLayers: 00000000834aebc7411e0de521f58991fd68a76009ebf097555cdd30
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -585,8 +585,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1334558501
-  m_SortingLayer: 60
+  m_SortingLayerID: -1853229791
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4ec0f31c5a0a08846a2981c2d413fbe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000009f32365fa989f2da136d7f54c3d84aac9548f7facd545d2b6d0d8b0a1ba31223dfce01f26114a3502f027b2cdd683f587b82366085bb09a7c5f52ba857796e42793b1709bff89acef7e926900935e32a47a027c5a149b8ec7fb3736a679c92158dd1e41a21188a16af1b12e1cb1f56abb956c088c5982049a3371e1d2f1ce839a3dc9c57e951dc9b17657469fdc6ca67d390598739f4d97547962b90130737ce1d13ec52a34098b2d36ae28c199a59851dfb7a867946750bdb2699b9bbba032429bb78dc13ef253043dc17a149639aa115f874128fbbd4a71d6ccd979b8e11094145456a1bccc2ac0fecfc2d25bf8b4fb5760232872efd59
+  m_ApplyToSortingLayers: 00000000834aebc7411e0de521f58991fd68a76009ebf097555cdd30
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -906,7 +906,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -924,8 +924,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1334558501
-  m_SortingLayer: 60
+  m_SortingLayerID: -452125119
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.31
   m_PreviewTimeScale: 1
@@ -1051,7 +1051,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1069,8 +1069,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1334558501
-  m_SortingLayer: 60
+  m_SortingLayerID: -452125119
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.4
   m_PreviewTimeScale: 1
@@ -1196,7 +1196,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1214,8 +1214,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1334558501
-  m_SortingLayer: 60
+  m_SortingLayerID: -452125119
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.31
   m_PreviewTimeScale: 1

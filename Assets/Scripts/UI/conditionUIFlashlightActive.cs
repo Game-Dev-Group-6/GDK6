@@ -28,11 +28,13 @@ public class conditionUIFlashlightActive : MonoBehaviour
                 UIFlashlight.SetActive(false);
             }
             UIHealth.SetActive(true);
+            UITrash.SetActive(true);
         }
         if (PlayerPrefs.HasKey("CutScene"))
         {
             UIFlashlight.SetActive(false);
             UIHealth.SetActive(false);
+            UITrash.SetActive(false);
         }
 
 

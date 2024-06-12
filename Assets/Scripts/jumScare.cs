@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class jumScare : MonoBehaviour
 {
+    [SerializeField] kuntaAfterPocica kuntaAfterPocica;
+    [SerializeField] bool afterJumpNotScarePlayTimeline;
     movementController movementController;
     bool firstTrigger;
     [SerializeField] PlayableDirector playableDirector;
@@ -68,14 +70,20 @@ public class jumScare : MonoBehaviour
         {
             if (delayTime2.Delay(1.3f))
             {
-                CutScene = true;
+                if (!afterJumpNotScarePlayTimeline)
+                {
+                    CutScene = true;
+                }
+                if (afterJumpNotScarePlayTimeline)
+                {
+                    kuntaAfterPocica.makeVisible = true;
+                }
                 isJumpScare = false;
                 scaleSprite = 0;
                 virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
                 background.SetActive(false);
                 UIHide.SetActive(true);
                 FindAnyObjectByType<movementController>().interactNPC = false;
-
             }
         }
         sprite.transform.localScale = new Vector2(scaleSprite, scaleSprite);

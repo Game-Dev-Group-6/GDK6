@@ -58,6 +58,7 @@ public class chooseTrashInScene : MonoBehaviour
                 if (DestroyTrash)
                 {
                     PlayerPrefs.SetString("DestroyTrashInHutanRoh", "");
+                    PlayerPrefs.SetString("TriggerJumpScare", "");
                 }
                 if (PlayerPrefs.HasKey("ShowTrashInHutanRoh"))
                 {
@@ -66,6 +67,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInHutanRoh"))
                         {
+
                             Destroy(trash);
                         }
                     }
@@ -88,6 +90,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInJalurHutan"))
                         {
+
                             Destroy(trash);
                         }
                     }
