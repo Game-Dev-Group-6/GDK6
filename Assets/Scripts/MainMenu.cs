@@ -56,8 +56,9 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Pindah ke scene yang dituju
+        PlayerPrefs.DeleteAll();
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Opening");
     }
 
     private IEnumerator DelayedQuitGame()

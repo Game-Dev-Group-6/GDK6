@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027449995, y: -0.07845001, z: 0}
-    m_Extent: {x: 0.57285, y: 0.50965, z: 0}
+    m_Center: {x: 0.032849997, y: -0.076900005, z: 0}
+    m_Extent: {x: 0.58105004, y: 0.5033, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -25683,6 +25683,26 @@ PrefabInstance:
     - target: {fileID: 4774899455082524307, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_text
       value: dadadadawdawdawdawda
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263166793022940251, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5.7962
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263166793022940251, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.2057
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263166793022940251, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1239
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263166793022940251, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975195225597890530, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7485777603059533663, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: slider

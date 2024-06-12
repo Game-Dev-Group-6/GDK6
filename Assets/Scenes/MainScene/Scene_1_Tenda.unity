@@ -1164,19 +1164,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2757657062818433114, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2757657062818433114, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: -234762529
+      value: -940881277
       objectReference: {fileID: 0}
     - target: {fileID: 2757657062818433114, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
-      value: 1352864865
+      value: -452125119
       objectReference: {fileID: 0}
     - target: {fileID: 2757657062818433114, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[2]
-      value: 746258991
+      value: 1621584125
       objectReference: {fileID: 0}
     - target: {fileID: 2757657062818433114, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[3]
@@ -1260,19 +1260,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3711939092303931936, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3711939092303931936, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: -234762529
+      value: -940881277
       objectReference: {fileID: 0}
     - target: {fileID: 3711939092303931936, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
-      value: 1352864865
+      value: -452125119
       objectReference: {fileID: 0}
     - target: {fileID: 3711939092303931936, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[2]
-      value: 746258991
+      value: 1621584125
       objectReference: {fileID: 0}
     - target: {fileID: 3711939092303931936, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[3]
@@ -1547,8 +1547,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 746258991
-  m_SortingLayer: 0
+  m_SortingLayerID: -452125119
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5dd95880dc9313a41beff75e6132c726, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4513,8 +4513,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 746258991
-  m_SortingLayer: 0
+  m_SortingLayerID: -452125119
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: -1964652264, guid: 066872ae94e433b45a318f8d4ff4be98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5108,7 +5108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2045127046
 Transform:
   m_ObjectHideFlags: 0

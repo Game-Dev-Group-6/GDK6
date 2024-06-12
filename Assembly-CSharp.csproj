@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Scene_1_Hutan\interactExit.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\interactBag.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\eventExitTend.cs" />
+    <Compile Include="Assets\Scripts\CutsceneController.cs" />
     <Compile Include="Assets\Packages\TP\Readme\Runtime\Settings\ReadmeSettings.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\SceneJalurHutan\eventKuntaActive.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\Cutscene\Scene1.cs" />
     <Compile Include="Assets\Scripts\lanternCreak.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\particleDeath.cs" />
+    <Compile Include="Assets\Scripts\ParallaxScrolling.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\sceneScript2.cs" />
     <Compile Include="Assets\Scripts\Player\soundSfxManager.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda1\playerPrefsTenda1.cs" />
@@ -160,6 +162,7 @@
     <Compile Include="Assets\Packages\TP\Readme\Runtime\Readme.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene4.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\playerPrefs2.cs" />
+    <Compile Include="Assets\Scripts\FlashlightButton.cs" />
     <Compile Include="Assets\Packages\TP\Shared\TP\Util\EditorWidowOrInspector.cs" />
     <Compile Include="Assets\Scripts\UI\uiFlashlight.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\triggerParallaxOff.cs" />
