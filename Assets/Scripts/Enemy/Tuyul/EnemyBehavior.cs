@@ -12,11 +12,13 @@ public class NewBehaviourScript : MonoBehaviour
     private bool hasStumbled = false;
     private bool isFacingRight = true;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -74,12 +76,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         hasStumbled = true;
         rb.velocity = Vector2.zero;
-        Invoke("ResetStumble", 2f);
-    }
-
-    void ResetStumble()
-    {
-        hasStumbled = false;
+        animator.SetTrigger("Fall"); // Set trigger for fall animation
     }
 
     void Flip()
