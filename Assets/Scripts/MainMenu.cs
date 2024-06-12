@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public float delay = 2f; // Waktu penundaan dalam detik
     public AudioSource clickAudioSource; // Referensi ke komponen AudioSource untuk click sound
     public GameObject settingsPanel; // Panel untuk pengaturan
+    public GameObject creditsPanel; // Panel untuk pengaturan
     public Slider volumeSlider; // Slider untuk volume
 
     private void Start()
@@ -17,6 +18,12 @@ public class MainMenu : MonoBehaviour
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(false);
+        }
+
+        // Pastikan panel settings tidak terlihat saat memulai
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false);
         }
 
         // Mengatur nilai awal slider
@@ -87,6 +94,20 @@ public class MainMenu : MonoBehaviour
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(true);
+        }
+    }
+
+    public void CreditsSettings()
+    {
+        // Mainkan efek suara klik
+        if (clickAudioSource != null)
+        {
+            clickAudioSource.Play();
+        }
+
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(true);
         }
     }
 

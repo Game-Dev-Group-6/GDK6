@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\CutsceneController.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\FlashlightButton.cs" />
+    <Compile Include="Assets\Scripts\SoundStep.cs" />
+    <Compile Include="Assets\Scripts\soundSfxManager.cs" />
     <Compile Include="Assets\Scripts\ParallaxScrolling.cs" />
   </ItemGroup>
   <ItemGroup>
