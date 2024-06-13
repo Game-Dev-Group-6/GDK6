@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     private bool isFacingRight = true;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private bool stumbledAfterRock = false;  // Variable to check if enemy has stumbled after rock
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class NewBehaviourScript : MonoBehaviour
             else
             {
                 movement = Vector2.zero;  // Berhenti jika pemain di luar jangkauan
+                animator.SetBool("Yutul_Lari",false);
             }
         }
     }
@@ -53,6 +55,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (!hasStumbled)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            animator.SetBool("Yutul_Lari",true);
         }
     }
 
@@ -68,7 +71,16 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rock"))
         {
+            stumbledAfterRock = true;  // Set variable to true when touching the rock
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rock") && stumbledAfterRock)
+        {
             Stumble();
+            stumbledAfterRock = false;  // Reset variable
         }
     }
 
