@@ -6,9 +6,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public string nameScene;
     public float delay = 2f; // Waktu penundaan dalam detik
     public AudioSource clickAudioSource; // Referensi ke komponen AudioSource untuk click sound
+    public AudioSource backgroundMusic; // Referensi ke komponen AudioSource untuk background music
     public GameObject settingsPanel; // Panel untuk pengaturan
+    public GameObject creditsPanel; // Panel untuk pengaturan
     public Slider volumeSlider; // Slider untuk volume
 
     private void Start()
@@ -17,6 +20,12 @@ public class MainMenu : MonoBehaviour
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(false);
+        }
+
+        // Pastikan panel settings tidak terlihat saat memulai
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(false);
         }
 
         // Mengatur nilai awal slider
@@ -29,6 +38,12 @@ public class MainMenu : MonoBehaviour
         if (volumeSlider != null)
         {
             volumeSlider.onValueChanged.AddListener(SetVolume);
+        }
+
+        // Pastikan background music tidak dimainkan saat start
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Stop();
         }
     }
 
@@ -56,9 +71,9 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Pindah ke scene yang dituju
-        PlayerPrefs.DeleteAll();
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene(nameScene);
+        PlayerPrefs.DeleteAll();
     }
 
     private IEnumerator DelayedQuitGame()
@@ -91,6 +106,20 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void CreditsSettings()
+    {
+        // Mainkan efek suara klik
+        if (clickAudioSource != null)
+        {
+            clickAudioSource.Play();
+        }
+
+        if (creditsPanel != null)
+        {
+            creditsPanel.SetActive(true);
+        }
+    }
+
     public void CloseSettings()
     {
         if (settingsPanel != null)
@@ -102,5 +131,13 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Play();
+        }
     }
 }

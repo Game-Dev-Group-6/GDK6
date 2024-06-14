@@ -190,7 +190,7 @@ public class pocicaCombat : MonoBehaviour
             HealthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             particle.Play();
-            FindAnyObjectByType<cameraShake>().CameraShake(1,1);
+            FindAnyObjectByType<cameraShake>().CameraShake(1, 1);
             animator.SetBool("Hit", false);
             blink = true;
             BlinKRandom();
@@ -296,7 +296,7 @@ public class pocicaCombat : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            player.GetComponent<playerHealthManager>().TakeDamage(0.2f);
+            player.GetComponent<playerHealthManager>().TakeDamage(0.01f);
         }
     }
 }

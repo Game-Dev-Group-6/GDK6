@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class conditionUIFlashlightActive : MonoBehaviour
 {
-    [SerializeField] GameObject UIFlashlight, UIHealth, UITrash;
+    [SerializeField] GameObject UIFlashlight, UIHealth, UITrash, UIClue;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -29,12 +29,14 @@ public class conditionUIFlashlightActive : MonoBehaviour
             }
             UIHealth.SetActive(true);
             UITrash.SetActive(true);
+            UIClue.SetActive(true);
         }
         if (PlayerPrefs.HasKey("CutScene"))
         {
             UIFlashlight.SetActive(false);
             UIHealth.SetActive(false);
             UITrash.SetActive(false);
+            UIClue.SetActive(false);
         }
 
 

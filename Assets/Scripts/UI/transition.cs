@@ -6,7 +6,7 @@ public class transition : MonoBehaviour
     [SerializeField] bool forOpening;
     Color newColor;
     [Range(0f, 0.5f)][SerializeField] float speedTransition;
-    bool reverse = false;
+    public bool reverse = false;
     public bool triggerTransition = false;
 
 

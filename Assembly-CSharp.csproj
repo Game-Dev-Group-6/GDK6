@@ -69,9 +69,9 @@
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\graveYard.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\interactExit.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\interactBag.cs" />
+    <Compile Include="Assets\Scripts\UI\clueButton.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\eventExitTend.cs" />
     <Compile Include="Assets\Scripts\CutsceneController.cs" />
-    <Compile Include="Assets\Packages\TP\Readme\Runtime\Settings\ReadmeSettings.cs" />
     <Compile Include="Assets\Scripts\fogParallax.cs" />
     <Compile Include="Assets\Scripts\SceneJalurHutan\eventKuntaActive.cs" />
     <Compile Include="Assets\Scripts\Cutscene\goToOtherScene.cs" />
@@ -113,7 +113,8 @@
     <Compile Include="Assets\Scripts\Player\Flashlight\switchWeapon.cs" />
     <Compile Include="Assets\Scripts\Player\movementController.cs" />
     <Compile Include="Assets\Scripts\DialogueManagerV2.cs" />
-    <Compile Include="Assets\Packages\TP\Readme\Runtime\TextAreaObject.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Tuyul\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scripts\UI\cluePaper.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\destroyBulletWhenEnemyBlink.cs" />
     <Compile Include="Assets\Scripts\Cutscene\Scene1.cs" />
     <Compile Include="Assets\Scripts\lanternCreak.cs" />
@@ -141,8 +142,8 @@
     <Compile Include="Assets\Scripts\Scene_1_Hutan\getFlashLight.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene3.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\giveWarning.cs" />
-    <Compile Include="Assets\Packages\TP\Readme\Runtime\ReadmeManager.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\goToScene2.cs" />
+    <Compile Include="Assets\Scripts\SoundInsert.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\interactCampfire.cs" />
     <Compile Include="Assets\Scripts\Scene_7_Jalur_Pendakian\playerPrefs7.cs" />
     <Compile Include="Assets\Scripts\cameraShake.cs" />
@@ -158,16 +159,14 @@
     <Compile Include="Assets\Scripts\EventScene\eventScene1.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\conditionComeToScene3.cs" />
-    <Compile Include="Assets\Packages\TP\Shared\TP\Util\HideFlagsUtility.cs" />
-    <Compile Include="Assets\Packages\TP\Readme\Runtime\Readme.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene4.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\playerPrefs2.cs" />
     <Compile Include="Assets\Scripts\FlashlightButton.cs" />
-    <Compile Include="Assets\Packages\TP\Shared\TP\Util\EditorWidowOrInspector.cs" />
     <Compile Include="Assets\Scripts\UI\uiFlashlight.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\triggerParallaxOff.cs" />
     <Compile Include="Assets\Scripts\Scene_5_Hutan_Mistik\playerPrefs5.cs" />
     <Compile Include="Assets\Scripts\UI\transition.cs" />
+    <Compile Include="Assets\Scripts\SoundStep.cs" />
     <Compile Include="Assets\Scripts\CollectItem\chooseTrashInScene.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\battery.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\enemyCombat.cs" />
@@ -186,6 +185,7 @@
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\delayTime2.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda1\timelineTenda1.cs" />
     <Compile Include="Assets\Scripts\Player\playerHealthManager.cs" />
+    <Compile Include="Assets\LISTBUG.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\changeSpriteFlashlight.cs" />
     <Compile Include="Assets\Scripts\Environment\treeCutMakeCameraShake.cs" />
     <Compile Include="Assets\Scripts\CollectItem\trashEffect.cs" />
@@ -199,7 +199,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Packages\TP\Readme\Samples\Scene Sample\Text File Dummy.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -216,7 +215,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Packages\TP\Readme\Plugins\HtmlAgilityPack.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -562,10 +560,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="HtmlAgilityPack">
-      <HintPath>Assets\Packages\TP\Readme\Plugins\HtmlAgilityPack.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">

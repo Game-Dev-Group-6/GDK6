@@ -86,8 +86,16 @@ public class raycastMouseScene2 : MonoBehaviour
                 interactOpenTent interactOpenTent = hit2D.transform.GetComponent<interactOpenTent>();
                 if (interactOpenTent.firstInteract)
                 {
-                    Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0) && !DialogueManager.isInteract)
+                    if (!transition.triggerTransition)
+                    {
+                        Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
+                    }
+                    else if (transition.triggerTransition)
+                    {
+                        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                    }
+
+                    if (Input.GetMouseButtonDown(0) && !DialogueManagerV2.isInteract)
                     {
 
                         if (!PlayerPrefs.HasKey("CanEnter"))
@@ -107,6 +115,8 @@ public class raycastMouseScene2 : MonoBehaviour
                             }
                             playerPrefsSave.SetPosPlayer(0);
                             hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
+                            FindAnyObjectByType<movementController>().interactNPC = true;
+
                         }
                     }
                 }
@@ -121,10 +131,10 @@ public class raycastMouseScene2 : MonoBehaviour
                 if (hit2D.collider.GetComponent<interactCampfire>().mouseCanInteract)
                 {
                     Cursor.SetCursor(cursorImage[1], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0) && !DialogueManager.isInteract)
+                    if (Input.GetMouseButtonDown(0) /* && !DialogueManager.isInteract */)
                     {
 
-                        hit2D.collider.GetComponent<monologTrigger>().MonologTrigger();
+                        hit2D.collider.GetComponent<DialogueManagerV2>().TriggerStartDialogue();
                         Debug.Log("ini campfire2");
                     }
                 }
@@ -150,8 +160,17 @@ public class raycastMouseScene2 : MonoBehaviour
                 interactOpenTent interactOpenTent = hit2D.transform.GetComponent<interactOpenTent>();
                 if (interactOpenTent.firstInteract)
                 {
-                    Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0))
+
+                    if (!transition.triggerTransition)
+                    {
+                        Cursor.SetCursor(cursorImage[0], Vector2.zero, CursorMode.ForceSoftware);
+                    }
+                    else if (transition.triggerTransition)
+                    {
+                        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+                    }
+
+                    if (Input.GetMouseButtonDown(0) && !DialogueManagerV2.isInteract)
                     {
                         if (transition != null)
                         {

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
 
+
 [Serializable]
 public class Array2d
 {
@@ -19,7 +20,7 @@ public class DialogueManagerV2 : MonoBehaviour
     {
         Monolog, Dialogue
     }
-    bool dialog;
+    [SerializeField] bool Monolog;
     public TypeInteract selectTypeInteract;
 
     [SerializeField] private float typingSpeed = 0.05f;
@@ -55,6 +56,8 @@ public class DialogueManagerV2 : MonoBehaviour
     public static bool isInteract = false;
     [SerializeField] public int countSentences;
     private float speechBubbleAnimationDelay = 0.6f;
+    [SerializeField] bool nextDialogue;
+    [SerializeField] bool klueActive;
 
     private void Start()
     {
@@ -72,6 +75,7 @@ public class DialogueManagerV2 : MonoBehaviour
 
     public void TriggerStartDialogue()
     {
+        isInteract = true;
         StartCoroutine(StartDialogue());
         HideUI();
     }
@@ -82,8 +86,9 @@ public class DialogueManagerV2 : MonoBehaviour
         {
             if (playerContinueButton.activeSelf)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.anyKeyDown && nextDialogue)
                 {
+                    Debug.Log("keyretur");
                     TriggerContinueNPCDialogue();
                 }
 
@@ -96,7 +101,7 @@ public class DialogueManagerV2 : MonoBehaviour
         {
             if (nPCContinueButton.activeSelf)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.anyKeyDown && nextDialogue)
                 {
                     TriggerContinuePlayerDialogue();
                 }
@@ -107,9 +112,24 @@ public class DialogueManagerV2 : MonoBehaviour
 
         if (countClickButton == countSentences)
         {
+
+            if (Monolog)
+            {
+                countClickButton = 0;
+                playerIndexI = 0;
+                playerIndexJ = 0;
+                nPCIndexI = -1;
+            }
             UnHideUI();
             playerMovementScript.interactNPC = false;
+            isInteract = false;
             events = true;
+            if (klueActive)
+            {
+                FindAnyObjectByType<clueButton>().klueBaru = true;
+                FindAnyObjectByType<clueButton>().ShowKlue();
+                klueActive = false;
+            }
         }
 
 
@@ -165,6 +185,7 @@ public class DialogueManagerV2 : MonoBehaviour
             nPCIndexJ = 0;
         }
         playerContinueButton.SetActive(true);
+        nextDialogue = true;
     }
 
     private IEnumerator TypeNPCDialogue()
@@ -182,6 +203,7 @@ public class DialogueManagerV2 : MonoBehaviour
             playerIndexJ = 0;
         }
         nPCContinueButton.SetActive(true);
+        nextDialogue = true;
     }
 
     private IEnumerator ContinuePlayerDialogue()
@@ -212,6 +234,7 @@ public class DialogueManagerV2 : MonoBehaviour
 
     public void TriggerContinuePlayerDialogue()
     {
+        nextDialogue = false;
         countClickButton++;
         Debug.Log("TriggerContinuePlayerDialog");
 
@@ -248,6 +271,7 @@ public class DialogueManagerV2 : MonoBehaviour
 
     public void TriggerContinueNPCDialogue()
     {
+        nextDialogue = false;
         countClickButton++;
         Debug.Log("TriggerContinueNPCDialogu");
 

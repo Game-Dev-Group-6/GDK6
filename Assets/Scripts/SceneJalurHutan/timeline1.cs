@@ -40,8 +40,8 @@ public class timeline1 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-                timelineActive = true;
-                PlayerPrefs.SetString("ShowTrashInHutanRoh", "");
+            timelineActive = true;
+            PlayerPrefs.SetString("ShowTrashInHutanRoh", "");
         }
     }
     public void CameraBackToPlayer()

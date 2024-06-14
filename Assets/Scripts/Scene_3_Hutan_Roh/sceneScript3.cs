@@ -7,7 +7,7 @@ public class sceneScript3 : MonoBehaviour
 {
     GameObject player;
     delayTime2 delayTime2;
-    [SerializeField] monologTrigger[] monologTriggers;
+    [SerializeField] DialogueManagerV2[] monologTriggers;
     void Awake()
     {
         delayTime2 = GetComponent<delayTime2>();
@@ -30,7 +30,7 @@ public class sceneScript3 : MonoBehaviour
         {
             if (delayTime2.Delay(0.5f))
             {
-                monologTriggers[0].MonologTrigger();
+                monologTriggers[0].TriggerStartDialogue();
                 PlayerPrefs.SetInt("SceneScript3", 0);
                 PlayerPrefs.SetInt("CanEnter", 0);
                 PlayerPrefs.SetInt("CanGetFlashlightInTent", 0);
@@ -45,7 +45,7 @@ public class sceneScript3 : MonoBehaviour
             {
                 if (delayTime2.Delay(0.5f))
                 {
-                    monologTriggers[1].MonologTrigger();
+                    monologTriggers[1].TriggerStartDialogue();
                     PlayerPrefs.SetInt("SceneScript3", 1);
                 }
             }

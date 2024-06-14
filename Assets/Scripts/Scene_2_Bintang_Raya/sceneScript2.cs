@@ -6,7 +6,7 @@ public class sceneScript2 : MonoBehaviour
 {
     GameObject player;
     delayTime2 delayTime2;
-    [SerializeField] monologTrigger[] monologTriggers;
+    [SerializeField] DialogueManagerV2[] monologTriggers;
     void Awake()
     {
         delayTime2 = GetComponent<delayTime2>();
@@ -32,7 +32,7 @@ public class sceneScript2 : MonoBehaviour
 
                 if (delayTime2.Delay(0.5f))
                 {
-                    monologTriggers[0].MonologTrigger();
+                    monologTriggers[0].TriggerStartDialogue();
                     PlayerPrefs.SetInt("SceneScript", 1);
                 }
 
@@ -50,7 +50,7 @@ public class sceneScript2 : MonoBehaviour
                 Debug.Log("Aktif Script2");
                 if (delayTime2.Delay(0.5f))
                 {
-                    monologTriggers[1].MonologTrigger();
+                    monologTriggers[1].TriggerStartDialogue();
                     PlayerPrefs.SetInt("SceneScript", 1);
                 }
             }

@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     public static bool isInteract = false;
 
     private float speechBubbleAnimationDelay = 0.6f;
+    bool nextDialogue;
 
     private void Start()
     {
@@ -81,7 +82,8 @@ public class DialogueManager : MonoBehaviour
         {
             if (playerContinueButton.activeSelf)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                Debug.Log("Free");
+                if (Input.anyKeyDown)
                 {
                     countClickButton++;
                     TriggerContinueNPCDialogue();
@@ -93,9 +95,9 @@ public class DialogueManager : MonoBehaviour
 
         if (nPCContinueButton != null)
         {
-            if (nPCContinueButton.activeSelf)
+            if (nPCContinueButton.activeSelf && nextDialogue)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.anyKeyDown)
                 {
                     countClickButton++;
                     TriggerContinuePlayerDialogue();
@@ -104,6 +106,17 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
+        if (playerContinueButtonMonolog != null)
+        {
+            if (playerContinueButtonMonolog.activeSelf)
+            {
+                if (Input.anyKeyDown)
+                {
+                    TriggerContinuePlayerMonolog();
+                }
+
+            }
+        }
 
         if (countClickButton == playerDialogueSentences.Length + nPCDialogueSentences.Length)
         {
@@ -259,6 +272,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void TriggerContinuePlayerMonolog()
     {
+        nextDialogue = false;
         Debug.Log("TriggerContinuePlayerMonolog");
         playerContinueButtonMonolog.SetActive(false);
         uIAudioSource.Play();
@@ -299,6 +313,7 @@ public class DialogueManager : MonoBehaviour
         if (lenghtChar >= playerDialogueSentences[showSentences[playerIndexMonolog]].ToCharArray().Length)
         {
             playerContinueButtonMonolog.SetActive(true);
+            nextDialogue = true;
         }
 
     }

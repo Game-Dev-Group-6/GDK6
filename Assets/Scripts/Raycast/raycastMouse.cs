@@ -7,13 +7,15 @@ using UnityEngine.Rendering;
 
 public class raycastMouse : MonoBehaviour
 {
+    [SerializeField] transition Transition;
     [SerializeField] GameObject CanvasGetFlashlight, DiaryBook;
     eventExitTend eventExitTend;
     [SerializeField] LayerMask layerMask;
     [SerializeField] Texture2D[] textures;
     public bool interactTendExit = false;
     GameObject flashLight, diary;
-
+    [SerializeField] GameObject getCanvasFlashlightYellow;
+    [SerializeField] bool flashLightYellow;
     Ray ray;
 
     // Start is called before the first frame update
@@ -27,6 +29,17 @@ public class raycastMouse : MonoBehaviour
     {
         RayCast();
         CursorChange();
+        if (getCanvasFlashlightYellow != null)
+        {
+            if (getCanvasFlashlightYellow.activeSelf)
+            {
+                flashLightYellow = true;
+            }
+            else if (!getCanvasFlashlightYellow.activeSelf)
+            {
+                flashLightYellow = false;
+            }
+        }
     }
 
     void CursorChange()
@@ -35,6 +48,10 @@ public class raycastMouse : MonoBehaviour
         if (FindAnyObjectByType<interactExit>().getInteractMouse && interactTendExit && !eventExitTend.triggerEventExitTend)
         {
             Cursor.SetCursor(textures[1], Vector2.zero, CursorMode.ForceSoftware);
+        }
+        if (eventExitTend.triggerEventExitTend)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
         }
         else if (!FindAnyObjectByType<interactExit>().getInteractMouse)
         {
@@ -55,7 +72,7 @@ public class raycastMouse : MonoBehaviour
         foreach (RaycastHit2D hit2D in hit)
         {
             Debug.Log(hit2D.collider.name);
-            if (hit2D.collider.tag == "Environment/TendExit")
+            if (hit2D.collider.tag == "Environment/TendExit" && !GetComponent<eventExitTend>().triggerEventExitTend && !flashLightYellow)
             {
                 interactTendExit = true;
                 if (hit2D.collider.GetComponent<interactExit>().getInteractMouse)
@@ -65,6 +82,8 @@ public class raycastMouse : MonoBehaviour
                         gamelan.GamelanStop();
                         hit2D.collider.GetComponent<interactExit>().TentExitSFX();
                         GetComponent<eventExitTend>().triggerEventExitTend = true;
+                        Transition.gameObject.SetActive(true);
+                        Transition.triggerTransition = true;
                     }
                 }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class opening : MonoBehaviour
 {
@@ -27,7 +28,9 @@ public class opening : MonoBehaviour
     private float delayAfterStart = 0.6f;
     int indexImage = 0;
     bool startInGame;
+    int i = 0;
     [SerializeField] delayTime2 delayTime2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,18 +42,27 @@ public class opening : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && typeFinish)
+        if (Input.GetMouseButtonDown(0) && typeFinish && i == 0)
         {
+            i++;
             TriggerNarrator();
         }
-        ImageManager();
-        if (startInGame)
+        if (Input.GetMouseButtonDown(0) && typeFinish && transition.reverse)
         {
-            if (delayTime2.Delay(3))
-            {
-                SceneManager.LoadScene(2);
-            }
+            TriggerNarrator();
+            transition.triggerTransition = false;
         }
+        ImageManager();
+        if (typeFinish)
+            if (startInGame)
+            {
+                transition.triggerTransition = false;
+                if (delayTime2.Delay(3))
+                {
+                    Debug.Log("LoadScene");
+                    SceneManager.LoadScene(2);
+                }
+            }
     }
     private void TriggerStartNarrator()
     {
@@ -70,7 +82,7 @@ public class opening : MonoBehaviour
         if (narratorIndex >= 2 && narratorIndex < 6)
         {
             StartCoroutine(ContinueNarrator());
-            transition.triggerTransition = false;
+
             narratorIndex++;
             indexImage++;
         }
@@ -79,7 +91,7 @@ public class opening : MonoBehaviour
             transition.triggerTransition = false;
             narratorText.text = "";
             startInGame = true;
-            Debug.Log("LoadScene");
+            typeFinish = true;
         }
         else
         {
@@ -111,21 +123,23 @@ public class opening : MonoBehaviour
         {
             narratorSkipButton.SetActive(true);
             typeFinish = true;
-        }
 
+        }
     }
 
     void ImageManager()
     {
         if (narratorIndex >= 2 && narratorIndex <= 6 && typeFinish)
         {
-            if (imagesOpening != null)
+            if (typeFinish)
             {
-                imagesOpening[indexImage].SetActive(true);
-                transition.triggerTransition = true;
+                if (imagesOpening != null)
+                {
+                    imagesOpening[indexImage].SetActive(true);
+                    transition.triggerTransition = true;
+                }
             }
         }
-
     }
 
 
