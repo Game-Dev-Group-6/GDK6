@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public float delay = 2f; // Waktu penundaan dalam detik
-    public AudioSource clickAudioSource; // Referensi ke komponen AudioSource untuk click sound
-    public AudioSource backgroundMusic; // Referensi ke komponen AudioSource untuk background music
     public GameObject settingsPanel; // Panel untuk pengaturan
     public GameObject creditsPanel; // Panel untuk pengaturan
-    public Slider volumeSlider; // Slider untuk volume
+    public Slider volumeMusicSlider; // Slider untuk volume musik
+    public Slider volumeSfxSlider; // Slider untuk volume SFX
 
     private void Start()
     {
@@ -21,28 +20,34 @@ public class MainMenu : MonoBehaviour
             settingsPanel.SetActive(false);
         }
 
-        // Pastikan panel settings tidak terlihat saat memulai
+        // Pastikan panel credits tidak terlihat saat memulai
         if (creditsPanel != null)
         {
             creditsPanel.SetActive(false);
         }
 
-        // Mengatur nilai awal slider
-        if (volumeSlider != null)
+        // Mengatur nilai awal slider volume musik
+        if (volumeMusicSlider != null)
         {
-            volumeSlider.value = AudioListener.volume;
+            volumeMusicSlider.value = AudioManager.Instance.GetMusicVolume();
         }
 
-        // Tambahkan listener untuk slider
-        if (volumeSlider != null)
+        // Tambahkan listener untuk slider volume musik
+        if (volumeMusicSlider != null)
         {
-            volumeSlider.onValueChanged.AddListener(SetVolume);
+            volumeMusicSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
         }
 
-        // Pastikan background music tidak dimainkan saat start
-        if (backgroundMusic != null)
+        // Mengatur nilai awal slider volume SFX
+        if (volumeSfxSlider != null)
         {
-            backgroundMusic.Stop();
+            volumeSfxSlider.value = AudioManager.Instance.GetSfxVolume();
+        }
+
+        // Tambahkan listener untuk slider volume SFX
+        if (volumeSfxSlider != null)
+        {
+            volumeSfxSlider.onValueChanged.AddListener(AudioManager.Instance.SetSfxVolume);
         }
     }
 
@@ -61,10 +66,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator DelayedStartGame()
     {
         // Mainkan efek suara klik
-        if (clickAudioSource != null)
-        {
-            clickAudioSource.Play();
-        }
+        AudioManager.Instance.PlaySfx(0);
 
         // Tunggu selama 'delay' detik
         yield return new WaitForSeconds(delay);
@@ -77,10 +79,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator DelayedQuitGame()
     {
         // Mainkan efek suara klik
-        if (clickAudioSource != null)
-        {
-            clickAudioSource.Play();
-        }
+        AudioManager.Instance.PlaySfx(0);
 
         // Tunggu selama 'delay' detik
         yield return new WaitForSeconds(delay);
@@ -93,10 +92,7 @@ public class MainMenu : MonoBehaviour
     public void OpenSettings()
     {
         // Mainkan efek suara klik
-        if (clickAudioSource != null)
-        {
-            clickAudioSource.Play();
-        }
+        AudioManager.Instance.PlaySfx(0);
 
         if (settingsPanel != null)
         {
@@ -107,10 +103,7 @@ public class MainMenu : MonoBehaviour
     public void CreditsSettings()
     {
         // Mainkan efek suara klik
-        if (clickAudioSource != null)
-        {
-            clickAudioSource.Play();
-        }
+        AudioManager.Instance.PlaySfx(0);
 
         if (creditsPanel != null)
         {
@@ -126,16 +119,8 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = volume;
-    }
-
     public void PlayBackgroundMusic()
     {
-        if (backgroundMusic != null)
-        {
-            backgroundMusic.Play();
-        }
+        AudioManager.Instance.PlayMusic(0);
     }
 }
