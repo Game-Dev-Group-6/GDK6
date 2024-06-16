@@ -502,10 +502,11 @@ Transform:
   m_GameObject: {fileID: 104344890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06, y: -4.48, z: 0}
+  m_LocalPosition: {x: 6, y: -4.48, z: 0}
   m_LocalScale: {x: 2.426, y: 2.426, z: 2.426}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 326499416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &104344896
@@ -670,6 +671,109 @@ Transform:
   - {fileID: 1890821201}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &326499414
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 104344895}
+    m_Modifications:
+    - target: {fileID: 1173817069767290443, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867340471626168854, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_Name
+      value: NPCSpeechBubbleContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283616255284344802, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1319511055}
+    - target: {fileID: 6283616255284344802, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TriggerContinuePlayerDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283616255284344802, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManagerV2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+--- !u!95 &326499415 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4919835149249265221, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+  m_PrefabInstance: {fileID: 326499414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &326499416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+  m_PrefabInstance: {fileID: 326499414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &326499417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6796987527940262608, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+  m_PrefabInstance: {fileID: 326499414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &326499418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4747195573539783024, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+  m_PrefabInstance: {fileID: 326499414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &380478563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -806,6 +910,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 45863121}
+    - target: {fileID: 5975195225597890530, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7485777603059533663, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: slider
       value: 
@@ -817,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 7912172192880774854, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 241863261}
+      objectReference: {fileID: 1319511055}
     - target: {fileID: 7912172192880774854, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TriggerContinueNPCDialogue
@@ -2228,6 +2336,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1054061507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.023482613
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329296706889782388, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_Name
+      value: TriggerDialogueNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339026978437668015, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: dialogueManagerV2
+      value: 
+      objectReference: {fileID: 1319511055}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
 --- !u!4 &1061915837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3667298250028432843, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
@@ -2587,6 +2756,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1319511054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319511056}
+  - component: {fileID: 1319511055}
+  m_Layer: 0
+  m_Name: Dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1319511055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319511054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c0c9fbc4fc44c4882a9c6b1f79507f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSentences: []
+  npcSentences:
+  - sentences:
+    - Kamu pasti orang yang sering dibicarakan oleh para penjaga gunung ini dan orang-
+      orang sekitar
+    - Dan pasti kamu lagi mencari dan mengumpulkan sampah, kan?
+    - Dan pasti kamu lagi mencari dan mengumpulkan sampah, kan?
+    - Kamu bisa dapat sampah ini jika kamu bisa menangkapku
+  showSentences: 
+  selectTypeInteract: 0
+  typingSpeed: 0.05
+  PlayerSpeakingFirst: 0
+  playerDialogueText: {fileID: 380478568}
+  nPCDialogueText: {fileID: 326499418}
+  playerContinueButton: {fileID: 380478567}
+  nPCContinueButton: {fileID: 326499417}
+  playerContinueButtonMonolog: {fileID: 0}
+  playerSpeechBubbleAnimator: {fileID: 380478566}
+  nPCSpeechBubbleAnimator: {fileID: 326499415}
+  uIAudioSource: {fileID: 0}
+  UIhide: {fileID: 0}
+  events: 0
+  setEventFalse: 0
+  countClickButton: 0
+  playerIndexI: 0
+  playerIndexJ: 0
+  nPCIndexI: 0
+  nPCIndexJ: 0
+  countSentences: 0
+--- !u!4 &1319511056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319511054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5489113, y: -1.9509586, z: 0.023482613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1344328356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3583,3 +3825,5 @@ SceneRoots:
   - {fileID: 771971221}
   - {fileID: 104344895}
   - {fileID: 1929999119}
+  - {fileID: 1319511056}
+  - {fileID: 1054061507}
