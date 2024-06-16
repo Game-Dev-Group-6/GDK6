@@ -2346,11 +2346,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.92
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.84
+      value: -2.79
       objectReference: {fileID: 0}
     - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2791,7 +2791,6 @@ MonoBehaviour:
     - Kamu pasti orang yang sering dibicarakan oleh para penjaga gunung ini dan orang-
       orang sekitar
     - Dan pasti kamu lagi mencari dan mengumpulkan sampah, kan?
-    - Dan pasti kamu lagi mencari dan mengumpulkan sampah, kan?
     - Kamu bisa dapat sampah ini jika kamu bisa menangkapku
   showSentences: 
   selectTypeInteract: 0
@@ -2829,6 +2828,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1335204840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.023482613
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412211913467846046, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329296706889782388, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: m_Name
+      value: TriggerDialogueNPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339026978437668015, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
+      propertyPath: dialogueManagerV2
+      value: 
+      objectReference: {fileID: 2058630333}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aec0eff969a2d244e8d2fb3869c10ffe, type: 3}
 --- !u!1001 &1344328356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3716,8 +3776,80 @@ Transform:
   m_GameObject: {fileID: 1929999116}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.77, y: -5.58, z: 0}
+  m_LocalPosition: {x: 20.53, y: -5.58, z: 0}
   m_LocalScale: {x: 0.38177964, y: 0.38177964, z: 0.38177964}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2058630332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2058630334}
+  - component: {fileID: 2058630333}
+  m_Layer: 0
+  m_Name: Dialog (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2058630333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058630332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c0c9fbc4fc44c4882a9c6b1f79507f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSentences:
+  - sentences:
+    - Yeay
+  npcSentences:
+  - sentences:
+    - Selamat
+    - Ini sampah yang kamu dapatkan
+  showSentences: 
+  selectTypeInteract: 0
+  typingSpeed: 0.05
+  PlayerSpeakingFirst: 0
+  playerDialogueText: {fileID: 380478568}
+  nPCDialogueText: {fileID: 326499418}
+  playerContinueButton: {fileID: 380478567}
+  nPCContinueButton: {fileID: 326499417}
+  playerContinueButtonMonolog: {fileID: 0}
+  playerSpeechBubbleAnimator: {fileID: 380478566}
+  nPCSpeechBubbleAnimator: {fileID: 326499415}
+  uIAudioSource: {fileID: 0}
+  UIhide: {fileID: 0}
+  events: 0
+  setEventFalse: 0
+  countClickButton: 0
+  playerIndexI: 0
+  playerIndexJ: 0
+  nPCIndexI: 0
+  nPCIndexJ: 0
+  countSentences: 0
+--- !u!4 &2058630334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058630332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5489113, y: -1.9509586, z: 0.023482613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3826,4 +3958,6 @@ SceneRoots:
   - {fileID: 104344895}
   - {fileID: 1929999119}
   - {fileID: 1319511056}
+  - {fileID: 2058630334}
   - {fileID: 1054061507}
+  - {fileID: 1335204840}
