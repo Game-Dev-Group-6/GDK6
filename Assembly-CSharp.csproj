@@ -167,6 +167,7 @@
     <Compile Include="Assets\Scripts\EventScene\eventScene1.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\conditionComeToScene3.cs" />
+    <Compile Include="Assets\Diky\AudioManagerTutorial.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene4.cs" />
     <Compile Include="Assets\Diky\Insect Sound.cs" />
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\playerPrefs2.cs" />

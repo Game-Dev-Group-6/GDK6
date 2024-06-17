@@ -9,8 +9,6 @@ public class MainMenu : MonoBehaviour
     public float delay = 2f; // Waktu penundaan dalam detik
     public GameObject settingsPanel; // Panel untuk pengaturan
     public GameObject creditsPanel; // Panel untuk pengaturan
-    public Slider volumeMusicSlider; // Slider untuk volume musik
-    public Slider volumeSfxSlider; // Slider untuk volume SFX
 
     private void Start()
     {
@@ -24,30 +22,6 @@ public class MainMenu : MonoBehaviour
         if (creditsPanel != null)
         {
             creditsPanel.SetActive(false);
-        }
-
-        // Mengatur nilai awal slider volume musik
-        if (volumeMusicSlider != null)
-        {
-            volumeMusicSlider.value = AudioManager.Instance.GetMusicVolume();
-        }
-
-        // Tambahkan listener untuk slider volume musik
-        if (volumeMusicSlider != null)
-        {
-            volumeMusicSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
-        }
-
-        // Mengatur nilai awal slider volume SFX
-        if (volumeSfxSlider != null)
-        {
-            volumeSfxSlider.value = AudioManager.Instance.GetSfxVolume();
-        }
-
-        // Tambahkan listener untuk slider volume SFX
-        if (volumeSfxSlider != null)
-        {
-            volumeSfxSlider.onValueChanged.AddListener(AudioManager.Instance.SetSfxVolume);
         }
     }
 
@@ -97,25 +71,6 @@ public class MainMenu : MonoBehaviour
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(true);
-        }
-    }
-
-    public void CreditsSettings()
-    {
-        // Mainkan efek suara klik
-        AudioManager.Instance.PlaySfx(0);
-
-        if (creditsPanel != null)
-        {
-            creditsPanel.SetActive(true);
-        }
-    }
-
-    public void CloseSettings()
-    {
-        if (settingsPanel != null)
-        {
-            settingsPanel.SetActive(false);
         }
     }
 
