@@ -34,13 +34,11 @@ public class conditionHaveFlashlight : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("HaveFlashlightWhite"))
         {
-            Debug.Log("whITE");
             flashlight.SetActive(false);
 
         }
         if (PlayerPrefs.HasKey("HaveFlashlightWhite"))
         {
-            Debug.Log("whITE");
             flashlight.SetActive(true);
             if (PlayerPrefs.HasKey("HaveFlashlightYellow"))
             {

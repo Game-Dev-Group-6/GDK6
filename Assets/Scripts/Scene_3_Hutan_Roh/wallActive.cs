@@ -12,7 +12,7 @@ public class wallActive : MonoBehaviour
     CinemachineVirtualCamera cinemachineVirtualCamera;
     [SerializeField] GameObject wallKanan, wallKiri, batasKanan, batasKiri;
     delayTime2 delayTime2;
-    [SerializeField] bool IsActive;
+    [SerializeField] public static bool IsActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +67,7 @@ public class wallActive : MonoBehaviour
                 }
             }
         }
+
     }
 
     void CameraShake()
@@ -104,8 +105,13 @@ public class wallActive : MonoBehaviour
             if (cinemachineVirtualCamera.m_Lens.OrthographicSize > 10)
             {
                 dialogueManagerV2_1.countSentences = 0;
-                FindAnyObjectByType<movementController>().interactNPC = false;
             }
         }
+    }
+
+    public void wallNonActive()
+    {
+        wallKanan.SetActive(false);
+        wallKiri.SetActive(false);
     }
 }

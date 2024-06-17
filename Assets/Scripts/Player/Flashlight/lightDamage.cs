@@ -30,7 +30,7 @@ public class lightDamage : MonoBehaviour
         Raycast();
     }
 
-    private void OnDrawGizmos()
+    /* private void OnDrawGizmos()
     {
         flipXLighter = FindAnyObjectByType<flipXLighter>();
         Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -42,7 +42,7 @@ public class lightDamage : MonoBehaviour
         {
             Gizmos.DrawLine(lightPos, hit.point);
         }
-    }
+    } */
     void Raycast()
     {
         light2D = GetComponent<Light2D>();
@@ -70,9 +70,12 @@ public class lightDamage : MonoBehaviour
             }
             if (hit.collider.tag == "Enemy/Pocica")
             {
-                hit.collider.GetComponent<healthManager>().TakeDamage(0.05f);
-                transform.GetChild(0).gameObject.transform.position = hit.point;
-                transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                if (FindAnyObjectByType<pocicaCombatManager>().startCombat)
+                {
+                    hit.collider.GetComponent<healthManager>().TakeDamage(20f);
+                    transform.GetChild(0).gameObject.transform.position = hit.point;
+                    transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                }
             }
 
         } //jika raycast tidak mendeteksi musuh, maka semua particle tidak akan dijalankan

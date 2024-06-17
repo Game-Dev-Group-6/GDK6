@@ -38,6 +38,9 @@ public class combat : MonoBehaviour
     delayCamera delayCamera;
     public bool delayForCamera = false;
     switchCamera switchCamera;
+    [SerializeField] ParticleSystem particleGroundAfterBlink;
+    bool onePlayParticleGround;
+    public bool enemyCanHit;
     // Start is called before the first frame update
 
 
@@ -70,6 +73,8 @@ public class combat : MonoBehaviour
             HealthManager();
             if (blink)
             {
+                enemyCanHit = false;
+                onePlayParticleGround = false;
                 warningAttack.SetActive(true);
                 enemyHit = false;
                 Blink();
@@ -97,6 +102,16 @@ public class combat : MonoBehaviour
             if (delayMove)
             {
                 GetComponent<hitAfterBlink>().makeAreaHit();
+                if (onGround)
+                {
+                    //ParticleGround
+                    if (!onePlayParticleGround)
+                    {
+                        particleGroundAfterBlink.Play();
+                        onePlayParticleGround = true;
+                    }
+
+                }
             }
         }
 
@@ -140,6 +155,7 @@ public class combat : MonoBehaviour
                 makeDistanceRight = false;
                 enemyHit = true;
                 move = false;
+                enemyCanHit = true;
             }
         }
         if (makeDistanceLeft)
@@ -157,6 +173,7 @@ public class combat : MonoBehaviour
                 makeDistanceLeft = false;
                 enemyHit = true;
                 move = false;
+                enemyCanHit = true;
             }
         }
     }

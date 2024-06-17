@@ -9,6 +9,7 @@ public class kuntaAfterPocica : MonoBehaviour
     Color newColor;
     [SerializeField] public bool makeVisible;
     bool reverse, triggerDialogue, makeInvisible, firstDialogue;
+    [SerializeField] bool forKunta3InJalurHutan;
     void Awake()
     {
         newColor = GetComponent<SpriteRenderer>().color;
@@ -20,6 +21,19 @@ public class kuntaAfterPocica : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!forKunta3InJalurHutan)
+        {
+            if (PlayerPrefs.HasKey("Kunta2"))
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+
+            if (!PlayerPrefs.HasKey("Kunta2"))
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
+
         StartDialogue();
         MakeInvisible();
         MakeVisible();
@@ -73,10 +87,7 @@ public class kuntaAfterPocica : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (!PlayerPrefs.HasKey("Kunta2"))
-            {
-                makeVisible = true;
-            }
+            makeVisible = true;
         }
     }
 }

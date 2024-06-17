@@ -13,12 +13,14 @@ public class pocicaCombatManager : MonoBehaviour
     public int j = 0;
     public bool startCombat, begins;
     public GameObject batasKanan, batasKiri;
-    [SerializeField] pocicaCombat[] pocicaCombats;
+    [SerializeField] public List<pocicaCombat> pocicaCombatss = new List<pocicaCombat>();
     [SerializeField] int countPocica;
+    delayTime2 delayTime2;
+    [SerializeField] GameObject UITrash, UIClue;
     // Start is called before the first frame update
     void Start()
     {
-
+        delayTime2 = GetComponent<delayTime2>();
     }
 
     // Update is called once per frame
@@ -31,9 +33,11 @@ public class pocicaCombatManager : MonoBehaviour
         if (begins)
         {
             Urutan();
+            conditionUIFlashlightActive.IsCombat = true;
         }
         if (startCombat)
         {
+            FindAnyObjectByType<movementController>().interactNPC = false;
             if (begins)
             {
                 foreach (GameObject Health in healthBar)
@@ -42,15 +46,15 @@ public class pocicaCombatManager : MonoBehaviour
                 }
             }
             begins = false;
-            if (j < pocicaCombats.Length)
+            if (j < pocicaCombatss.Count)
             {
                 if (!pocicaAttack)
                 {
-                    pocicaCombats[j].IsAttack = true;
+                    pocicaCombatss[j].IsAttack = true;
                     pocicaAttack = true;
                 }
             }
-            if (j >= pocicaCombats.Length)
+            if (j >= pocicaCombatss.Count)
             {
                 j = 0;
             }
@@ -61,23 +65,53 @@ public class pocicaCombatManager : MonoBehaviour
             {
                 jumpScareTrigger.SetActive(true);
                 IsTriggerJumpScare = true;
+                PlayerPrefs.DeleteKey("TriggerJumpScare");
             }
         }
+        ConditionPocicaLose();
     }
-
     void Urutan()
     {
-        if (i < pocicaCombats.Length)
+        if (i < pocicaCombatss.Count)
         {
-            pocicaCombats[i].blink = true;
-            if (pocicaCombats[i].startCombat)
+            pocicaCombatss[i].blink = true;
+            if (pocicaCombatss[i].startCombat)
             {
                 i++;
             }
         }
-        if (i >= pocicaCombats.Length)
+        if (i >= pocicaCombatss.Count)
         {
             startCombat = true;
+        }
+    }
+    [SerializeField] GameObject Image_Transition_Canvas;
+    public bool eventCameraShake, oneShake;
+    void ConditionPocicaLose()
+    {
+        if (pocicaCombatss.Count == 0 && !eventCameraShake)
+        {
+            PlayerPrefs.SetString("Kunta3", "");
+            Image_Transition_Canvas.SetActive(true);
+            if (conditionUIFlashlightActive.IsCombat)
+            {
+                FindAnyObjectByType<movementController>().interactNPC = true;
+                conditionUIFlashlightActive.IsCombat = false;
+            }
+
+
+
+        }
+        if (eventCameraShake)
+        {
+            if (!oneShake)
+            {
+
+                FindAnyObjectByType<wallActive>().wallNonActive();
+                FindAnyObjectByType<cameraShake>().CameraShake(3, 1);
+                FindAnyObjectByType<movementController>().interactNPC = false;
+                oneShake = true;
+            }
         }
     }
 }

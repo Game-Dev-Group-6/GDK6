@@ -17,11 +17,17 @@ public class triggerSceneScript3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (PlayerPrefs.HasKey("HaveFlashlightWhite"))
+        {
+            if (ColliderPenghalang != null)
+            {
+                Destroy(ColliderPenghalang);
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !PlayerPrefs.HasKey("HaveFlashlightWhite"))
         {
             if (!PlayerPrefs.HasKey("SceneScript3"))
             {
@@ -31,13 +37,7 @@ public class triggerSceneScript3 : MonoBehaviour
             {
                 sceneScript3.Script2();
             }
-            else if (PlayerPrefs.HasKey("HaveFlashlightWhite"))
-            {
-                if (ColliderPenghalang != null)
-                {
-                    Destroy(ColliderPenghalang);
-                }
-            }
+
         }
     }
 

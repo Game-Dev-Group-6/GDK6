@@ -595,6 +595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aae057ee0af2d4a9c85fc2b7892ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasTransition: {fileID: 1181714359}
+  getItemCanvas: {fileID: 3237209762549612368}
   playableDirector1: {fileID: 285364266}
   playableDirector2: {fileID: 36458201}
   transition: {fileID: 2104679813}
@@ -1900,7 +1902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1c8c80351909044a6f5cdc06201b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reset: 1
+  reset: 0
 --- !u!82 &551017813
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5006,7 +5008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8698640749814217237, guid: 6c2a966928f05a048bdfeaecdd378d67, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5464,7 +5466,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1802905421}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104679813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e94f384dc7a3d48b0ad1d4c0b3b995, type: 3}
   m_Name: 

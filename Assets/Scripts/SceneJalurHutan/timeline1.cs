@@ -50,4 +50,9 @@ public class timeline1 : MonoBehaviour
         dialogueManagerV2.TriggerStartDialogue();
         /*  player.GetComponent<movementController>().interactNPC = false; */
     }
+
+    public void ShowTrashInJalurHutan()
+    {
+        PlayerPrefs.SetString("ShowTrashInJalurHutan", "");
+    }
 }

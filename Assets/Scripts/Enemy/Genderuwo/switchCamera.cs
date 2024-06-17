@@ -46,7 +46,7 @@ public class switchCamera : MonoBehaviour
                 virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.x += 0.01f;
                 if (virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset.x > 1.2)
                 {
-                    if (virtualCamera.m_Lens.OrthographicSize <= 7.5f)
+                    if (virtualCamera.m_Lens.OrthographicSize <= 10f)
                     {
                         virtualCamera.m_Lens.OrthographicSize += 0.05f;
                     }

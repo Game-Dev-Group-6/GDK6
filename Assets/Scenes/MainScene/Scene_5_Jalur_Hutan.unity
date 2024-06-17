@@ -256,6 +256,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76f2e1e87a2e034a8abe95ca237a021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &80076630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4818016112018472804, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+  m_PrefabInstance: {fileID: 295199332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &82789621
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +434,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 82789625}
+          m_TargetAssemblyTypeName: timeline1, Assembly-CSharp
+          m_MethodName: ShowTrashInJalurHutan
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 253230813}
+          m_TargetAssemblyTypeName: eventKuntaActive, Assembly-CSharp
+          m_MethodName: MakeEventPlayerPrefs
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &116123702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,6 +466,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 29903743458276365, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 29903743458276365, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 721529939
+      objectReference: {fileID: 0}
     - target: {fileID: 114761601323911960, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -487,6 +530,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6f00c3a1e0b335f4695c433296235e1f, type: 3}
+    - target: {fileID: 3110681296322112895, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110681296322112895, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110681296322112895, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 721529939
+      objectReference: {fileID: 0}
     - target: {fileID: 3338706618114608155, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -1037,6 +1092,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 74511289}
     - target: {fileID: 2377121040508488985, guid: 9a6e72e2d0b7b3a42b3b31fe19f58394, type: 3}
+      propertyPath: dialogueManagerV2
+      value: 
+      objectReference: {fileID: 1108352282}
+    - target: {fileID: 2377121040508488985, guid: 9a6e72e2d0b7b3a42b3b31fe19f58394, type: 3}
       propertyPath: afterJumpNotScarePlayTimeline
       value: 1
       objectReference: {fileID: 0}
@@ -1328,7 +1387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051488285925788636, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -132.28564
+      value: -959
       objectReference: {fileID: 0}
     - target: {fileID: 8447915447721584376, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1412,6 +1471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422652341}
   - component: {fileID: 422652340}
+  - component: {fileID: 422652342}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: VirtualCamera
@@ -1474,6 +1534,19 @@ Transform:
   - {fileID: 1271836428}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422652342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422652339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4886b50dcb0b244acdc341815b9d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &434028560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2325,8 @@ MonoBehaviour:
   countSentences: 0
   nextDialogue: 0
   klueActive: 0
+  makePlayerPrefsGamePlay: 0
+  interactNPCMakeTrueInLast: 0
 --- !u!4 &880247109
 Transform:
   m_ObjectHideFlags: 0
@@ -2281,15 +2356,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.86
+      value: 6.48
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9880542
+      value: -0.990629
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2297,15 +2372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.15410687
+      value: 0.1365805
       objectReference: {fileID: 0}
     - target: {fileID: 2200062664795780130, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 359.87
+      value: 344.3
       objectReference: {fileID: 0}
     - target: {fileID: 3464861488752968772, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2317,7 +2392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464861488752968772, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3464861488752968772, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2351,13 +2426,17 @@ PrefabInstance:
       propertyPath: trashIn
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5231405265582284717, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
+      propertyPath: trashCount
+      value: 
+      objectReference: {fileID: 80076630}
     - target: {fileID: 5378536754028262734, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_SortingLayer
-      value: 26
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5378536754028262734, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1680059927
+      value: -1853229791
       objectReference: {fileID: 0}
     - target: {fileID: 6294313401524317159, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_IsActive
@@ -2515,6 +2594,8 @@ MonoBehaviour:
   countSentences: 0
   nextDialogue: 0
   klueActive: 0
+  makePlayerPrefsGamePlay: 0
+  interactNPCMakeTrueInLast: 0
 --- !u!4 &1108352283
 Transform:
   m_ObjectHideFlags: 0
@@ -3276,9 +3357,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646552180194887778, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646552180194887778, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: dialogueManagerV2
       value: 
       objectReference: {fileID: 1108352282}
+    - target: {fileID: 5646552180194887778, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
+      propertyPath: forKunta3InJalurHutan
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7736544769269150822, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_Name
       value: ----- kunta_idle_0 (1)

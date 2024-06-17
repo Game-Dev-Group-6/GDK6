@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.030799985, y: -0.077999994, z: 0}
-    m_Extent: {x: 0.5829, y: 0.51129997, z: 0}
+    m_Center: {x: 0.02914998, y: -0.08074999, z: 0}
+    m_Extent: {x: 0.57525, y: 0.50395, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15390,6 +15390,7 @@ MonoBehaviour:
   countSentences: 0
   nextDialogue: 0
   klueActive: 0
+  makePlayerPrefsGamePlay: 0
 --- !u!1 &233104405
 GameObject:
   m_ObjectHideFlags: 0
@@ -25615,6 +25616,7 @@ MonoBehaviour:
   countSentences: 0
   nextDialogue: 0
   klueActive: 1
+  makePlayerPrefsGamePlay: 1
 --- !u!1001 &513910388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31172,7 +31174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464861488752968772, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3464861488752968772, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31212,11 +31214,11 @@ PrefabInstance:
       objectReference: {fileID: 1571834165}
     - target: {fileID: 5378536754028262734, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_SortingLayer
-      value: 22
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5378536754028262734, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_SortingLayerID
-      value: -323466847
+      value: -1853229791
       objectReference: {fileID: 0}
     - target: {fileID: 6294313401524317159, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
       propertyPath: m_IsActive
@@ -55107,6 +55109,7 @@ MonoBehaviour:
   countSentences: 0
   nextDialogue: 0
   klueActive: 0
+  makePlayerPrefsGamePlay: 0
 --- !u!1 &2103879064
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\sceneScript3.cs" />
     <Compile Include="Assets\Packages\TP\Shared\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\controlIntensityLighterWeapon.cs" />
+    <Compile Include="Assets\Scripts\Scene_6_Pemakaman\triggerJumpScare.cs" />
     <Compile Include="Assets\Scripts\Environment\treeManagerSort.cs" />
     <Compile Include="Assets\Scripts\sortEnvironment.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\InteractFlashLight.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\DelayAllScene\delayTime.cs" />
     <Compile Include="Assets\Scripts\Enemy\Pocica\pocicaCombatManager.cs" />
+    <Compile Include="Assets\Scripts\Scene_6_Pemakaman\merinding.cs" />
     <Compile Include="Assets\Scripts\Environment\treeCut.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\controlIntesityLighter.cs" />
     <Compile Include="Assets\Scripts\CollectItem\triggerCollect.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Assets\Scripts\EventScene\eventScene5.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\enemyTrigger.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\PlayerPrefsSave.cs" />
+    <Compile Include="Assets\Scripts\Enemy\CheckPoint\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\DelayAllScene\delayFlashLight_1.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene6.cs" />
     <Compile Include="Assets\Scripts\UI\borderCinema.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="Assets\Scripts\Player\Flashlight\rotateLighter.cs" />
     <Compile Include="Assets\Scripts\Raycast\raycastMouseScene2.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\playerPrefs3.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Pocica\deathParticleManager.cs" />
     <Compile Include="Assets\Scripts\Environment\treeDurability.cs" />
     <Compile Include="Assets\Scripts\Scene_6_Pemakaman\playerPrefs6.cs" />
     <Compile Include="Assets\Scripts\UI\controlColor.cs" />
@@ -183,6 +187,7 @@
     <Compile Include="Assets\Scripts\Player\Flashlight\lightDamage.cs" />
     <Compile Include="Assets\Scripts\selectMonologSentences.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\delayTime2.cs" />
+    <Compile Include="Assets\Scripts\Scene_6_Pemakaman\nonActiveMerinding.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda1\timelineTenda1.cs" />
     <Compile Include="Assets\Scripts\Player\playerHealthManager.cs" />
     <Compile Include="Assets\LISTBUG.cs" />

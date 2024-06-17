@@ -77,7 +77,7 @@ public class raycastMouse : MonoBehaviour
                 interactTendExit = true;
                 if (hit2D.collider.GetComponent<interactExit>().getInteractMouse)
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) && !DialogueManagerV2.isInteract)
                     {
                         gamelan.GamelanStop();
                         hit2D.collider.GetComponent<interactExit>().TentExitSFX();
@@ -103,6 +103,7 @@ public class raycastMouse : MonoBehaviour
             }
             else if (hit2D.collider.tag == "Diary")
             {
+                PlayerPrefs.SetString("ShowTrashInBintangRaya", "");
                 interactTendExit = false;
                 diary = hit2D.collider.gameObject;
                 diary.GetComponent<InteractFlashLight>().hover = true;
@@ -113,7 +114,7 @@ public class raycastMouse : MonoBehaviour
                 }
                 Debug.Log("Ini diary");
             }
-            else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit" || hit2D.collider.tag != "Diary")
+            else if (hit2D.collider.tag != "FlashLight/Get" || hit2D.collider.tag != "Environment/TendExit" || hit2D.collider.tag != "Diary" || DialogueManagerV2.isInteract)
             {
                 interactTendExit = false;
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
@@ -131,7 +132,7 @@ public class raycastMouse : MonoBehaviour
             }
         }
 
-        if (hit.Length <= 0)
+        if (hit.Length <= 0 || DialogueManagerV2.isInteract)
         {
             interactTendExit = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

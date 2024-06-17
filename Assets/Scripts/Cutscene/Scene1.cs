@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 
 public class Scene1 : MonoBehaviour
 {
+    [SerializeField] GameObject canvasTransition, getItemCanvas;
     [SerializeField] PlayableDirector playableDirector1, playableDirector2;
     [SerializeField] GameObject transition;
     [SerializeField] AudioSource audioSource;
@@ -49,6 +50,7 @@ public class Scene1 : MonoBehaviour
         {
             ControlVolume();
         }
+        ControlTransition();
     }
     void ControlVolume()
     {
@@ -56,6 +58,17 @@ public class Scene1 : MonoBehaviour
         {
             audioSource.GetComponent<AudioSource>().spatialBlend -= 0.0005f;
         }
+    }
 
+    void ControlTransition()
+    {
+        if (getItemCanvas.activeSelf)
+        {
+            canvasTransition.SetActive(false);
+        }
+        else if (!getItemCanvas.activeSelf)
+        {
+            canvasTransition.SetActive(true);
+        }
     }
 }

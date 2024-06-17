@@ -43,10 +43,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 0.25
+    - _Size: -0.29
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _PositionCircle: {r: 0.08, g: 0.05, b: 0, a: 0}
+    - _Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0}
+    - _PositionCircle: {r: 0.01, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9082557616712580891
 MonoBehaviour:

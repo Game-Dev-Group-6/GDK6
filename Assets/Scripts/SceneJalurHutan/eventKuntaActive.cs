@@ -18,12 +18,16 @@ public class eventKuntaActive : MonoBehaviour
     }
     void ListEvent()
     {
-        if (!PlayerPrefs.HasKey("Kunta1"))
+        if (PlayerPrefs.HasKey("AfterMelati") && !PlayerPrefs.HasKey("Kunta2"))
         {
+            Debug.Log("TimelineActive");
             timeline.SetActive(true);
+
         }
-        else if (PlayerPrefs.HasKey("Kunta1"))
+        else if (!PlayerPrefs.HasKey("AfterMelati") || PlayerPrefs.HasKey("Kunta2"))
+
         {
+            Debug.Log("NonTimelineActive");
             timeline.SetActive(false);
         }
 
@@ -35,5 +39,9 @@ public class eventKuntaActive : MonoBehaviour
         {
             triggerJumpscare.SetActive(false);
         }
+    }
+    public void MakeEventPlayerPrefs()
+    {
+        PlayerPrefs.SetString("Kunta2", "");
     }
 }

@@ -117,7 +117,15 @@ public class opening : MonoBehaviour
 
             narratorText.text += letter;
             lenghtChar++;
-            yield return new WaitForSeconds(typingSpeed);
+            if (!Input.anyKey)
+            {
+                yield return new WaitForSeconds(typingSpeed * 2);
+            }
+            if (Input.anyKeyDown)
+            {
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
         }
         if (lenghtChar >= narratorSentences[narratorIndex - 1].ToCharArray().Length)
         {

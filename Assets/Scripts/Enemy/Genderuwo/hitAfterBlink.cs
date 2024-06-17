@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class hitAfterBlink : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        /*   makeAreaHit(); */
-    }
-    // Update is called once per frame
-
     public void makeAreaHit()
     {
 
@@ -34,7 +22,7 @@ public class hitAfterBlink : MonoBehaviour
                 {
                     x *= 1;
                 }
-                hit2D.GetComponent<Rigidbody2D>().AddForce(new Vector2(x, 0.3f), ForceMode2D.Impulse);
+                hit2D.GetComponent<Rigidbody2D>().AddForce(new Vector2(x, 0.01f), ForceMode2D.Impulse);
             }
         }
     }

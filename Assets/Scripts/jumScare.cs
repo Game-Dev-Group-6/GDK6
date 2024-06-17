@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UIElements;
 
 public class jumScare : MonoBehaviour
 {
+    [SerializeField] DialogueManagerV2 dialogueManagerV2;
     [SerializeField] kuntaAfterPocica kuntaAfterPocica;
     [SerializeField] bool afterJumpNotScarePlayTimeline;
     movementController movementController;
@@ -20,6 +22,7 @@ public class jumScare : MonoBehaviour
     [SerializeField] delayTime2 delayTime2;
     bool isJumpScare = false;
     float scaleSprite = 0;
+    BoxCollider2D colliders;
     [SerializeField] float speedZoom;
     CinemachineVirtualCamera virtualCamera;
     // Start is called before the first frame update
@@ -31,7 +34,7 @@ public class jumScare : MonoBehaviour
     }
     void Start()
     {
-
+        colliders = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -54,10 +57,10 @@ public class jumScare : MonoBehaviour
                     playableDirector.Play();
                     CutScene = false;
                     delayTime2.Timer = 0;
-                    movementController.interactNPC = false;
                 }
             }
         }
+        DeletePlayerPrefsKunta();
     }
 
     void ZoomCamera()
@@ -83,7 +86,6 @@ public class jumScare : MonoBehaviour
                 virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
                 background.SetActive(false);
                 UIHide.SetActive(true);
-                FindAnyObjectByType<movementController>().interactNPC = false;
             }
         }
         sprite.transform.localScale = new Vector2(scaleSprite, scaleSprite);
@@ -92,14 +94,30 @@ public class jumScare : MonoBehaviour
     {
         if (other.tag == "Player" && !firstTrigger)
         {
+            if (colliders != null)
+            {
+                colliders.enabled = false;
+            }
             firstTrigger = true;
             movementController.interactNPC = true;
-            FindAnyObjectByType<movementController>().interactNPC = true;
             isJumpScare = true;
-            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 1.8f;
+            virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 10f;
             background.SetActive(true);
             UIHide.SetActive(false);
         }
+    }
+
+    void DeletePlayerPrefsKunta()
+    {
+        if (dialogueManagerV2 != null)
+        {
+            if (dialogueManagerV2.countClickButton == dialogueManagerV2.countSentences)
+            {
+                PlayerPrefs.DeleteKey("Kunta3");
+                dialogueManagerV2.countClickButton = 0;
+            }
+        }
+
     }
 
 }

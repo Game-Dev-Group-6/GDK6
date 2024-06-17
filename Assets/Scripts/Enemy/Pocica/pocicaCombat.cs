@@ -296,7 +296,7 @@ public class pocicaCombat : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            player.GetComponent<playerHealthManager>().TakeDamage(0.01f);
+            player.GetComponent<playerHealthManager>().TakeDamage(5f);
         }
     }
 }

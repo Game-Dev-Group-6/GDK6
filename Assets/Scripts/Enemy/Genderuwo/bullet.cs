@@ -102,7 +102,14 @@ public class bullet : MonoBehaviour
             }
         }
     }
-
+    bool rightOfPlayer = true;
+    void PositionBullet()
+    {
+        if (transform.position.x < GameObject.FindWithTag("Player").transform.position.x)
+        {
+            rightOfPlayer = false;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.name == "Ground")
@@ -141,8 +148,8 @@ public class bullet : MonoBehaviour
             }
             if (hitTo.tag == "Player")
             {
-                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.2f, 3), ForceMode2D.Impulse);
-                hitTo.GetComponent<playerHealthManager>().TakeDamage(1);
+                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(rightOfPlayer ? -2 : 2, 0.1f), ForceMode2D.Impulse);
+                hitTo.GetComponent<playerHealthManager>().TakeDamage(6);
                 cameraShake.CameraShake(1, 1);
                 Destroy(gameObject);
             }

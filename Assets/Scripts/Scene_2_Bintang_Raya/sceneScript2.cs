@@ -22,6 +22,7 @@ public class sceneScript2 : MonoBehaviour
     void Update()
     {
         Script1();
+        DeleteSceneScript();
     }
     void Script1()
     {
@@ -54,6 +55,15 @@ public class sceneScript2 : MonoBehaviour
                     PlayerPrefs.SetInt("SceneScript", 1);
                 }
             }
+        }
+    }
+
+    void DeleteSceneScript()
+    {
+        if (PlayerPrefs.HasKey("HaveFlashlightWhite"))
+        {
+            PlayerPrefs.DeleteKey("SceneScript");
+            PlayerPrefs.SetString("CanEnter", "");
         }
     }
 }

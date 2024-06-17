@@ -22,7 +22,6 @@ public class uiFlashlight : MonoBehaviour
         {
             if (flashlightWhite.activeSelf)
             {
-                Debug.Log("WhiteActive");
                 iconFlashlightWhite.SetActive(true);
                 iconFlashlightYellow.SetActive(false);
                 iconBattery.SetActive(false);
@@ -31,7 +30,6 @@ public class uiFlashlight : MonoBehaviour
             {
                 if (flashlightYellow.activeSelf)
                 {
-                    Debug.Log("YellowActive");
                     iconFlashlightYellow.SetActive(true);
                     iconBattery.SetActive(true);
                     iconFlashlightWhite.SetActive(false);

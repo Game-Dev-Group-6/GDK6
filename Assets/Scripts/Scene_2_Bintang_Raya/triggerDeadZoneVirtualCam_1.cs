@@ -44,7 +44,6 @@ public class triggerDeadZoneVirtualCam_1 : MonoBehaviour
 
     void DeadZoneLeftPlayer()
     {
-        Debug.Log("DeadZoneLeft");
         if (player.transform.position.x < transform.position.x)
         {
             cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_DeadZoneWidth = 2;
@@ -63,7 +62,6 @@ public class triggerDeadZoneVirtualCam_1 : MonoBehaviour
     }
     void DeadZoneRightPlayer()
     {
-        Debug.Log("DeadZoneRight");
         if (player.transform.position.x < transform.position.x)
         {
             if (deadZoneActive)

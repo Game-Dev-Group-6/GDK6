@@ -131,7 +131,7 @@ public class raycastMouseScene2 : MonoBehaviour
                 if (hit2D.collider.GetComponent<interactCampfire>().mouseCanInteract)
                 {
                     Cursor.SetCursor(cursorImage[1], Vector2.zero, CursorMode.ForceSoftware);
-                    if (Input.GetMouseButtonDown(0) /* && !DialogueManager.isInteract */)
+                    if (Input.GetMouseButtonDown(0) && !DialogueManagerV2.isInteract)
                     {
 
                         hit2D.collider.GetComponent<DialogueManagerV2>().TriggerStartDialogue();
@@ -181,7 +181,7 @@ public class raycastMouseScene2 : MonoBehaviour
                         hit2D.collider.GetComponent<eventTendOpen>().eventTrue = true;
                     }
                 }
-                else if (!interactOpenTent.firstInteract)
+                else if (!interactOpenTent.firstInteract || DialogueManagerV2.isInteract)
                 {
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
                 }

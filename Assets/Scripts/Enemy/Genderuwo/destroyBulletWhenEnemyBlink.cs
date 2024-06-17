@@ -18,9 +18,13 @@ public class destroyBulletWhenEnemyBlink : MonoBehaviour
         {
             deleteBullet = GameObject.FindGameObjectsWithTag("Bullet");
         }
-        foreach (GameObject bullet in deleteBullet)
+        if (deleteBullet != null)
         {
-            Destroy(bullet);
+            foreach (GameObject bullet in deleteBullet)
+            {
+                Destroy(bullet);
+            }
         }
+
     }
 }

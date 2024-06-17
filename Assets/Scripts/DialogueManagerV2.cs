@@ -58,6 +58,9 @@ public class DialogueManagerV2 : MonoBehaviour
     private float speechBubbleAnimationDelay = 0.6f;
     [SerializeField] bool nextDialogue;
     [SerializeField] bool klueActive;
+    [SerializeField] bool makePlayerPrefsGamePlay;
+    [SerializeField] bool interactNPCMakeTrueInLast;
+
 
     private void Start()
     {
@@ -113,6 +116,10 @@ public class DialogueManagerV2 : MonoBehaviour
         if (countClickButton == countSentences)
         {
 
+            if (makePlayerPrefsGamePlay)
+            {
+                PlayerPrefs.SetString("GamePlay", "");
+            }
             if (Monolog)
             {
                 countClickButton = 0;
@@ -121,7 +128,10 @@ public class DialogueManagerV2 : MonoBehaviour
                 nPCIndexI = -1;
             }
             UnHideUI();
-            playerMovementScript.interactNPC = false;
+            if (!interactNPCMakeTrueInLast)
+            {
+                playerMovementScript.interactNPC = false;
+            }
             isInteract = false;
             events = true;
             if (klueActive)

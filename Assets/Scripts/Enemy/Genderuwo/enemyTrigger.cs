@@ -73,11 +73,8 @@ public class enemyTrigger : MonoBehaviour
                 {
                     ShowGraveYard();
                 }
-
             }
         }
-
-
         if (gentayangan)
         {
             childrenObj.transform.position = Vector2.MoveTowards(childrenObj.transform.position, new Vector2(transform.position.x, childrenObj.transform.position.y), speedTrigger);
@@ -108,9 +105,7 @@ public class enemyTrigger : MonoBehaviour
 
     void Penampakan()
     {
-
         childrenObj.GetComponent<Rigidbody2D>().gravityScale = 0f;
-
         if (j < 1)
         {
             childrenObj.transform.position = new Vector2(transform.position.x - (areaPenampakan - 13f), GameObject.Find("Ground").transform.position.y + GameObject.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.y + 1f);
