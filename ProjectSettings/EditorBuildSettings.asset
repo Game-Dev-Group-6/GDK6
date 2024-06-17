@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene/Scene_8_Jalur_Pendakian.unity
     guid: b2aab48ae74a1d34dad86e368bade7b3
+  - enabled: 1
+    path: Assets/Scenes/Fix Main Menu.unity
+    guid: c3d8ab0629670ef469cc3bda6afaf40a
   m_configObjects: {}
