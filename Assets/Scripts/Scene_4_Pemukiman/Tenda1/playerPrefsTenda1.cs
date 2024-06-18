@@ -16,17 +16,6 @@ public class playerPrefsTenda1 : MonoBehaviour
             }
         }
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetPlayerPrefs()
     {
         PlayerPrefs.SetString("AfterMelati", "");

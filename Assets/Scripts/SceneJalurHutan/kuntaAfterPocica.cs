@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class kuntaAfterPocica : MonoBehaviour
@@ -10,6 +11,7 @@ public class kuntaAfterPocica : MonoBehaviour
     [SerializeField] public bool makeVisible;
     bool reverse, triggerDialogue, makeInvisible, firstDialogue;
     [SerializeField] bool forKunta3InJalurHutan;
+    [SerializeField] GameObject penghalang;
     void Awake()
     {
         newColor = GetComponent<SpriteRenderer>().color;
@@ -23,14 +25,16 @@ public class kuntaAfterPocica : MonoBehaviour
     {
         if (!forKunta3InJalurHutan)
         {
-            if (PlayerPrefs.HasKey("Kunta2"))
+            if (PlayerPrefs.HasKey("Kunta2") && !PlayerPrefs.HasKey("Kunta3"))
             {
                 GetComponent<BoxCollider2D>().enabled = true;
+                penghalang.SetActive(true);
             }
 
-            if (!PlayerPrefs.HasKey("Kunta2"))
+            if (!PlayerPrefs.HasKey("Kunta2") || PlayerPrefs.HasKey("Kunta3"))
             {
                 GetComponent<BoxCollider2D>().enabled = false;
+                penghalang.SetActive(false);
             }
         }
 

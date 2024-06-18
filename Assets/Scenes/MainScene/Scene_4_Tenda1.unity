@@ -759,6 +759,7 @@ MonoBehaviour:
   nextDialogue: 0
   klueActive: 0
   makePlayerPrefsGamePlay: 0
+  interactNPCMakeTrueInLast: 0
 --- !u!4 &453749859
 Transform:
   m_ObjectHideFlags: 0
@@ -2079,12 +2080,20 @@ PrefabInstance:
       value: NPCSpeechBubbleContainer
       objectReference: {fileID: 0}
     - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.109
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0.824
       objectReference: {fileID: 0}
     - target: {fileID: 4130530361098007754, guid: 404ce0530108636458839dc37fb78eb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3582,11 +3591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_LocalScale.z
@@ -3594,11 +3603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.047
+      value: 0.169
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.289
+      value: 0.082
       objectReference: {fileID: 0}
     - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -4184,6 +4193,7 @@ MonoBehaviour:
   nextDialogue: 0
   klueActive: 0
   makePlayerPrefsGamePlay: 0
+  interactNPCMakeTrueInLast: 0
 --- !u!4 &1816397964
 Transform:
   m_ObjectHideFlags: 0
