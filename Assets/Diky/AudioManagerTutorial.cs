@@ -11,7 +11,7 @@ public class AudioManagerTutorial : MonoBehaviour
     private float backgroundFloat, soundEffectsFloat;
     public AudioSource backgroundAudio;
     public AudioSource[] soundEffectsAudio;
-
+    
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
@@ -30,7 +30,7 @@ public class AudioManagerTutorial : MonoBehaviour
         {
             backgroundFloat = PlayerPrefs.GetFloat(BackgroundPref);
             backgroundSlider.value = backgroundFloat;
-            soundEffectsFloat = PlayerPrefs.GetFloat(BackgroundPref);
+            soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
             soundEffectsSlider.value = soundEffectsFloat;
 
         }
@@ -41,6 +41,7 @@ public class AudioManagerTutorial : MonoBehaviour
         PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value);
         PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsSlider.value);
     }
+    
 
     private void OnApplicationFocus(bool inFocus)
     {
@@ -53,11 +54,13 @@ public class AudioManagerTutorial : MonoBehaviour
     public void UpdateSound()
     {
         backgroundAudio.volume = backgroundSlider.value;
+    }
+
+    public void UpdateSFX()
+    {
+        for (int i = 0; i < soundEffectsAudio.Length; i++)
         {
-            for (int i = 0; i < soundEffectsAudio.Length; i++)
-            {
-                soundEffectsAudio[i].volume = soundEffectsSlider.value;
-            }
+            soundEffectsAudio[i].volume = soundEffectsSlider.value;
         }
     }
 }

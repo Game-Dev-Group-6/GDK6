@@ -1,11 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class healthManager : MonoBehaviour
 {
+    public UnityEvent onCustomEvent;
+    public GameObject deathParticleDelete;
     pocicaCombatManager pocicaCombatManager;
     float maxHealth = 100;
     float currentHealth;
@@ -50,6 +50,25 @@ public class healthManager : MonoBehaviour
             if (onePlayParticle)
             {
                 Destroy(gameObject, 2f);
+                if (GetComponent<delayTime2>().Delay(2))
+                {
+                    Debug.Log("Destroy");
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    if (gameObject != null)
+                    {
+                        if (onCustomEvent != null) 
+                        {
+                            onCustomEvent.Invoke();
+                        }
+                        // Destroy setelah 2 detik
+                        Destroy(gameObject, 2);
+                        Debug.Log("Destroy setelah 2 detik");
+                        Destroy(deathParticleDelete, 2);
+                    }
+                }
             }
 
         }

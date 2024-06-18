@@ -191,6 +191,7 @@
     <Compile Include="Assets\Diky\Jalur Pendakian\JalurPendakianStart.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene2.cs" />
     <Compile Include="Assets\Scripts\SceneJalurHutan\kuntaAfterPocica.cs" />
+    <Compile Include="Assets\All\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\switchCamera.cs" />
     <Compile Include="Assets\Scripts\Cutscene\cutScene_2_3.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\delayCamera.cs" />
