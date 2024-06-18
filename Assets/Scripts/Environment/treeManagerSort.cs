@@ -22,8 +22,6 @@ public class treeManagerSort : MonoBehaviour
         triggerGendoruwo = GameObject.Find("RangeTriggerGendoruwo");
         genderuwo = GameObject.Find("Enemy_Gendoruwo");
         enemyTrigger = triggerGendoruwo.GetComponent<enemyTrigger>();
-
-
     }
 
     // Update is called once per frame

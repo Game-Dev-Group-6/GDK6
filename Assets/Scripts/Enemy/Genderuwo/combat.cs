@@ -93,7 +93,6 @@ public class combat : MonoBehaviour
                 switchCamera.LookEnemy();
                 if (delayBlink.Delay(4))
                 {
-                    player.GetComponent<movementController>().interactNPC = false;
                     player.GetComponent<movementController>().slowMove = false;
                     lockPositionPlayer = false;
                     delayMove = false;
@@ -118,11 +117,13 @@ public class combat : MonoBehaviour
     }
     void Combat2()
     {
-        if (distanceEnemyToPlayer < 15 && !makeDistanceLeft && move && !delayMove || distanceEnemyToPlayer < 15 && !makeDistanceRight && move && !delayMove || startCombat)
+        if (distanceEnemyToPlayer < 100 && !makeDistanceLeft && move && !delayMove || distanceEnemyToPlayer < 100 && !makeDistanceRight && move && !delayMove || startCombat)
         {
             if (!awakeCombat)
             {
                 startCombat = false;
+                //menampilkan canvas/healthBar enemy
+                transform.GetChild(0).gameObject.SetActive(true);
             }
             if (delayTime2.Delay(1))
             {
@@ -156,6 +157,7 @@ public class combat : MonoBehaviour
                 enemyHit = true;
                 move = false;
                 enemyCanHit = true;
+
             }
         }
         if (makeDistanceLeft)
@@ -174,6 +176,7 @@ public class combat : MonoBehaviour
                 enemyHit = true;
                 move = false;
                 enemyCanHit = true;
+
             }
         }
     }
@@ -221,7 +224,7 @@ public class combat : MonoBehaviour
             }
             EnemyHit(3f, 6.5f, 3f);
         }
-        if (enemyHealthBar.currentHealth <= 80 && enemyHealthBar.currentHealth > 60)
+        /* if (enemyHealthBar.currentHealth <= 80 && enemyHealthBar.currentHealth > 60)
         {
             if (!health80)
             {
@@ -231,7 +234,7 @@ public class combat : MonoBehaviour
                 health80 = true;
             }
             EnemyHit(3f, 6.5f, 3f);
-        }
+        } */
         if (enemyHealthBar.currentHealth <= 60 && enemyHealthBar.currentHealth > 40)
         {
             if (!health60)
@@ -241,19 +244,19 @@ public class combat : MonoBehaviour
                 blink = true;
                 health60 = true;
             }
-            EnemyHit(3f, 6.5f, 3f);
+            EnemyHit(3f, 6.5f, 2.5f);
         }
-        if (enemyHealthBar.currentHealth <= 40 && enemyHealthBar.currentHealth > 20)
-        {
-            if (!health40)
-            {
-                move = true;
-                shieldActive = true;
-                blink = true;
-                health40 = true;
-            }
-            EnemyHit(3f, 6.5f, 3f);
-        }
+        /*   if (enemyHealthBar.currentHealth <= 40 && enemyHealthBar.currentHealth > 20)
+          {
+              if (!health40)
+              {
+                  move = true;
+                  shieldActive = true;
+                  blink = true;
+                  health40 = true;
+              }
+              EnemyHit(3f, 6.5f, 3f);
+          } */
         if (enemyHealthBar.currentHealth <= 20 && enemyHealthBar.currentHealth > 0)
         {
             if (!health20)
@@ -263,7 +266,7 @@ public class combat : MonoBehaviour
                 blink = true;
                 health20 = true;
             }
-            EnemyHit(3f, 6.5f, 3f);
+            EnemyHit(3f, 6.5f, 2f);
         }
         if (enemyHealthBar.currentHealth <= 0)
         {
@@ -289,6 +292,7 @@ public class combat : MonoBehaviour
                 {
                     if (delayTime2.Delay(delayCameraAfterHitTree))
                     {
+                        
                         switchCamera.LookPlayer();
                         delayForCamera = true;
                     }

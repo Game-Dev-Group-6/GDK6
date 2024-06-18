@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\Scene_2_Bintang_Raya\goToScene3.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda2\hideCanvasDiary.cs" />
     <Compile Include="Assets\Scripts\UI\narratorTrigger.cs" />
+    <Compile Include="Assets\Scripts\Scene_6_Pemakaman\GundaAfterLose.cs" />
     <Compile Include="Assets\Scripts\Scene_1_Hutan\getFlashLight.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene3.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\giveWarning.cs" />

@@ -15,6 +15,7 @@ public class enemyHealthBar : MonoBehaviour
     private delayTime2 delayTime2;
     private particleDeath particleDeath;
     combat combat;
+    [SerializeField] transition transition;
 
 
 
@@ -62,9 +63,11 @@ public class enemyHealthBar : MonoBehaviour
 
     public void EnemyDead()
     {
+        FindAnyObjectByType<movementController>().interactNPC = true;
         if (delayTime2.Delay(5f))
         {
             Destroy(transform.parent.gameObject);
+            transition.gameObject.SetActive(true);
         }
         //mengambil object parent, karena object poci merupakan children
 

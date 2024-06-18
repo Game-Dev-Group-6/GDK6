@@ -42,6 +42,7 @@ public class triggerJumpScare : MonoBehaviour
                 virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
                 background.SetActive(false);
                 UIHide.SetActive(true);
+                FindAnyObjectByType<movementController>().interactNPC = false;
             }
         }
         sprite.transform.localScale = new Vector2(scaleSprite, scaleSprite);
@@ -57,6 +58,7 @@ public class triggerJumpScare : MonoBehaviour
     {
         if (other.tag == "Player" && !oneTriggerJumpScare)
         {
+            FindAnyObjectByType<movementController>().interactNPC = true;
             JumpScareActive();
             oneTriggerJumpScare = true;
         }

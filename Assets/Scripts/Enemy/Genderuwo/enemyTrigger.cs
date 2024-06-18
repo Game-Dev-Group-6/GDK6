@@ -11,7 +11,7 @@ public class enemyTrigger : MonoBehaviour
     private Color newColor;
     private delayTime delayTime;//Pakai Time.time
     private Animator animator;
-    private DialogueManagerV2 dialogueManagerV2;
+    [SerializeField] private DialogueManagerV2 dialogueManagerV2;
     int i = 0;
     int j = 0;
 
@@ -31,8 +31,7 @@ public class enemyTrigger : MonoBehaviour
         delayTime = GetComponent<delayTime>();
         childrenObj = transform.GetChild(0);
         animator = childrenObj.GetComponent<Animator>();
-        dialogueManagerV2 = FindAnyObjectByType<DialogueManagerV2>();
-
+        childrenObj.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,6 +41,7 @@ public class enemyTrigger : MonoBehaviour
         float distance = Vector2.Distance(gameObject.transform.position, posPlayer);
         if (distance <= areaGentayangan && distance > areaPenampakan && !combat)
         {
+
             Gentayangan();
         }
         else if (distance <= areaPenampakan && distance > areaCombat && !combat)
@@ -51,27 +51,31 @@ public class enemyTrigger : MonoBehaviour
             childrenObj.GetComponent<SpriteRenderer>().flipX = true;
             Penampakan();
         }
+
+
         else if (distance <= areaCombat && childrenObj.GetComponent<enemyHealthBar>().currentHealth > 0 || combat)
         {
             if (!combatBegin)
             {
+                //Menempatkan posisi Gunda seperti posisi dari parentnya, yaitu TriggerEnemy
                 if (!combat)
                 {
                     childrenObj.transform.position = new Vector2(transform.position.x, transform.position.y);
                     childrenObj.transform.localScale = Vector2.one * 1.5f;
                     combat = true;
                 }
-
+                // Mengatur Gunda Supaya dikembalikan ke keadaan semula
                 childrenObj.GetComponent<Rigidbody2D>().gravityScale = 1f;
                 childrenObj.GetComponent<BoxCollider2D>().enabled = true;
                 newColor.a = 1;
                 childrenObj.GetComponent<SpriteRenderer>().color = newColor;
-                //menampilkan canvas/healthBar enemy
-                childrenObj.transform.GetChild(0).gameObject.SetActive(true);
 
-                if (dialogueManagerV2.events)
+                //Jika dialog selesai maka akan menampilkan GraveStone/BatuNisan
+                if (dialogueManagerV2.countClickButton == dialogueManagerV2.countSentences)
                 {
+                    Debug.Log("ShowGraveYard");
                     ShowGraveYard();
+                    dialogueManagerV2.countClickButton = 0;
                 }
             }
         }
@@ -101,6 +105,7 @@ public class enemyTrigger : MonoBehaviour
         {
             gentayangan = false;
         }
+        Debug.Log("Gentayangan");
     }
 
     void Penampakan()
@@ -110,6 +115,7 @@ public class enemyTrigger : MonoBehaviour
         {
             childrenObj.transform.position = new Vector2(transform.position.x - (areaPenampakan - 13f), GameObject.Find("Ground").transform.position.y + GameObject.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.y + 1f);
             j++;
+            Debug.Log("Penampakan");
         }
         newColor = childrenObj.GetComponent<SpriteRenderer>().color;
         newColor.a -= 0.001f;

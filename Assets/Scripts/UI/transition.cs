@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class transition : MonoBehaviour
 {
-    [SerializeField] bool transitionPoci, eventPoci, eventReverse;
+    [SerializeField] bool transitionPoci, eventPoci, eventReverse, transitionGunda, eventGunda;
     [SerializeField] bool forOpening;
     Color newColor;
     [Range(0f, 0.5f)][SerializeField] float speedTransition;
@@ -26,8 +26,14 @@ public class transition : MonoBehaviour
         if (transitionPoci)
         {
             newColor.a = 0;
+            reverse = true;
         }
-        else if (!transitionPoci)
+        if (transitionGunda)
+        {
+            newColor.a = 0;
+            reverse = true;
+        }
+        else if (!transitionPoci && !transitionGunda)
         {
             newColor.a = 1;
         }
@@ -41,7 +47,7 @@ public class transition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!forOpening && !transitionPoci)
+        if (!forOpening && !transitionPoci && !transitionGunda)
         {
             if (!triggerTransition)
             {
@@ -85,6 +91,27 @@ public class transition : MonoBehaviour
                 FindAnyObjectByType<pocicaCombatManager>().eventCameraShake = true;
             }
         }
+        if (transitionGunda)
+        {
+            ChangeAlphaOnLast();
+            if (!reverse)
+            {
+                GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5f;
+                if (delayTime2.Delay(2.5f))
+                {
+                    eventReverse = true;
+                }
+                if (eventReverse)
+                {
+                    ChangeAlphaOnAwake();
+                }
+            }
+            if (eventGunda)
+            {
+                FindAnyObjectByType<GundaAfterLose>().playCondition = true;
+                gameObject.SetActive(false);
+            }
+        }
 
     }
     public void ChangeAlphaOnAwake()//Open >> Gelap ke Terang(Transparan)
@@ -97,6 +124,7 @@ public class transition : MonoBehaviour
             {
                 reverse = true;
                 eventPoci = true;
+                eventGunda = true;
                 if (!forOpening)
                 {
                     gameObject.SetActive(false);

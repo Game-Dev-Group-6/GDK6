@@ -3,9 +3,10 @@
 - Bug di pintutenda, harusnya cursor tidak aktif [DONE]
 - UI pada Scene JalurHutan [DONE]
 - Opening (Gambar yang muncul duluan ketika diklik 2x) [DONE]
-- Saat dipemukiman, setelah berdialog dengan melati dan keluar tenda, seharusnya tidak bisa interact Tent
-- Saat berdialog dengan melati seharusnya tidak bisa interact dengan Tent
-- Waktu belum combat seharusnya flashlight kuning tidak memberikan damage
+- Saat dipemukiman, setelah berdialog dengan melati dan keluar tenda, seharusnya tidak bisa interact Tent [DONE]
+- Saat berdialog dengan melati seharusnya tidak bisa interact dengan Tent [DONE]
+- Waktu belum combat seharusnya flashlight kuning tidak memberikan damage [DONE]
+- Waktu interact dengan melati seharusnya player tidak bisa menggerakkan Charracter, masalahnya player bisa melakukan FlipX
 
 ===== LIST SCENE BELUM DIBUAT =====
 - Scene Credit
@@ -18,12 +19,14 @@
 - Tuyul
 
 ===== PERLU REVISI =====
+- Gunda dari 5 kondisi blink, diubah menjadi 3 kondisi blink
+- Setelah gunda melakukan blink(sudah jatuh ketanah dan membuat shield) seharusnya player tidak bisa bergerak
 - Hilangkan UITrash,UIClue saat mode combat [DONE]
 - Perlu check point Pocica[DONE]
-- Perlu check point Gunda
+- Perlu check point Gunda [DONE]
 - Kondisi Lose lawan Pocica [DONE]
-- Kondisi Lose lawan Gunda
-- Mekanik Flashlight Yellow
+- Kondisi Lose lawan Gunda [DONE]
+- Mekanik Flashlight Yellow 
 - Game Sound (Pisah SFX sama Music, bagian Setting Menu)
 - Perlu membuat jumlah Trash yang didapat [DONE]
 - Dialog pada saat lawan Poci ada tulisan "dadadadada" [DONE]
