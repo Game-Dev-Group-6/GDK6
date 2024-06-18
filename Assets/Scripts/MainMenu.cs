@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public float delay = 2f; // Waktu penundaan dalam detik
-
-    private void Start()
-    {
-
-    }
+    public string nameScene;
 
     public void StartGame()
     {
@@ -30,14 +26,16 @@ public class MainMenu : MonoBehaviour
 
         // Pindah ke scene yang dituju
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
+<<<<<<< Updated upstream
         SceneManager.LoadScene("Scene_2_Bintang_Raya");
+=======
+        SceneManager.LoadScene(nameScene);
+        PlayerPrefs.DeleteAll();
+>>>>>>> Stashed changes
     }
 
     private IEnumerator DelayedQuitGame()
     {
-        // Mainkan efek suara klik
-        AudioManager.Instance.PlaySfx(0);
-
         // Tunggu selama 'delay' detik
         yield return new WaitForSeconds(delay);
 
