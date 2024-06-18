@@ -13,6 +13,7 @@ public class triggerCcollect : MonoBehaviour
     RaycastHit2D[] ray;
     delayTime2 delayTime2;
     bool destroyTrash = false;
+    public GameObject insertObject, insertUI;
 
 
     //START----- Merubah scale dari Trash ketika terdeteksi mouse -----//
@@ -61,6 +62,16 @@ public class triggerCcollect : MonoBehaviour
                 trashActive = hit.transform.gameObject;
                 parentTrash = hit.transform.parent.gameObject;
                 destroyTrash = true;
+                if (insertObject != null)
+                {
+                    Debug.Log("hai");
+                    insertObject.SetActive(true);
+                }
+                if (insertUI != null)
+                {
+                    Debug.Log("hai");
+                    insertUI.SetActive(false);
+                }
             }
 
 

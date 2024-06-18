@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CutsceneController : MonoBehaviour
@@ -107,12 +105,6 @@ public class CutsceneController : MonoBehaviour
         if (parallaxScrolling != null)
         {
             parallaxScrolling.enabled = true;
-        }
-
-        // Mainkan backsound dari MainMenu
-        if (mainMenuScript != null)
-        {
-            mainMenuScript.PlayBackgroundMusic();
         }
     }
 
