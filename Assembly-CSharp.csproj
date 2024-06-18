@@ -188,6 +188,7 @@
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\bullet.cs" />
     <Compile Include="Assets\Scripts\Environment\parallax.cs" />
     <Compile Include="Assets\Diky\Diky Script\PauseScript.cs" />
+    <Compile Include="Assets\Diky\Jalur Pendakian\JalurPendakianStart.cs" />
     <Compile Include="Assets\Scripts\EventScene\eventScene2.cs" />
     <Compile Include="Assets\Scripts\SceneJalurHutan\kuntaAfterPocica.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\switchCamera.cs" />
