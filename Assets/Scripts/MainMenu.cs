@@ -1,28 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public float delay = 2f; // Waktu penundaan dalam detik
-    public GameObject settingsPanel; // Panel untuk pengaturan
-    public GameObject creditsPanel; // Panel untuk pengaturan
 
     private void Start()
     {
-        // Pastikan panel settings tidak terlihat saat memulai
-        if (settingsPanel != null)
-        {
-            settingsPanel.SetActive(false);
-        }
 
-        // Pastikan panel credits tidak terlihat saat memulai
-        if (creditsPanel != null)
-        {
-            creditsPanel.SetActive(false);
-        }
     }
 
     public void StartGame()
@@ -39,15 +25,12 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator DelayedStartGame()
     {
-        // Mainkan efek suara klik
-        AudioManager.Instance.PlaySfx(0);
-
         // Tunggu selama 'delay' detik
         yield return new WaitForSeconds(delay);
 
         // Pindah ke scene yang dituju
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene("Scene_2_Bintang_Raya");
     }
 
     private IEnumerator DelayedQuitGame()
@@ -61,21 +44,5 @@ public class MainMenu : MonoBehaviour
         // Keluar dari game
         Debug.Log("Quitting game"); // Tambahkan debug log
         Application.Quit();
-    }
-
-    public void OpenSettings()
-    {
-        // Mainkan efek suara klik
-        AudioManager.Instance.PlaySfx(0);
-
-        if (settingsPanel != null)
-        {
-            settingsPanel.SetActive(true);
-        }
-    }
-
-    public void PlayBackgroundMusic()
-    {
-        AudioManager.Instance.PlayMusic(0);
     }
 }
