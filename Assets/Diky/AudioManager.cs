@@ -20,15 +20,10 @@ public class AudioManager : MonoBehaviour
         // Pastikan ada setidaknya satu AudioSource dalam daftar
         if (soundMusicList.Length > 0)
         {
-            // Atur dan mainkan clip dari audioList pertama di musicSource
-            if (soundMusicList[0].clip != null)
+            for (int i = 0; i < soundMusicList.Length; i++) 
             {
-                soundMusicSource.clip = soundMusicList[0].clip;
-                soundMusicSource.Play();
-            }
-            else
-            {
-                Debug.LogWarning("AudioSource pertama tidak memiliki AudioClip!");
+                Debug.Log("Masuk Music");
+                soundMusicSource.clip = soundMusicList[i].clip;
             }
         }
         else
@@ -40,14 +35,10 @@ public class AudioManager : MonoBehaviour
         if (soundSFXList.Length > 0)
         {
             // Atur dan mainkan clip dari audioList pertama di musicSource
-            if (soundSFXList[0].clip != null)
+            for (int i = 0; i < soundSFXList.Length; i++)
             {
-                soundEffectSource.clip = soundSFXList[0].clip;
-                soundEffectSource.Play();
-            }
-            else
-            {
-                Debug.LogWarning("AudioSource pertama tidak memiliki AudioClip!");
+                Debug.Log("Masuk SFX");
+                soundEffectSource.clip = soundSFXList[i].clip;
             }
         }
         else
@@ -55,24 +46,4 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Audio list is empty!");
         }
     }
-
-    public void PlayMusic(AudioClip clip)
-    {
-        soundMusicSource.PlayOneShot(clip);
-    }
-
-    public void PlayAmbient(AudioClip clip)
-    {
-        soundAmbientSource.PlayOneShot(clip);
-    }
-
-    public void PlayUI(AudioClip clip)
-    {
-        soundUISource.PlayOneShot(clip);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        soundEffectSource.PlayOneShot(clip);       
-    }    
 }
