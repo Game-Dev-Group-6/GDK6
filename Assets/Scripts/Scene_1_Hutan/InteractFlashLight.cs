@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 
 public class InteractFlashLight : MonoBehaviour
 {
+    bool klue;
     [SerializeField] GameObject canvasDiary, canvasUIBar;
 
     [SerializeField] Volume volume;
@@ -31,6 +32,17 @@ public class InteractFlashLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPrefs.HasKey("Klue4"))
+        {
+            if (!klue)
+            {
+                if (GetComponent<delayTime2>().Delay(0.2f))
+                {
+                    FindAnyObjectByType<clueButton>().klueBaru = true;
+                    klue = true;
+                }
+            }
+        }
         if (hover)
         {
             ChangeColor();

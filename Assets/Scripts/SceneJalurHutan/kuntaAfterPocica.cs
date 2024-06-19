@@ -21,13 +21,14 @@ public class kuntaAfterPocica : MonoBehaviour
     {
         if (!forKunta3InJalurHutan)
         {
-            if (PlayerPrefs.HasKey("Kunta2") && !PlayerPrefs.HasKey("Kunta3"))
+            if (PlayerPrefs.HasKey("Kunta2") && !PlayerPrefs.HasKey("Kunta2Delete"))
             {
                 GetComponent<BoxCollider2D>().enabled = true;
                 penghalang.SetActive(true);
+                Debug.Log(penghalang);
             }
 
-            if (!PlayerPrefs.HasKey("Kunta2") || PlayerPrefs.HasKey("Kunta3"))
+            if (!PlayerPrefs.HasKey("Kunta2") || PlayerPrefs.HasKey("Kunta2Delete"))
             {
                 GetComponent<BoxCollider2D>().enabled = false;
                 penghalang.SetActive(false);

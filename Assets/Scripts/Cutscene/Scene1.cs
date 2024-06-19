@@ -28,7 +28,8 @@ public class Scene1 : MonoBehaviour
                 Debug.Log("Load Timeline 2");
                 playableDirector2.Play();
                 gamePlay = true;
-                PlayerPrefs.DeleteKey("Scene1_Timeline");
+                PlayerPrefs.SetInt("Scene1_Timeline", 3);
+
             }
         }
         if (PlayerPrefs.HasKey("GamePlay"))

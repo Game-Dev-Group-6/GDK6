@@ -72,7 +72,7 @@ public class lightDamage : MonoBehaviour
             {
                 if (FindAnyObjectByType<pocicaCombatManager>().startCombat)
                 {
-                    hit.collider.GetComponent<healthManager>().TakeDamage(5f);
+                    hit.collider.GetComponent<healthManager>().TakeDamage(0.1f);
                     transform.GetChild(0).gameObject.transform.position = hit.point;
                     transform.GetChild(0).GetComponent<ParticleSystem>().Play();
                 }

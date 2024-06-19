@@ -114,6 +114,9 @@ public class jumScare : MonoBehaviour
             if (dialogueManagerV2.countClickButton == dialogueManagerV2.countSentences)
             {
                 PlayerPrefs.DeleteKey("Kunta3");
+                PlayerPrefs.SetString("Kunta2Delete", "");
+                FindAnyObjectByType<clueButton>().klueBaru = true;
+                PlayerPrefs.SetString("Klue8", "");
                 dialogueManagerV2.countClickButton = 0;
             }
         }

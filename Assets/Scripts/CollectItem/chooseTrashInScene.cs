@@ -44,6 +44,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInBintangRaya"))
                         {
+                            PlayerPrefs.SetString("Klue4Done", "");
                             Destroy(trash);
                         }
                     }
@@ -67,7 +68,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInHutanRoh"))
                         {
-
+                            PlayerPrefs.SetString("Klue5Done", "");
                             Destroy(trash);
                         }
                     }
@@ -90,7 +91,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInJalurHutan"))
                         {
-
+                            PlayerPrefs.SetString("Klue6Done", "");
                             Destroy(trash);
                         }
                     }
@@ -113,6 +114,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInHutanMistik"))
                         {
+                            PlayerPrefs.SetString("Klue7Done", "");
                             Destroy(trash);
                         }
                     }
@@ -135,6 +137,7 @@ public class chooseTrashInScene : MonoBehaviour
                         trash.SetActive(true);
                         if (PlayerPrefs.HasKey("DestroyTrashInPemakaman"))
                         {
+                            PlayerPrefs.SetString("Klue8Done", "");
                             Destroy(trash);
                         }
                     }

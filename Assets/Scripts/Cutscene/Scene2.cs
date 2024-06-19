@@ -10,6 +10,10 @@ public class Scene2 : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        if (PlayerPrefs.GetInt("Scene1_Timeline") == 3)
+        {
+            PlayerPrefs.DeleteKey("Scene1_Timeline");
+        }
         if (timeline1 != null)
         {
             if (PlayerPrefs.HasKey("Scene1_Timeline"))

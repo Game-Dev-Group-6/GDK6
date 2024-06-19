@@ -65,6 +65,7 @@ public class GundaAfterLose : MonoBehaviour
         {
             if (delayTime2.Delay(6))
             {
+                PlayerPrefs.SetString("GundaLose", "");
                 FindAnyObjectByType<movementController>().interactNPC = false;
                 Destroy(gameObject);
             }
@@ -147,6 +148,7 @@ public class GundaAfterLose : MonoBehaviour
                         FindAnyObjectByType<movementController>().interactNPC = true;
                         PlayerPrefs.SetString("ShowTrashInPemakaman", "");
                         throwTrash = true;
+                        PlayerPrefs.SetString("Merinding", "");
                     }
                 }
             }

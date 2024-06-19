@@ -1238,7 +1238,7 @@ PrefabInstance:
       objectReference: {fileID: 559948725}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: backgroundAudio.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.size
@@ -3951,8 +3951,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1621584125
-  m_SortingLayer: 4
+  m_SortingLayerID: 819813461
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 667824390, guid: d0bb764455bca584c8db4d53706745a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6372,6 +6372,10 @@ PrefabInstance:
     - target: {fileID: 3353690560411889094, guid: 05419a685bfbdcc42aa115c6ad0a1411, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411066345747859686, guid: 05419a685bfbdcc42aa115c6ad0a1411, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8776983170555400478, guid: 05419a685bfbdcc42aa115c6ad0a1411, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
