@@ -13,13 +13,6 @@ public class soundSfxManager : MonoBehaviour
         walk = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void leftLegs()
     {
         walk.clip = audioClips[2];

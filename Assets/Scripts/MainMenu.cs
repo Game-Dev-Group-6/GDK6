@@ -26,12 +26,8 @@ public class MainMenu : MonoBehaviour
 
         // Pindah ke scene yang dituju
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
-<<<<<<< Updated upstream
-        SceneManager.LoadScene("Scene_2_Bintang_Raya");
-=======
         SceneManager.LoadScene(nameScene);
         PlayerPrefs.DeleteAll();
->>>>>>> Stashed changes
     }
 
     private IEnumerator DelayedQuitGame()
