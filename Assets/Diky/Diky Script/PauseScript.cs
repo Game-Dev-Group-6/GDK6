@@ -3,32 +3,59 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
+    public static bool GameIsPaused = false;
     // untuk input game objek
     public GameObject inputObject;
     public GameObject inputObject2;
-    void Update() 
+
+    void Update()
     {
-        // Memberikan input key escape untuk pause
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Game objek aktif
-            inputObject.SetActive(true);
-            inputObject2.SetActive(false);
 
-            // Memanggil fungsi
-            PauseGame();
+
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+
+                Pause();
+            }
         }
     }
-    void PauseGame() 
+
+    public void Resume()
     {
-        // Mengatur waktu game menjadi 0 agar game berhenti
-        Time.timeScale = 0f;
+        inputObject2.SetActive(false);        
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+        foreach (AudioSource a in audios)
+        {
+            a.UnPause();
+        }
+
+
     }
 
-    void ResumeGame() 
+    void Pause()
     {
-        // Mengatur waktu game menjadi 1 agar game jalan seperti semula
-        Time.timeScale = 1f;
+        // Game objek aktif
+        inputObject.SetActive(true);        
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+        foreach (AudioSource a in audios)
+        {
+            a.Pause();
+        }
+
     }
 
     // Memberi parameter untuk input nama scene

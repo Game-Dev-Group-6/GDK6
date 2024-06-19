@@ -2991,6 +2991,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6858552496438254425}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: backgroundAudio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.size
       value: 6
       objectReference: {fileID: 0}

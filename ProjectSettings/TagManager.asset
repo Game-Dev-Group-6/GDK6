@@ -20,11 +20,15 @@ TagManager:
   - Enemy/Gendu
   - Enemy/Pocica
   - Diary
+  - SFX
+  - Music
+  - InsectJumpscare
+  - Audio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Audio
   - Water
   - UI
   - Background
