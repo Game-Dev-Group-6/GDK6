@@ -4,6 +4,7 @@ using System.Collections;
 
 public class CreditsTrigger : MonoBehaviour
 {
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("ShowTrashInJalurPendakian"))
@@ -24,6 +25,6 @@ public class CreditsTrigger : MonoBehaviour
     private IEnumerator ChangeSceneWithDelay()
     {
         yield return new WaitForSeconds(delay); // Tunggu selama delay
-        SceneManager.LoadScene(0); // Load scene yang ditentukan
+        SceneManager.LoadScene(sceneName); // Load scene yang ditentukan
     }
 }
