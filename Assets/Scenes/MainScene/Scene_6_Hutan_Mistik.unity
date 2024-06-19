@@ -143,6 +143,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ----- CanvasBar ------
       objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1552223128400147727, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: flashlightWhite
       value: 
@@ -698,6 +710,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DialogueManagerV2, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261181259150969088, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.112
+      objectReference: {fileID: 0}
     - target: {fileID: 9013707406859411220, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1138,6 +1166,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646552180194887778, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
+      propertyPath: penghalang
+      value: 
+      objectReference: {fileID: 421581366}
+    - target: {fileID: 5646552180194887778, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: dialogueManagerV2
       value: 
       objectReference: {fileID: 241863261}
@@ -1155,19 +1187,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8669121929226535770, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8669121929226535770, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8669121929226535770, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.96
+      value: 2.319
       objectReference: {fileID: 0}
     - target: {fileID: 8669121929226535770, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: -1.258
       objectReference: {fileID: 0}
     - target: {fileID: 8776257670984447925, guid: bb50e21908f10124886a40ce9c8b016b, type: 3}
       propertyPath: m_LocalPosition.x
