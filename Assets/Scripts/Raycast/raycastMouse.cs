@@ -72,7 +72,7 @@ public class raycastMouse : MonoBehaviour
         foreach (RaycastHit2D hit2D in hit)
         {
             Debug.Log(hit2D.collider.name);
-            if (hit2D.collider.tag == "Environment/TendExit" && !GetComponent<eventExitTend>().triggerEventExitTend && !flashLightYellow)
+            if (hit2D.collider.tag == "Environment/TendExit" && !GetComponent<eventExitTend>().triggerEventExitTend && !flashLightYellow && !PlayerPrefs.HasKey("Scene1_Timeline"))
             {
                 interactTendExit = true;
                 if (hit2D.collider.GetComponent<interactExit>().getInteractMouse)
@@ -132,7 +132,7 @@ public class raycastMouse : MonoBehaviour
             }
         }
 
-        if (hit.Length <= 0 || DialogueManagerV2.isInteract)
+        if (hit.Length <= 0 || DialogueManagerV2.isInteract || PlayerPrefs.HasKey("Scene1_Timeline"))
         {
             interactTendExit = false;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

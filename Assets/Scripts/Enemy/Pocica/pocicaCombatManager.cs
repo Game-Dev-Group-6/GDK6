@@ -106,7 +106,8 @@ public class pocicaCombatManager : MonoBehaviour
         {
             if (!oneShake)
             {
-
+                FindAnyObjectByType<clueButton>().klueBaru = true;
+                PlayerPrefs.SetString("Klue7", "");
                 FindAnyObjectByType<wallActive>().wallNonActive();
                 FindAnyObjectByType<cameraShake>().CameraShake(3, 1);
                 FindAnyObjectByType<movementController>().interactNPC = false;

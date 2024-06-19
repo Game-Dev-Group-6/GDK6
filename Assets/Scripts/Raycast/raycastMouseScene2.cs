@@ -81,7 +81,7 @@ public class raycastMouseScene2 : MonoBehaviour
         RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, layerMask);
         foreach (RaycastHit2D hit2D in hit)
         {
-            if (hit2D.collider.tag == "Environment/TendOpen")
+            if (hit2D.collider.tag == "Environment/TendOpen" && !PlayerPrefs.HasKey("Scene1_Timeline"))
             {
                 interactOpenTent interactOpenTent = hit2D.transform.GetComponent<interactOpenTent>();
                 if (interactOpenTent.firstInteract)
@@ -120,7 +120,7 @@ public class raycastMouseScene2 : MonoBehaviour
                         }
                     }
                 }
-                else if (!interactOpenTent.firstInteract)
+                else if (!interactOpenTent.firstInteract || PlayerPrefs.HasKey("Scene1_Timeline"))
                 {
                     Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
                 }

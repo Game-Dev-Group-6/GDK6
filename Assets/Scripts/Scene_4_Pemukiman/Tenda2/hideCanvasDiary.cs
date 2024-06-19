@@ -17,6 +17,7 @@ public class hideCanvasDiary : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                PlayerPrefs.SetString("Klue4", "");
                 gameObject.SetActive(false);
             }
         }

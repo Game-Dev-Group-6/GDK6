@@ -10,7 +10,7 @@ public class merinding : MonoBehaviour
     [SerializeField] GameObject canvasBar;
     void Start()
     {
-        if (!PlayerPrefs.HasKey("Merinding"))
+        if (!PlayerPrefs.HasKey("GundaLose"))
         {
             foreach (GameObject nonActive in GameObjectsNonActive)
             {
@@ -18,6 +18,18 @@ public class merinding : MonoBehaviour
             }
             treeManagerSort.enabled = true;
         }
+        if (PlayerPrefs.HasKey("GundaLose"))
+        {
+            foreach (GameObject nonActive in GameObjectsNonActive)
+            {
+                nonActive.SetActive(false);
+            }
+            treeManagerSort.enabled = false;
+        }
+    }
+    void Update()
+    {
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

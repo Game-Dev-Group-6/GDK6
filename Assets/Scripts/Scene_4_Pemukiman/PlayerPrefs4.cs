@@ -9,11 +9,18 @@ public class PlayerPrefs4 : MonoBehaviour
     bool triggerDialogue;
     void Awake()
     {
+        if (!PlayerPrefs.HasKey("Klue3"))
+        {
+            FindAnyObjectByType<clueButton>().klueBaru = true;
+            PlayerPrefs.SetString("Klue3", "");
+        }
         if (PlayerPrefs.HasKey("AfterMelati"))
         {
             if (!PlayerPrefs.HasKey("AfterMelatiOutTent"))
             {
                 triggerDialogue = true;
+                FindAnyObjectByType<clueButton>().klueBaru = true;
+                PlayerPrefs.SetString("Klue6", "");
             }
         }
     }

@@ -3514,9 +3514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSlider: {fileID: 844060535}
   soundEffectsSlider: {fileID: 79669577}
-  backgroundAudio:
-  - {fileID: 0}
-  - {fileID: 0}
+  backgroundAudio: []
   soundEffectsAudio:
   - {fileID: 1840199819}
   - {fileID: 27571338}

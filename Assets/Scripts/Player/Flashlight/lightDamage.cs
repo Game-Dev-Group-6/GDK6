@@ -4,6 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 public class lightDamage : MonoBehaviour
 {
+    [SerializeField] ParticleSystem ParticleHurtEnemy;
     private flipXLighter flipXLighter;
     private particleEffect[] particleEffect;
     private delayTime2 delayTime;
@@ -55,6 +56,11 @@ public class lightDamage : MonoBehaviour
         ray = Physics2D.RaycastAll(lightPos, raycastDir.normalized, raycastDistance, musuh);
         foreach (RaycastHit2D hit in ray)
         {
+            if (ParticleHurtEnemy != null)
+            {
+                ParticleHurtEnemy.gameObject.transform.position = hit.point;
+                ParticleHurtEnemy.Play();
+            }
             if (hit.collider.tag == "Enemy/Gendu")
             {
                 //waktu delay untuk menentukan waktu jeda ketika musuh terkena damage
@@ -66,15 +72,26 @@ public class lightDamage : MonoBehaviour
                     //menampilkan effek particle
                     transform.GetChild(0).gameObject.transform.position = hit.point;
                     transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                    if (ParticleHurtEnemy != null)
+                    {
+                        ParticleHurtEnemy.gameObject.transform.position = hit.point;
+                        ParticleHurtEnemy.Play();
+                    }
                 }
+
             }
             if (hit.collider.tag == "Enemy/Pocica")
             {
                 if (FindAnyObjectByType<pocicaCombatManager>().startCombat)
                 {
-                    hit.collider.GetComponent<healthManager>().TakeDamage(5f);
+                    hit.collider.GetComponent<healthManager>().TakeDamage(0.1f);
                     transform.GetChild(0).gameObject.transform.position = hit.point;
                     transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                    if (ParticleHurtEnemy != null)
+                    {
+                        ParticleHurtEnemy.gameObject.transform.position = hit.point;
+                        ParticleHurtEnemy.Play();
+                    }
                 }
             }
 

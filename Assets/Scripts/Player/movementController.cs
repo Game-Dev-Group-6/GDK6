@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class movementController : MonoBehaviour
 {
+    [SerializeField] float TimeScale = 1;
+    [SerializeField] bool TimeScaleActive;
     [Header("Kedip")]
     [SerializeField] private bool random = false;
 
@@ -34,6 +34,7 @@ public class movementController : MonoBehaviour
     }
     void Start()
     {
+
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
 
@@ -43,6 +44,10 @@ public class movementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (TimeScaleActive)
+        {
+            Time.timeScale = TimeScale;
+        }
         if (!interactNPC && !PlayerPrefs.HasKey("CutScene"))
         {
             MoveHorizontal();
@@ -143,7 +148,7 @@ public class movementController : MonoBehaviour
         {
             if (FindAnyObjectByType<cameraShake>() != null && PlayerPrefs.HasKey("CameraShake"))
             {
-                FindAnyObjectByType<cameraShake>().CameraShake(1,1);
+                FindAnyObjectByType<cameraShake>().CameraShake(1, 1);
             }
 
             rb.velocity = new Vector2(0, 1) * powerJump;

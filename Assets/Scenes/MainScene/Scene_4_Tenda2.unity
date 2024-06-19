@@ -2113,6 +2113,7 @@ GameObject:
   - component: {fileID: 633616401}
   - component: {fileID: 633616402}
   - component: {fileID: 633616403}
+  - component: {fileID: 633616404}
   m_Layer: 12
   m_Name: Book Bag Variant_0
   m_TagString: Diary
@@ -2262,6 +2263,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4f757b9b2df21438ff55e476bf4e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &633616404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633616397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb72b8bb9c7ba499c436f9ea4ddb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
 --- !u!1 &677911589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,6 +3775,18 @@ PrefabInstance:
     - target: {fileID: 723989061457528828, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: m_Name
       value: ----- CanvasBar ------
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014306865548620626, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1552223128400147727, guid: 04dbc07c740a8564ca3a5cef658afa19, type: 3}
       propertyPath: flashlightWhite

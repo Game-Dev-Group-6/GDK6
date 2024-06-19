@@ -10,6 +10,7 @@ public class buttonAmbil : MonoBehaviour
 
     public void CanvasNotActive()
     {
+        PlayerPrefs.SetString("Klue2Done", "");
         canvasGetFlashlight.canvasActive = false;
         ConditionGetFlashLight.GetComponent<conditionHaveFlashlight>().flashlightWhite = true;
         if (ConditionGetFlashLight != null)

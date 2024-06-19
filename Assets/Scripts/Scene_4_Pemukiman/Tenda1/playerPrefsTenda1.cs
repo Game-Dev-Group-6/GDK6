@@ -19,5 +19,6 @@ public class playerPrefsTenda1 : MonoBehaviour
     public void SetPlayerPrefs()
     {
         PlayerPrefs.SetString("AfterMelati", "");
+        PlayerPrefs.SetString("Klue3Done", "");
     }
 }

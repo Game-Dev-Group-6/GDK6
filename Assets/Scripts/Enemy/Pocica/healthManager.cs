@@ -52,6 +52,7 @@ public class healthManager : MonoBehaviour
                 Destroy(gameObject, 2f);
                 if (GetComponent<delayTime2>().Delay(2))
                 {
+                    pocicaCombatManager.pocicaAttack = false;
                     Debug.Log("Destroy");
                     Destroy(gameObject);
                 }
@@ -59,7 +60,7 @@ public class healthManager : MonoBehaviour
                 {
                     if (gameObject != null)
                     {
-                        if (onCustomEvent != null) 
+                        if (onCustomEvent != null)
                         {
                             onCustomEvent.Invoke();
                         }

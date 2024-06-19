@@ -42,7 +42,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue1Done") && !Klue1Done)
                 {
                     listKlue[0].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[0].GetComponent<TextMeshProUGUI>().text = "<s>Hutan<s>";
+                    listKlue[0].GetComponent<TextMeshProUGUI>().text = "<s>Pemukiman<s>";
                     Klue1Done = true;
                 }
             }
