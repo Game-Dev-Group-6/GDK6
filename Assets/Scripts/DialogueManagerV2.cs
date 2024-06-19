@@ -115,7 +115,8 @@ public class DialogueManagerV2 : MonoBehaviour
 
         if (countClickButton == countSentences)
         {
-
+            nPCDialogueText.text = "";
+            playerDialogueText.text = "";
             if (makePlayerPrefsGamePlay)
             {
                 PlayerPrefs.SetString("GamePlay", "");
