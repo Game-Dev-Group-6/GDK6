@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.033899993, y: -0.07245001, z: 0}
-    m_Extent: {x: 0.5725, y: 0.50775003, z: 0}
+    m_Center: {x: 0.0318, y: -0.08320001, z: 0}
+    m_Extent: {x: 0.5791, y: 0.5013, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -61195,19 +61195,39 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1390043774}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
-      propertyPath: soundEffectsAudio.Array.data[0]
+      propertyPath: backgroundAudio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: soundEffectsAudio.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: backgroundAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 2114723738}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: backgroundAudio.Array.data[1]
       value: 
       objectReference: {fileID: 1010240055}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
-      propertyPath: soundEffectsAudio.Array.data[1]
+      propertyPath: soundEffectsAudio.Array.data[0]
       value: 
       objectReference: {fileID: 929353913}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
-      propertyPath: soundEffectsAudio.Array.data[2]
+      propertyPath: soundEffectsAudio.Array.data[1]
       value: 
       objectReference: {fileID: 911531612}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 513910390}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[3]
+      value: 
+      objectReference: {fileID: 513910390}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[4]
       value: 
       objectReference: {fileID: 513910390}
     - target: {fileID: 6009984354729621841, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
