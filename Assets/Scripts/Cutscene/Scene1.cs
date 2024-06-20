@@ -8,7 +8,7 @@ public class Scene1 : MonoBehaviour
     [SerializeField] GameObject canvasTransition, getItemCanvas;
     [SerializeField] PlayableDirector playableDirector1, playableDirector2;
     [SerializeField] GameObject transition;
-    [SerializeField] AudioSource audioSource;
+
     bool gamePlay = false;
     // Start is called before the first frame update
     void Awake()
@@ -44,22 +44,6 @@ public class Scene1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-        if (gamePlay == true)
-        {
-            ControlVolume();
-        }
-        ControlTransition();
-    }
-    void ControlVolume()
-    {
-        if (audioSource.GetComponent<AudioSource>().spatialBlend > 0)
-        {
-            audioSource.GetComponent<AudioSource>().spatialBlend -= 0.0005f;
-        }
-    }
 
     void ControlTransition()
     {

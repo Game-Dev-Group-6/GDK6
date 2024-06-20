@@ -7,7 +7,14 @@ public class PauseScript : MonoBehaviour
     // untuk input game objek
     public GameObject inputObject;
     public GameObject inputObject2;
+    public GameObject inputObject3;
 
+    AudioManagerTutorial audioManagerTutorial;
+
+    void Start()
+    {
+        audioManagerTutorial = FindObjectOfType<AudioManagerTutorial>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,7 +35,9 @@ public class PauseScript : MonoBehaviour
 
     public void Resume()
     {
-        inputObject2.SetActive(false);        
+        inputObject.SetActive(false); 
+        inputObject2.SetActive(true);        
+        inputObject3.SetActive(false); 
         Time.timeScale = 1f;
         GameIsPaused = false;
 
@@ -39,13 +48,13 @@ public class PauseScript : MonoBehaviour
             a.UnPause();
         }
 
-
+        audioManagerTutorial.SaveSoundSettings();
     }
 
     void Pause()
     {
-        // Game objek aktif
-        inputObject.SetActive(true);        
+        inputObject.SetActive(true);   
+        inputObject2.SetActive(false);     
         Time.timeScale = 0f;
         GameIsPaused = true;
 
