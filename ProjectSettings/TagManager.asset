@@ -24,11 +24,12 @@ TagManager:
   - Music
   - InsectJumpscare
   - Audio
+  - grabbable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Audio
+  - UI 2
   - Water
   - UI
   - Background
@@ -38,7 +39,7 @@ TagManager:
   - Bullet
   - Trash
   - Interact
-  - 
+  - Audio
   - 
   - 
   - 
