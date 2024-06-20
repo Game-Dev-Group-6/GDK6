@@ -13,6 +13,7 @@ public class PlayerPrefs4 : MonoBehaviour
         {
             FindAnyObjectByType<clueButton>().klueBaru = true;
             PlayerPrefs.SetString("Klue3", "");
+            PlayerPrefs.SetString("Klue1Done", "");
         }
         if (PlayerPrefs.HasKey("AfterMelati"))
         {

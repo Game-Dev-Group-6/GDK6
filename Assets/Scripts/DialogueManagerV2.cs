@@ -51,8 +51,8 @@ public class DialogueManagerV2 : MonoBehaviour
     [SerializeField] public int countClickButton = 0;
     [SerializeField] private int playerIndexI = 0;
     [SerializeField] private int playerIndexJ = 0;
-    [SerializeField] private int nPCIndexI = 0;
-    [SerializeField] private int nPCIndexJ = 0;
+    [SerializeField] public int nPCIndexI = 0;
+    [SerializeField] public int nPCIndexJ = 0;
     public static bool isInteract = false;
     [SerializeField] public int countSentences;
     private float speechBubbleAnimationDelay = 0.6f;
@@ -123,8 +123,6 @@ public class DialogueManagerV2 : MonoBehaviour
             {
                 playerDialogueText.text = "";
             }
-
-            playerDialogueText.text = "";
             if (makePlayerPrefsGamePlay)
             {
                 PlayerPrefs.SetString("GamePlay", "");

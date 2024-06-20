@@ -35,5 +35,14 @@
 - Show UI item ketika mendapatkan flashlight/interact Diary [DONE]
 
 
+===== PENEMPATAN DAN PENGHILANGAN KLUE =====
+- (Klue1) Klue Pemukimana >> Saat awal muncul scenescript di BintangRaya >> Hilang saat berada di pemukiman
+- (Klue2) Klue Cahaya >> Saat di hutan roh, awal kali ke trigger scene script >> Hilang saat mengambil senter
+- (Klue3) Klue Dia >> Saat berada di Pemukiman >> Hilang saat menemui melati
+- (Klue4) Klue Sampah Kaleng >> Diary >> Hilang saat mengambil sampah kaleng
+- (Klue5) Klue Pohon >> Saat Setelah menemui melati >> hilang setelah mengambil sampah di pohon kunta
+- (Klue6) Klue Sampah 3 >> Muncul setelah dialog dengan kunta >> Hilang setelah mengambil sampah di dekat pocica
+- (Klue7) Klue Sampah 4 >> Muncul setelah mengalahkan pocica >> Hilang setelah mengambil sampah di Hutan mistik
+- (Klue8) Klue Sampah 5 >> Muncul setelah 
 
 */

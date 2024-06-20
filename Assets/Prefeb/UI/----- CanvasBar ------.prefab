@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sampah2
+  m_text: Hutannya jadi Kotor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4b7b572592462443b5179c45434234f, type: 2}
   m_sharedMaterial: {fileID: -780839275414740374, guid: b4b7b572592462443b5179c45434234f, type: 2}
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sampah1
+  m_text: Bintang ternodai Sampah
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4b7b572592462443b5179c45434234f, type: 2}
   m_sharedMaterial: {fileID: -780839275414740374, guid: b4b7b572592462443b5179c45434234f, type: 2}
@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sampah4
+  m_text: Sampahnya Terhalang Kabut
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4b7b572592462443b5179c45434234f, type: 2}
   m_sharedMaterial: {fileID: -780839275414740374, guid: b4b7b572592462443b5179c45434234f, type: 2}
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sampah5
+  m_text: Pemakaman itu ada yang menjaga
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4b7b572592462443b5179c45434234f, type: 2}
   m_sharedMaterial: {fileID: -780839275414740374, guid: b4b7b572592462443b5179c45434234f, type: 2}
@@ -3989,7 +3989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sampah3
+  m_text: Dia Punya Sampahnya
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4b7b572592462443b5179c45434234f, type: 2}
   m_sharedMaterial: {fileID: -780839275414740374, guid: b4b7b572592462443b5179c45434234f, type: 2}
