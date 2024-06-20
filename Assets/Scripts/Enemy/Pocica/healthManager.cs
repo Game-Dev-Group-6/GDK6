@@ -35,7 +35,6 @@ public class healthManager : MonoBehaviour
     {
         if (currentHealth < 1)
         {
-            pocicaCombatManager.j = 0;
             pocicaCombatManager.pocicaCombatss.Remove(gameObject.GetComponent<pocicaCombat>());
             GetComponent<ParticleSystem>().Stop();
             if (!onePlayParticle)

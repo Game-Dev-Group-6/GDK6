@@ -12,6 +12,9 @@ public class Array2d
 }
 public class DialogueManagerV2 : MonoBehaviour
 {
+
+    [SerializeField] AudioSource audioPlayer, audioNPC;
+
     [Header("Dialogue Sentences")]
     [SerializeField] Array2d[] playerSentences;
     [SerializeField] Array2d[] npcSentences;
@@ -190,6 +193,10 @@ public class DialogueManagerV2 : MonoBehaviour
 
     private IEnumerator TypePlayerDialogue()
     {
+        if (audioPlayer != null)
+        {
+            audioPlayer.Play();
+        }
         foreach (char letter in playerSentences[playerIndexI].sentences[playerIndexJ].ToCharArray())
         {
             playerDialogueText.text += letter;
@@ -207,6 +214,10 @@ public class DialogueManagerV2 : MonoBehaviour
 
     private IEnumerator TypeNPCDialogue()
     {
+        if (audioNPC != null)
+        {
+            audioNPC.Play();
+        }
         foreach (char letter in npcSentences[nPCIndexI].sentences[nPCIndexJ].ToCharArray())
         {
             nPCDialogueText.text += letter;

@@ -7,7 +7,6 @@ public class SoundInsert : MonoBehaviour
     void Start()
     {
         // Menginisialisasi AudioSource pada GameObject ini
-        audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
             Debug.LogError("AudioSource tidak ditemukan pada GameObject ini.");
