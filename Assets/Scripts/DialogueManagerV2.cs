@@ -115,7 +115,15 @@ public class DialogueManagerV2 : MonoBehaviour
 
         if (countClickButton == countSentences)
         {
-            nPCDialogueText.text = "";
+            if (nPCDialogueText != null)
+            {
+                nPCDialogueText.text = "";
+            }
+            if (playerDialogueText != null)
+            {
+                playerDialogueText.text = "";
+            }
+
             playerDialogueText.text = "";
             if (makePlayerPrefsGamePlay)
             {
