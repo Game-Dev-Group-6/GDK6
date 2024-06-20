@@ -186,6 +186,7 @@
     <Compile Include="Assets\Scripts\CollectItem\chooseTrashInScene.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\battery.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\enemyCombat.cs" />
+    <Compile Include="Assets\Scripts\Scene_5_Hutan_Mistik\tuyulInteract.cs" />
     <Compile Include="Assets\Scripts\Player\Flashlight\flipXLighter.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\triggerSceneScript3.cs" />
     <Compile Include="Assets\Packages\TP\Shared\TP\Util\Logs.cs" />

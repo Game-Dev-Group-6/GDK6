@@ -76,7 +76,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue3Done") && !Klue3Done)
                 {
                     listKlue[2].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[2].GetComponent<TextMeshProUGUI>().text = "<s>Dia<s>";
+                    listKlue[2].GetComponent<TextMeshProUGUI>().text = "<s>Dia menunggu di Tenda<s>";
                     Klue3Done = true;
                 }
             }
@@ -93,7 +93,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue4Done") && !Klue4Done)
                 {
                     listKlue[3].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[3].GetComponent<TextMeshProUGUI>().text = "<s>Sampah1<s>";
+                    listKlue[3].GetComponent<TextMeshProUGUI>().text = "<s>Bintang ternodai Sampah<s>";
                     Klue4Done = true;
                 }
             }
@@ -110,7 +110,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue5Done") && !Klue5Done)
                 {
                     listKlue[4].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[4].GetComponent<TextMeshProUGUI>().text = "<s>Sampah2<s>";
+                    listKlue[4].GetComponent<TextMeshProUGUI>().text = "<s>Hutannya jadi Kotor<s>";
                     Klue5Done = true;
                 }
             }
@@ -127,7 +127,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue6Done") && !Klue6Done)
                 {
                     listKlue[5].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[5].GetComponent<TextMeshProUGUI>().text = "<s>Sampah3<s>";
+                    listKlue[5].GetComponent<TextMeshProUGUI>().text = "<s>Dia Punya Sampahnya<s>";
                     Klue6Done = true;
                 }
             }
@@ -144,7 +144,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue7Done") && !Klue7Done)
                 {
                     listKlue[6].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[6].GetComponent<TextMeshProUGUI>().text = "<s>Sampah4<s>";
+                    listKlue[6].GetComponent<TextMeshProUGUI>().text = "<s>Sampahnya Terhalang Kabut<s>";
                     Klue7Done = true;
                 }
             }
@@ -161,7 +161,7 @@ public class cluePaper : MonoBehaviour
                 if (PlayerPrefs.HasKey("Klue8Done") && !Klue8Done)
                 {
                     listKlue[7].transform.SetSiblingIndex(indexChild + 1);
-                    listKlue[7].GetComponent<TextMeshProUGUI>().text = "<s>Sampah5<s>";
+                    listKlue[7].GetComponent<TextMeshProUGUI>().text = "<s>Pemakaman itu ada yang menjaga<s>";
                     Klue8Done = true;
                 }
             }
