@@ -714,7 +714,6 @@ MonoBehaviour:
   playableDirector1: {fileID: 285364266}
   playableDirector2: {fileID: 36458201}
   transition: {fileID: 2104679813}
-  audioSource: {fileID: 0}
 --- !u!4 &238195280
 Transform:
   m_ObjectHideFlags: 0
@@ -1392,7 +1391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.size
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: backgroundAudio.Array.data[0]
@@ -1409,39 +1408,39 @@ PrefabInstance:
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 532560901}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[2]
       value: 
-      objectReference: {fileID: 532560901}
+      objectReference: {fileID: 1298572108}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[3]
       value: 
-      objectReference: {fileID: 1298572108}
+      objectReference: {fileID: 1695998868}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[4]
       value: 
-      objectReference: {fileID: 1695998868}
+      objectReference: {fileID: 321875509}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[5]
       value: 
-      objectReference: {fileID: 321875509}
+      objectReference: {fileID: 321875514}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[6]
       value: 
-      objectReference: {fileID: 321875514}
+      objectReference: {fileID: 321875513}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 348901963}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[8]
       value: 
-      objectReference: {fileID: 321875513}
+      objectReference: {fileID: 1990739431}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[9]
       value: 
-      objectReference: {fileID: 348901963}
+      objectReference: {fileID: 1990739431}
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: soundEffectsAudio.Array.data[10]
       value: 
@@ -5821,6 +5820,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982181813392060618, guid: 6c2a966928f05a048bdfeaecdd378d67, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982181813392060618, guid: 6c2a966928f05a048bdfeaecdd378d67, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -6572,6 +6575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391291116955898753, guid: 05419a685bfbdcc42aa115c6ad0a1411, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1071697827144120859, guid: 05419a685bfbdcc42aa115c6ad0a1411, type: 3}
       propertyPath: m_Name
       value: InterfaceGetItem

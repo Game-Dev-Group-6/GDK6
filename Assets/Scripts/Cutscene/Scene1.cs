@@ -8,7 +8,6 @@ public class Scene1 : MonoBehaviour
     [SerializeField] GameObject canvasTransition, getItemCanvas;
     [SerializeField] PlayableDirector playableDirector1, playableDirector2;
     [SerializeField] GameObject transition;
-
     bool gamePlay = false;
     // Start is called before the first frame update
     void Awake()
@@ -37,13 +36,15 @@ public class Scene1 : MonoBehaviour
             transition.GetComponent<transition>().enabled = true;
         }
 
-    }
-    void Start()
-    {
-
+    
     }
 
     // Update is called once per frame
+    void Update()
+    {
+
+        ControlTransition();
+    }
 
     void ControlTransition()
     {
