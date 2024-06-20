@@ -2,34 +2,28 @@ using UnityEngine;
 
 public class SoundInsert : MonoBehaviour
 {
-    [SerializeField] AudioClip audioClip;
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
-    void Awake()
+    void Start()
     {
         // Menginisialisasi AudioSource pada GameObject ini
         audioSource = gameObject.GetComponent<AudioSource>();
-
-        // Jika AudioSource belum ada, tambahkan komponen tersebut
         if (audioSource == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            Debug.LogError("AudioSource tidak ditemukan pada GameObject ini.");
         }
-
-        // Menetapkan AudioClip ke AudioSource
-        audioSource.clip = audioClip;
     }
 
     // Metode untuk memainkan suara
     public void PlaySound()
     {
-        if (audioSource.clip != null)
+        if (audioSource != null)
         {
             audioSource.Play();
         }
         else
         {
-            Debug.LogWarning("AudioClip tidak tersedia.");
+            Debug.LogError("AudioSource tidak diinisialisasi.");
         }
     }
 }

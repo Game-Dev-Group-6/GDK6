@@ -36,7 +36,6 @@ public class PlayerPrefsSave : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
-        Debug.Log(PlayerPrefs.GetInt("Scene2PosX"));
     }
     public void SetPosPlayer(float posXKurang)
     {
