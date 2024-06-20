@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class pocicaCombat : MonoBehaviour
 {
+    [SerializeField] AudioSource audioHit, audioJump;
     [SerializeField] GameObject HealthBar;
     public bool blink, IsAttack, firstBlink, secondBlink;
     [SerializeField] pocicaCombatManager pocicaCombatManager;
@@ -103,7 +104,6 @@ public class pocicaCombat : MonoBehaviour
         {
             if (delayTime2.Delay(1) && !move)
             {
-                pocicaCombatManager.j++;
                 pocicaCombatManager.pocicaAttack = false;
                 move = true;
             }
@@ -188,6 +188,7 @@ public class pocicaCombat : MonoBehaviour
             HealthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             particle.Play();
+            audioHit.Play();
             FindAnyObjectByType<cameraShake>().CameraShake(1, 1);
             animator.SetBool("Hit", false);
             blink = true;
@@ -296,6 +297,11 @@ public class pocicaCombat : MonoBehaviour
         {
             player.GetComponent<playerHealthManager>().TakeDamage(0.5f);
         }
+    }
+
+    public void Jump()
+    {
+        audioJump.Play();
     }
 }
 

@@ -6,7 +6,6 @@ using UnityEngine;
 public class pocicaCombatManager : MonoBehaviour
 {
     [SerializeField] GameObject jumpScareTrigger; bool IsTriggerJumpScare;
-
     [SerializeField] GameObject[] healthBar;
     public bool pocicaAttack;
     public int i = 0;
@@ -16,11 +15,13 @@ public class pocicaCombatManager : MonoBehaviour
     [SerializeField] public List<pocicaCombat> pocicaCombatss = new List<pocicaCombat>();
     [SerializeField] int countPocica;
     delayTime2 delayTime2;
+    delayBlink delayBlink;
     [SerializeField] GameObject UITrash, UIClue;
     // Start is called before the first frame update
     void Start()
     {
         delayTime2 = GetComponent<delayTime2>();
+        delayBlink = GetComponent<delayBlink>();
     }
 
     // Update is called once per frame
@@ -52,6 +53,13 @@ public class pocicaCombatManager : MonoBehaviour
                 {
                     pocicaCombatss[j].IsAttack = true;
                     pocicaAttack = true;
+                }
+                if (pocicaCombatss[j].IsAttack)
+                {
+                    if (delayBlink.Delay(3f))
+                    {
+                        j++;
+                    }
                 }
             }
             if (j >= pocicaCombatss.Count)
@@ -98,9 +106,6 @@ public class pocicaCombatManager : MonoBehaviour
                 FindAnyObjectByType<movementController>().interactNPC = true;
                 conditionUIFlashlightActive.IsCombat = false;
             }
-
-
-
         }
         if (eventCameraShake)
         {

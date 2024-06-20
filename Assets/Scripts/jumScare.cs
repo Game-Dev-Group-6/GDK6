@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class jumScare : MonoBehaviour
 {
+    [SerializeField] AudioSource PocicaJumpScare;
     [SerializeField] DialogueManagerV2 dialogueManagerV2;
     [SerializeField] kuntaAfterPocica kuntaAfterPocica;
     [SerializeField] bool afterJumpNotScarePlayTimeline;
@@ -104,6 +105,7 @@ public class jumScare : MonoBehaviour
             virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 10f;
             background.SetActive(true);
             UIHide.SetActive(false);
+            PocicaJumpScare.Play();
         }
     }
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8511016998370371890}
   - component: {fileID: 5898577205196544584}
   - component: {fileID: 5535125390067905382}
-  - component: {fileID: 5210112104247180417}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -103,19 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5210112104247180417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2453827394243474648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80cc7fc5b5930324d982d2bdff207ad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textActivate: {fileID: 8412105122966894072}
 --- !u!1 &8412105122966894072
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +114,7 @@ GameObject:
   - component: {fileID: 3563807083185675466}
   - component: {fileID: 8014399890872877497}
   - component: {fileID: 1150718748659178083}
+  - component: {fileID: 4378425137551624313}
   m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -272,3 +259,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4378425137551624313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412105122966894072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cc7fc5b5930324d982d2bdff207ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textActivate: {fileID: 8412105122966894072}
