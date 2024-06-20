@@ -15,6 +15,7 @@ public class buttonAmbil : MonoBehaviour
         ConditionGetFlashLight.GetComponent<conditionHaveFlashlight>().flashlightWhite = true;
         if (ConditionGetFlashLight != null)
         {
+            Time.timeScale = 1;
             Destroy(flashlightOnBag);
         }
     }

@@ -28,7 +28,6 @@ public class getFlashLight : MonoBehaviour
         {
             if (volume.profile.TryGet(out depthOfField))
             {
-                Time.timeScale = 0;
                 depthOfField.focalLength.value = 300;
             }
         }
@@ -37,7 +36,6 @@ public class getFlashLight : MonoBehaviour
             if (volume.profile.TryGet(out depthOfField))
             {
                 depthOfField.focalLength.value = 0;
-                Time.timeScale = 1;
             }
         }
     }

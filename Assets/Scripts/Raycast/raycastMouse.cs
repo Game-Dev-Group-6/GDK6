@@ -98,6 +98,7 @@ public class raycastMouse : MonoBehaviour
                 Cursor.SetCursor(textures[0], Vector2.zero, CursorMode.ForceSoftware);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    Time.timeScale = 0;
                     CanvasGetFlashlight.GetComponent<getFlashLight>().canvasActive = true;
                 }
             }
