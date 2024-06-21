@@ -34,7 +34,6 @@ public class kuntaAfterDialogue : MonoBehaviour
                 if (newColor.a <= 0)
                 {
                     kuntaHide = false;
-                    PlayerPrefs.SetString("Kunta1", "");
                 }
             }
         }

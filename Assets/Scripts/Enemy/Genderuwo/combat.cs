@@ -125,15 +125,16 @@ public class combat : MonoBehaviour
                 //menampilkan canvas/healthBar enemy
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+            //enemy membuat jarak dari player && memilih pohon terdekat
             if (delayTime2.Delay(1))
             {
-                if (transform.position.x > player.transform.position.x)
+                if (transform.position.x > player.transform.position.x && !makeDistanceRight)
                 {
                     makeDistanceRight = true;
                     shieldNow = treeManagerSort.treeRightEnemy[0];
                     longDistance = shieldNow.transform.position.x + 2;
                 }
-                else if (transform.position.x < player.transform.position.x)
+                else if (transform.position.x < player.transform.position.x && !makeDistanceLeft)
                 {
                     makeDistanceLeft = true;
                     shieldNow = treeManagerSort.treeLeftEnemy[0];
@@ -292,7 +293,7 @@ public class combat : MonoBehaviour
                 {
                     if (delayTime2.Delay(delayCameraAfterHitTree))
                     {
-                        
+
                         switchCamera.LookPlayer();
                         delayForCamera = true;
                     }

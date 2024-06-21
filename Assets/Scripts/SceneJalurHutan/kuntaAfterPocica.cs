@@ -20,12 +20,12 @@ public class kuntaAfterPocica : MonoBehaviour
     {
         if (!forKunta3InJalurHutan)
         {
-            if (PlayerPrefs.HasKey("Kunta2") && !PlayerPrefs.HasKey("Kunta2Delete"))
+            if (PlayerPrefs.GetInt("Kunta") == 2)
             {
                 GetComponent<BoxCollider2D>().enabled = true;
             }
 
-            if (!PlayerPrefs.HasKey("Kunta2") || PlayerPrefs.HasKey("Kunta2Delete"))
+            if (PlayerPrefs.GetInt("Kunta") != 2)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
             }

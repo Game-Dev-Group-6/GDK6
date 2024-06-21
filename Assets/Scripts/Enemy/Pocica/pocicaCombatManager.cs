@@ -99,7 +99,7 @@ public class pocicaCombatManager : MonoBehaviour
     {
         if (pocicaCombatss.Count == 0 && !eventCameraShake)
         {
-            PlayerPrefs.SetString("Kunta3", "");
+            PlayerPrefs.SetInt("Kunta", 3);
             Image_Transition_Canvas.SetActive(true);
             if (conditionUIFlashlightActive.IsCombat)
             {

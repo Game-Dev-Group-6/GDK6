@@ -5809,9 +5809,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: backgroundFloat
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: backgroundSlider
       value: 
       objectReference: {fileID: 559948726}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsFloat
+      value: 0.31
+      objectReference: {fileID: 0}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: soundEffectsSlider
       value: 
