@@ -1630,6 +1630,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5898577205196544584, guid: 57ff682ddc97b6f40b5b49dc3baa1d2f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898577205196544584, guid: 57ff682ddc97b6f40b5b49dc3baa1d2f, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898577205196544584, guid: 57ff682ddc97b6f40b5b49dc3baa1d2f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898577205196544584, guid: 57ff682ddc97b6f40b5b49dc3baa1d2f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8014399890872877497, guid: 57ff682ddc97b6f40b5b49dc3baa1d2f, type: 3}
       propertyPath: m_text
       value: JALUR PENDAKIAN
@@ -1743,6 +1759,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1621584125
       objectReference: {fileID: 0}
+    - target: {fileID: 531220937460973221, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1591088351298558039, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     - target: {fileID: 703055568702703125, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2186,7 +2206,7 @@ AudioSource:
   m_GameObject: {fileID: 987318204}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 745419710221708082, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2561d2c7f916faf4f9b51b1b40451cd6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2329,7 +2349,7 @@ AudioSource:
   m_GameObject: {fileID: 1023108658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 745419710221708082, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2ff5f0db2302ae04f833dfd0d804c853, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3138,6 +3158,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8803430482927223674, guid: cec72baad5552ad479cedae62b023892, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5264760771717495318, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3326,6 +3350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4480736914427728780, guid: 8fc3184b1d705ca4d95ec3ca2c15cd85, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5264760771717495318, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     - target: {fileID: 5319895250700625785, guid: 8fc3184b1d705ca4d95ec3ca2c15cd85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 481
@@ -3858,7 +3886,7 @@ AudioSource:
   m_GameObject: {fileID: 1915985364}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8457505908981670711, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6fe9971935caa0643bf261a044dde193, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3986,7 +4014,7 @@ AudioSource:
   m_GameObject: {fileID: 1945846917}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 745419710221708082, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
   m_audioClip: {fileID: 8300000, guid: dabac0bd9221f7448945322125157e4b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4610,7 +4638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2783174134365233427, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3137249440720272089, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_IsActive
@@ -4618,7 +4646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4107152076345340455, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4893681937563630044, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4635,6 +4663,10 @@ PrefabInstance:
     - target: {fileID: 4893681937563630044, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893681937563630044, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
       objectReference: {fileID: 0}
     - target: {fileID: 4893681937563630044, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
