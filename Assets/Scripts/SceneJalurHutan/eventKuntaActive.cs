@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class eventKuntaActive : MonoBehaviour
 {
+
     [SerializeField] GameObject timeline, triggerJumpscare;
     // Start is called before the first frame update
     void Start()
     {
-
+        ListEvent();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ListEvent();
+
     }
     void ListEvent()
     {
         if (PlayerPrefs.HasKey("AfterMelati") && !PlayerPrefs.HasKey("Kunta"))
         {
-            PlayerPrefs.SetInt("Kunta", 2);
             Debug.Log("TimelineActive");
             timeline.SetActive(true);
         }
@@ -32,7 +32,6 @@ public class eventKuntaActive : MonoBehaviour
         if (PlayerPrefs.GetInt("Kunta") == 3)
         {
             triggerJumpscare.SetActive(true);
-            PlayerPrefs.SetInt("Kunta", 4);
         }
         else if (PlayerPrefs.GetInt("Kunta") != 3)
         {
@@ -41,6 +40,5 @@ public class eventKuntaActive : MonoBehaviour
     }
     public void MakeEventPlayerPrefs()
     {
-        PlayerPrefs.SetString("Kunta2", "");
     }
 }

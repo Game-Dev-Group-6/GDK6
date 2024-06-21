@@ -23,6 +23,7 @@ public class timeline1 : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
         if (timelineActive)
@@ -36,13 +37,20 @@ public class timeline1 : MonoBehaviour
             }
         }
     }
+    int i = 0;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (i < 1)
         {
-            timelineActive = true;
-            PlayerPrefs.SetString("ShowTrashInHutanRoh", "");
+            if (other.tag == "Player")
+            {
+                PlayerPrefs.SetInt("Kunta", 2);
+                timelineActive = true;
+                PlayerPrefs.SetString("ShowTrashInHutanRoh", "");
+                i++;
+            }
         }
+
     }
     public void CameraBackToPlayer()
     {

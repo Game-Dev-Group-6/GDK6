@@ -105,7 +105,11 @@ public class jumScare : MonoBehaviour
             virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 10f;
             background.SetActive(true);
             UIHide.SetActive(false);
-            PocicaJumpScare.Play();
+            if (PocicaJumpScare != null)
+            {
+                PocicaJumpScare.Play();
+            }
+
         }
     }
 
@@ -115,8 +119,7 @@ public class jumScare : MonoBehaviour
         {
             if (dialogueManagerV2.countClickButton == dialogueManagerV2.countSentences)
             {
-                PlayerPrefs.DeleteKey("Kunta3");
-                PlayerPrefs.SetString("Kunta2Delete", "");
+                PlayerPrefs.SetInt("Kunta", 4);
                 FindAnyObjectByType<clueButton>().klueBaru = true;
                 PlayerPrefs.SetString("Klue8", "");
                 dialogueManagerV2.countClickButton = 0;

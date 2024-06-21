@@ -3223,6 +3223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c0c9fbc4fc44c4882a9c6b1f79507f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayer: {fileID: 0}
+  audioNPC: {fileID: 0}
   playerSentences:
   - sentences:
     - Maafkan aku.
@@ -3779,6 +3781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c0c9fbc4fc44c4882a9c6b1f79507f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayer: {fileID: 0}
+  audioNPC: {fileID: 0}
   playerSentences:
   - sentences:
     - WAAAH! Kamu membuatku terkejut!

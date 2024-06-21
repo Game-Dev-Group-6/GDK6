@@ -8,15 +8,29 @@ public class treeCut : MonoBehaviour
     GameObject player;
     public bool treeFall = false;
     [SerializeField] GameObject treeNotCut, treeCutRight, treeCutLeft;
+    combat Combat;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        Combat = FindAnyObjectByType<combat>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Combat != null)
+        {
+            if (Combat.shieldActive)
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+            if (!Combat.shieldActive)
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
+
         if (treeFall)
         {
             if (player.transform.position.x > transform.position.x && !lockFall)
@@ -33,14 +47,6 @@ public class treeCut : MonoBehaviour
                 GetComponent<BoxCollider2D>().enabled = false;
                 lockFall = true;
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-            treeFall = false;
-            treeCutRight.SetActive(false);
-            treeNotCut.SetActive(true);
         }
     }
 }
