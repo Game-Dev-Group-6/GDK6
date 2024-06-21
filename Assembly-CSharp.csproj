@@ -164,6 +164,7 @@
     <Compile Include="Assets\Scripts\EventScene\eventScene7.cs" />
     <Compile Include="Assets\Scripts\Scene_4_Pemukiman\Tenda2\interactDiary.cs" />
     <Compile Include="Assets\Scripts\SceneJalurHutan\kuntaAfterDialogue.cs" />
+    <Compile Include="Assets\Scripts\Scene_5_Hutan_Mistik\virtualCameraMissing.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\hitAfterBlink.cs" />
     <Compile Include="Assets\Scripts\Scene_3_Hutan_Roh\wallActive.cs" />
     <Compile Include="Assets\Scripts\Enemy\Genderuwo\combat.cs" />
