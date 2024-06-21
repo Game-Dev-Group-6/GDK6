@@ -3218,6 +3218,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
+      propertyPath: myMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
+    - target: {fileID: 3743405041575530023, guid: cdf2ba5cd72252e4b930b755b8c73ee0, type: 3}
       propertyPath: backgroundSlider
       value: 
       objectReference: {fileID: 6858552496438254429}

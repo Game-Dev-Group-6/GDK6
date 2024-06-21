@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class AudioManagerTutorial : MonoBehaviour
 {
-     private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string FirstPlay = "FirstPlay";
     private static readonly string BackgroundPref = "BackgroundPref";
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
     private int firstPlayInt;

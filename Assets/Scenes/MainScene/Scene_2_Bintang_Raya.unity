@@ -10251,8 +10251,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027400017, y: -0.07634999, z: 0}
-    m_Extent: {x: 0.5762, y: 0.50905, z: 0}
+    m_Center: {x: 0.030550003, y: -0.08109999, z: 0}
+    m_Extent: {x: 0.58265, y: 0.5079, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -26019,6 +26019,16 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 531220937460973221, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
   m_PrefabInstance: {fileID: 513910388}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &513910391 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2854011052674137222, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+  m_PrefabInstance: {fileID: 513910388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &513910392 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7007462231255674897, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+  m_PrefabInstance: {fileID: 513910388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &640509907
 GameObject:
   m_ObjectHideFlags: 0
@@ -31462,6 +31472,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
+--- !u!82 &911531612 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1081622965831772951, guid: 4b2285260a2dec84093cda84b9533c36, type: 3}
+  m_PrefabInstance: {fileID: 911531611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929353911
 GameObject:
   m_ObjectHideFlags: 0
@@ -50599,6 +50614,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2093061460}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsAudio.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: backgroundAudio.Array.data[0]
       value: 
       objectReference: {fileID: 2114723738}
@@ -50622,6 +50641,18 @@ PrefabInstance:
       propertyPath: soundEffectsAudio.Array.data[3]
       value: 
       objectReference: {fileID: 513910390}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 513910392}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[5]
+      value: 
+      objectReference: {fileID: 513910391}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[6]
+      value: 
+      objectReference: {fileID: 911531612}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
