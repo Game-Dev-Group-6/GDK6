@@ -9,7 +9,15 @@ public class SoundInsert : MonoBehaviour
         // Menginisialisasi AudioSource pada GameObject ini
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource tidak ditemukan pada GameObject ini.");
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                Debug.LogError("AudioSource tidak ditemukan pada GameObject ini.");
+            }
+        }
+        else
+        {
+            Debug.Log("AudioSource berhasil diinisialisasi.");
         }
     }
 
@@ -18,7 +26,15 @@ public class SoundInsert : MonoBehaviour
     {
         if (audioSource != null)
         {
-            audioSource.Play();
+            if (audioSource.clip != null)
+            {
+                audioSource.Play();
+                Debug.Log("Suara dimainkan: " + audioSource.clip.name);
+            }
+            else
+            {
+                Debug.LogError("AudioClip belum diset pada AudioSource.");
+            }
         }
         else
         {

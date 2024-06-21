@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class AudioManagerTutorial : MonoBehaviour
 {
-    private static readonly string FirstPlay = "FirstPlay";
+     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string BackgroundPref = "BackgroundPref";
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
     private int firstPlayInt;
@@ -11,6 +12,7 @@ public class AudioManagerTutorial : MonoBehaviour
     private float backgroundFloat, soundEffectsFloat;
     public AudioSource[] backgroundAudio;
     public AudioSource[] soundEffectsAudio;
+    [SerializeField] private AudioMixer myMixer;
     
     void Start()
     {
@@ -18,8 +20,6 @@ public class AudioManagerTutorial : MonoBehaviour
 
         if (firstPlayInt == 0)
         {
-            backgroundFloat = .125f;
-            soundEffectsFloat = .75f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
             PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
@@ -32,8 +32,10 @@ public class AudioManagerTutorial : MonoBehaviour
             backgroundSlider.value = backgroundFloat;
             soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
             soundEffectsSlider.value = soundEffectsFloat;
-
         }
+
+        UpdateSound();
+        UpdateSFX();
     }
 
     public void SaveSoundSettings()
@@ -41,7 +43,6 @@ public class AudioManagerTutorial : MonoBehaviour
         PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value);
         PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsSlider.value);
     }
-    
 
     private void OnApplicationFocus(bool inFocus)
     {
@@ -53,17 +54,21 @@ public class AudioManagerTutorial : MonoBehaviour
 
     public void UpdateSound()
     {
+        float volume = backgroundSlider.value;
         for (int i = 0; i < backgroundAudio.Length; i++)
         {
             backgroundAudio[i].volume = backgroundSlider.value;
         }        
+        myMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
     }
 
     public void UpdateSFX()
     {
+        float volume = soundEffectsSlider.value;
         for (int i = 0; i < soundEffectsAudio.Length; i++)
         {
-            soundEffectsAudio[i].volume = soundEffectsSlider.value;
+            soundEffectsAudio[i].volume = soundEffectsSlider.value; 
         }
+        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
     }
 }

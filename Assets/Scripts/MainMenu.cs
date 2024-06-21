@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Loading scene: SampleScene"); // Tambahkan debug log
         SceneManager.LoadScene(nameScene);
         
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     private IEnumerator DelayedQuitGame()

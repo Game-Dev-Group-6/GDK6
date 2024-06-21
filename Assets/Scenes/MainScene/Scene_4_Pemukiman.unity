@@ -503,8 +503,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.6339, y: -0.77335, z: 0}
-    m_Extent: {x: 0.6475997, y: 0.63965, z: 0}
+    m_Center: {x: 12.640699, y: -0.76804996, z: 0}
+    m_Extent: {x: 0.6556001, y: 0.64195, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -548,6 +548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c0c9fbc4fc44c4882a9c6b1f79507f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioPlayer: {fileID: 0}
+  audioNPC: {fileID: 0}
   playerSentences:
   - sentences:
     - "\u2026.."
@@ -1253,12 +1255,16 @@ PrefabInstance:
       objectReference: {fileID: 1240060797}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: backgroundAudio.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: soundEffectsAudio.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: backgroundAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 1656591820}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: soundEffectsAudio.Array.data[0]
       value: 
@@ -1275,7 +1281,8 @@ PrefabInstance:
       propertyPath: soundEffectsAudio.Array.data[3]
       value: 
       objectReference: {fileID: 649301366}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5673471301148915922, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1289,17 +1296,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d3931b5a353b4a45938657f635f821f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &536530355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3289809165401132398, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
-  m_PrefabInstance: {fileID: 536530353}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbacfa649e52d44d9d5f4cdf9eb9aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &542251931
@@ -1596,8 +1592,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.64065, y: -0.7729, z: 0}
-    m_Extent: {x: 0.6517501, y: 0.6416, z: 0}
+    m_Center: {x: 12.64455, y: -0.78055, z: 0}
+    m_Extent: {x: 0.6517501, y: 0.64325, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1678,8 +1674,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.63865, y: -0.77415, z: 0}
-    m_Extent: {x: 0.64435005, y: 0.64425004, z: 0}
+    m_Center: {x: 12.6432495, y: -0.76930004, z: 0}
+    m_Extent: {x: 0.6447501, y: 0.6398, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2010,8 +2006,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.641399, y: -0.78145, z: 0}
-    m_Extent: {x: 0.64170027, y: 0.64165, z: 0}
+    m_Center: {x: 12.631599, y: -0.77435, z: 0}
+    m_Extent: {x: 0.6481004, y: 0.64505, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4313,6 +4309,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AudioManagerTutorial, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1915044441661638662, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915044441661638662, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
     - target: {fileID: 2040788764358520551, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: m_Name
       value: Pause-Canvas
@@ -4329,10 +4333,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SaveSoundSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 3290039810998580833, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: clickAudioSource
+      value: 
+      objectReference: {fileID: 649301366}
+    - target: {fileID: 3290039810998580833, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: hoverAudioSource
+      value: 
+      objectReference: {fileID: 71225841}
+    - target: {fileID: 4930167772537109492, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: clickAudioSource
+      value: 
+      objectReference: {fileID: 649301366}
+    - target: {fileID: 4930167772537109492, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: hoverAudioSource
+      value: 
+      objectReference: {fileID: 71225841}
+    - target: {fileID: 6159244576512722046, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: clickAudioSource
+      value: 
+      objectReference: {fileID: 649301366}
+    - target: {fileID: 6159244576512722046, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: hoverAudioSource
+      value: 
+      objectReference: {fileID: 71225841}
+    - target: {fileID: 6406319597768666521, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: clickAudioSource
+      value: 
+      objectReference: {fileID: 649301366}
+    - target: {fileID: 6406319597768666521, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: hoverAudioSource
+      value: 
+      objectReference: {fileID: 71225841}
     - target: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 536530355}
+      objectReference: {fileID: 0}
     - target: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMusicVolume
@@ -5648,8 +5684,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.63895, y: -0.76745, z: 0}
-    m_Extent: {x: 0.64575005, y: 0.64105, z: 0}
+    m_Center: {x: 12.6412, y: -0.77524996, z: 0}
+    m_Extent: {x: 0.64649963, y: 0.63555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6039,6 +6075,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1656591819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.3465033
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7577217
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.10064893
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 491362505614488267, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764241151200607727, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+      propertyPath: m_Name
+      value: Backsound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+--- !u!82 &1656591820 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3826440472001246044, guid: 4fc94790d44dadb48a0321db0e0ecfa6, type: 3}
+  m_PrefabInstance: {fileID: 1656591819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658632825
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,8 +7106,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 12.6346, y: -0.7669, z: 0}
-    m_Extent: {x: 0.6458001, y: 0.6404, z: 0}
+    m_Center: {x: 12.6383, y: -0.77335, z: 0}
+    m_Extent: {x: 0.64890003, y: 0.64454997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8006,3 +8104,4 @@ SceneRoots:
   - {fileID: 1240060796}
   - {fileID: 71225840}
   - {fileID: 649301365}
+  - {fileID: 1656591819}
