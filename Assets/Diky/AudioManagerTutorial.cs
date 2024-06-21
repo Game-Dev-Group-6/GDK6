@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class AudioManagerTutorial : MonoBehaviour
 {
-     private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string FirstPlay = "FirstPlay";
     private static readonly string BackgroundPref = "BackgroundPref";
     private static readonly string SoundEffectsPref = "SoundEffectsPref";
     private int firstPlayInt;
@@ -13,15 +13,20 @@ public class AudioManagerTutorial : MonoBehaviour
     public AudioSource[] backgroundAudio;
     public AudioSource[] soundEffectsAudio;
     [SerializeField] private AudioMixer myMixer;
-    
+
+    void Awake()
+    {
+
+    }
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
         if (firstPlayInt == 0)
         {
-            backgroundSlider.value = backgroundFloat;
-            soundEffectsSlider.value = soundEffectsFloat;
+            PlayerPrefs.DeleteAll();
+            backgroundFloat = backgroundSlider.value;
+            soundEffectsFloat = soundEffectsSlider.value;
             PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
             PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsFloat);
             PlayerPrefs.SetInt(FirstPlay, -1);
@@ -46,7 +51,7 @@ public class AudioManagerTutorial : MonoBehaviour
 
     private void OnApplicationFocus(bool inFocus)
     {
-        if(!inFocus)
+        if (!inFocus)
         {
             SaveSoundSettings();
         }
@@ -58,7 +63,7 @@ public class AudioManagerTutorial : MonoBehaviour
         for (int i = 0; i < backgroundAudio.Length; i++)
         {
             backgroundAudio[i].volume = backgroundSlider.value;
-        }        
+        }
         myMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
     }
 
@@ -67,7 +72,7 @@ public class AudioManagerTutorial : MonoBehaviour
         float volume = soundEffectsSlider.value;
         for (int i = 0; i < soundEffectsAudio.Length; i++)
         {
-            soundEffectsAudio[i].volume = soundEffectsSlider.value; 
+            soundEffectsAudio[i].volume = soundEffectsSlider.value;
         }
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
     }
