@@ -137,16 +137,6 @@ public class bullet : MonoBehaviour
         Collider2D[] hit = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 0.5f), transform.eulerAngles.z);
         foreach (Collider2D hitTo in hit)
         {
-            ContactPoint2D[] contacts = new ContactPoint2D[10]; // Buffer untuk menyimpan kontak
-            int contactCount = hitTo.GetContacts(contacts); // Mendapatkan kontak
-
-            for (int i = 0; i < contactCount; i++)
-            {
-                ContactPoint2D contact = contacts[i];
-                // Anda bisa memproses kontak di sini jika diperlukan
-                Debug.Log("Contact Point: " + contact.point + ", Contact Normal: " + contact.normal);
-            }
-
             if (hitTo.tag == "Tree")
             {
                 if (combat.shieldActive)

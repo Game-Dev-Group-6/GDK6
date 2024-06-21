@@ -255,6 +255,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1535460115814286154, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 584805346}
+    - target: {fileID: 1535460115814286154, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535460115814286154, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManagerTutorial, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1915044441661638662, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -319,6 +331,14 @@ PrefabInstance:
       propertyPath: inputObject2
       value: 
       objectReference: {fileID: 501597774}
+    - target: {fileID: 2573697176523910560, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 584805346}
+    - target: {fileID: 2573697176523910560, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveSoundSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 3290039810998580833, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: clickAudioSource
       value: 
@@ -343,6 +363,26 @@ PrefabInstance:
       propertyPath: hoverAudioSource
       value: 
       objectReference: {fileID: 1474987875}
+    - target: {fileID: 6406319597768666521, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: clickAudioSource
+      value: 
+      objectReference: {fileID: 782411904}
+    - target: {fileID: 6406319597768666521, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: hoverAudioSource
+      value: 
+      objectReference: {fileID: 1474987875}
+    - target: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 584805346}
+    - target: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManagerTutorial, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8360216537868721016, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2063,6 +2103,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+--- !u!114 &584805346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+  m_PrefabInstance: {fileID: 584805345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3931b5a353b4a45938657f635f821f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &601409081
 GameObject:
   m_ObjectHideFlags: 0

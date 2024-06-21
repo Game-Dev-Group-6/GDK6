@@ -1599,6 +1599,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3668482191283455046, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
   m_PrefabInstance: {fileID: 485391683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &485391686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1535460115814286154, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+  m_PrefabInstance: {fileID: 485391683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &485391687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7287790226090324215, guid: 920bd348d4ab8694c98c5885a4f339d0, type: 3}
+  m_PrefabInstance: {fileID: 485391683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &532560895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2908,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1621584125
       objectReference: {fileID: 0}
+    - target: {fileID: 531220937460973221, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1591088351298558039, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     - target: {fileID: 703055568702703125, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2914,6 +2940,10 @@ PrefabInstance:
       propertyPath: m_ApplyToSortingLayers.Array.data[2]
       value: 1621584125
       objectReference: {fileID: 0}
+    - target: {fileID: 2854011052674137222, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7718809083505107511, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     - target: {fileID: 3338706618114608155, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -3002,6 +3032,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1479764668}
+    - target: {fileID: 7007462231255674897, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7718809083505107511, guid: e9554dcc27a494e4fb625e8e90982a87, type: 2}
     - target: {fileID: 7485777603059533663, guid: 3c848143780f20f468fedda9774e7ed1, type: 3}
       propertyPath: slider
       value: 
@@ -3652,6 +3686,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3582264371937184754, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: backgroundSlider
+      value: 
+      objectReference: {fileID: 485391687}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: soundEffectsSlider
+      value: 
+      objectReference: {fileID: 485391686}
+    - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
+      propertyPath: backgroundAudio.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056137634099256430, guid: 273b518fcfe827e4e812a223ef12f5d2, type: 3}
