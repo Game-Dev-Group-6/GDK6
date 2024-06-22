@@ -24,6 +24,7 @@ public class AudioManagerTutorial : MonoBehaviour
 
         if (firstPlayInt == 0)
         {
+            Debug.Log("Restart");
             PlayerPrefs.DeleteAll();
             backgroundFloat = backgroundSlider.value;
             soundEffectsFloat = soundEffectsSlider.value;

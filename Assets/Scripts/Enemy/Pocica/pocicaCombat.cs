@@ -185,6 +185,7 @@ public class pocicaCombat : MonoBehaviour
         }
         if (transform.localScale.x >= 6)
         {
+            oneHit = false;
             HealthBar.SetActive(false);
             GetComponent<SpriteRenderer>().enabled = false;
             particle.Play();
@@ -250,8 +251,9 @@ public class pocicaCombat : MonoBehaviour
     }
     void LockPositionPlayer()
     {
+
         rb.isKinematic = false;
-        newPos = Vector2.MoveTowards(transform.position, new Vector2(lockPlayerPos.x, attack ? lockPlayerPos.y : transform.position.y), attack ? speedMoveToWards : 0.01f);
+        newPos = Vector2.MoveTowards(transform.position, new Vector2(lockPlayerPos.x, attack ? lockPlayerPos.y : transform.position.y), attack ? speedMoveToWards : 2.3f * Time.deltaTime);
         transform.position = (Vector3)newPos;
     }
     void ConditionFlipX()
@@ -291,11 +293,27 @@ public class pocicaCombat : MonoBehaviour
             delayTime2.Timer = 0;
         }
     }
+    int addforce;
+    bool oneHit;
     private void OnParticleCollision(GameObject other)
     {
         if (other.tag == "Player")
         {
-            player.GetComponent<playerHealthManager>().TakeDamage(0.5f);
+            player.GetComponent<playerHealthManager>().TakeDamage(0.2f);
+            if (player.transform.position.x < transform.position.x)
+            {
+                addforce = -7;
+            }
+            else
+            {
+                addforce = 7;
+            }
+            if (!oneHit)
+            {
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(addforce, 0.3f), ForceMode2D.Impulse);
+                oneHit = true;
+            }
+
         }
     }
 

@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd88634b5ed72e4a922af56785523b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bateraiTambah: 0.5
-  bateraiKurang: 0.5
+  bateraiTambah: 5
+  bateraiKurang: 5
   weapon: {fileID: 4743043069094431009}
   timeDelayChangeIntensity: 1
   intenMin: 1
@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 8182047529911058538}
   - component: {fileID: 531220937460973221}
   - component: {fileID: 4281692377934957873}
+  - component: {fileID: 7182005169885984594}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -603,6 +604,19 @@ MonoBehaviour:
   respawnPlayerInHutanRoh: 0
   respawnPlayerInPemakaman: 0
   FlashlightInPlayer: {fileID: 0}
+--- !u!114 &7182005169885984594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703055568702703125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0eadbe3a6a8f0242ab46770463e9518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
 --- !u!1 &815831163499501489
 GameObject:
   m_ObjectHideFlags: 0

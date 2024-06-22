@@ -4567,6 +4567,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &2131404366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3137249440720272089, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
+  m_PrefabInstance: {fileID: 6858552496438254424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6858552496438254424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4719,6 +4724,10 @@ PrefabInstance:
       propertyPath: inputObject2
       value: 
       objectReference: {fileID: 1145373860}
+    - target: {fileID: 5232777101575425510, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
+      propertyPath: inputObject3
+      value: 
+      objectReference: {fileID: 2131404366}
     - target: {fileID: 5464840540663344155, guid: 200a1d5adaacd264aa2b2ebf3ff0d680, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

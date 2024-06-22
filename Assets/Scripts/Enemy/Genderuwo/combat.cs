@@ -223,7 +223,7 @@ public class combat : MonoBehaviour
                 shieldActive = true;
                 health100 = true;
             }
-            EnemyHit(3f, 6.5f, 3f);
+            EnemyHit(1f, 6.5f, 3f);
         }
         /* if (enemyHealthBar.currentHealth <= 80 && enemyHealthBar.currentHealth > 60)
         {
@@ -245,7 +245,7 @@ public class combat : MonoBehaviour
                 blink = true;
                 health60 = true;
             }
-            EnemyHit(3f, 6.5f, 2.5f);
+            EnemyHit(1f, 6.5f, 2.5f);
         }
         /*   if (enemyHealthBar.currentHealth <= 40 && enemyHealthBar.currentHealth > 20)
           {
@@ -267,7 +267,7 @@ public class combat : MonoBehaviour
                 blink = true;
                 health20 = true;
             }
-            EnemyHit(3f, 6.5f, 2f);
+            EnemyHit(1f, 6.5f, 2f);
         }
         if (enemyHealthBar.currentHealth <= 0)
         {

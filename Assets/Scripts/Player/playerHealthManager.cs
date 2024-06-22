@@ -19,6 +19,10 @@ public class playerHealthManager : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] Text text;
     [SerializeField] bool respawnPlayerInHutanRoh, respawnPlayerInPemakaman;
+    bool getDamage;
+    delayHurt DelayHurt;
+    Color newColor;
+    bool reverse, changeColor;
     void Awake()
     {
 
@@ -26,6 +30,8 @@ public class playerHealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        newColor = GetComponent<SpriteRenderer>().color;
+        DelayHurt = GetComponent<delayHurt>();
         if (!PlayerPrefs.HasKey("CurrentHealth"))
         {
             PlayerPrefs.SetFloat("CurrentHealth", 100);
@@ -62,13 +68,64 @@ public class playerHealthManager : MonoBehaviour
             text.text = (int)currentHealt + "/100";
         }
         ConditionPlayerDeath();
+        ConditionGetDamage();
+        if (changeColor)
+        {
+            ColorHurt();
+        }
     }
+    int i = 0;
+    void ColorHurt()
+    {
 
+        if (newColor.g > 0 && !reverse)
+        {
+            newColor.g -= 0.1f;
+            newColor.b = newColor.g;
+            if (newColor.g <= 0)
+            {
+                reverse = true;
+            }
+        }
+        if (newColor.g < 1 && reverse)
+        {
+            newColor.g += 0.1f;
+            newColor.b = newColor.g;
+            if (newColor.g >= 1)
+            {
+                reverse = false;
+                if (i < 2)
+                {
+                    i++;
+                }
+                if (i >= 2)
+                {
+                    changeColor = false;
+                    i = 0;
+                }
+
+            }
+        }
+        GetComponent<SpriteRenderer>().color = newColor;
+    }
     public void TakeDamage(float Damage)
     {
         currentHealt -= Damage;
+        getDamage = true;
+        GetComponent<movementController>().interactNPC = true;
+        changeColor = true;
     }
-
+    void ConditionGetDamage()
+    {
+        if (getDamage)
+        {
+            if (DelayHurt.Delay(1f))
+            {
+                getDamage = false;
+                GetComponent<movementController>().interactNPC = false;
+            }
+        }
+    }
     [SerializeField] GameObject FlashlightInPlayer;
     void ConditionPlayerDeath()
     {
@@ -99,7 +156,6 @@ public class playerHealthManager : MonoBehaviour
             }
         }
     }
-
     void PickScene()
     {
         switch (enemy)

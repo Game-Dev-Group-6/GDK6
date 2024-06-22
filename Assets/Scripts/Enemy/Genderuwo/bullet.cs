@@ -147,9 +147,13 @@ public class bullet : MonoBehaviour
                 Destroy(gameObject);
             }
 
+            if (GameObject.FindWithTag("Enemy/Gendu").transform.position.x > GameObject.FindWithTag("Player").transform.position.x)
+            {
+                addforce = -3;
+            }
             if (hitTo.tag == "Player")
             {
-                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(addforce, 0.1f), ForceMode2D.Impulse);
+                hitTo.GetComponent<Rigidbody2D>().AddForce(new Vector2(addforce, 0.2f), ForceMode2D.Impulse);
                 hitTo.GetComponent<playerHealthManager>().TakeDamage(6);
                 cameraShake.CameraShake(1, 1);
                 Destroy(gameObject);
