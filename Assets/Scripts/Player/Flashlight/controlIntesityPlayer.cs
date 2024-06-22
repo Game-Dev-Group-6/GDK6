@@ -10,13 +10,13 @@ public class controlIntesity : MonoBehaviour
     [SerializeField] float timeDelayChangeIntensity;
     [SerializeField] float intenMin, intenMax;
     Light2D lightInten;
-    delayTime delayTime;
+    delayTime2 delayTime2;
 
 
     void Start()
     {
         lightInten = GetComponent<Light2D>();
-        delayTime = GetComponent<delayTime>();
+        delayTime2 = GetComponent<delayTime2>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class controlIntesity : MonoBehaviour
     {
         if (lightInten != null)
         {
-            if (delayTime.Delay(timeDelayChangeIntensity))
+            if (delayTime2.Delay(timeDelayChangeIntensity))
             {
                 lightInten.intensity = Random.Range(intenMin, intenMax);
             }

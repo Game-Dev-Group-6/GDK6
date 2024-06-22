@@ -84,7 +84,7 @@ public class treeDurability : MonoBehaviour
         }
         else if (waitingTime <= 0)
         {
-            waiting.text = "";
+            waiting.text = "Click";
         }
 
         /* sliderWaitingTime.value = (float)waitingTime / timeForBreakTree; */
